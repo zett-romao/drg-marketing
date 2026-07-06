@@ -61,6 +61,11 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [ ] Formulário de **captação de leads** (em vez de só `mailto:`).
 - [ ] Kit de **campanha** (e-mail marketing, banner, texto padrão).
 
+## 📱 Responsivo + ícone de app — FEITO (2026-07-06)
+- [x] Landing e painel `/admin/` responsivos (nav no celular esconde botão secundário; hero/títulos fluidos com clamp; painel em 1 coluna no mobile).
+- [x] **Logo na aba do navegador** (favicon SVG + `assets/favicon-32.png`).
+- [x] **Ícone de app** (tela inicial do celular): `assets/icon-192.png`, `icon-512.png`, `apple-touch-icon.png` (gerados da logo `</>` via Chrome headless) + `manifest.webmanifest` (name "DR Systems", theme #152a45). Aplicado na home, nas 10 páginas de produto e no admin.
+
 ## 🛠️ Painel de edição — FEITO (2026-07-06)
 - [x] Cards da home passam a vir de `data/site.json` (fonte única; home renderiza via JS).
 - [x] **Painel privado `/admin/`**: login com token do GitHub (fine-grained, Contents R/W no repo `drg-marketing`), edita mostrar/ocultar, ativo/em breve, textos, emoji, ordem (↑↓), destaque e adicionar/remover; botão **Salvar e publicar** grava `data/site.json` via API do GitHub → Pages atualiza sozinho (~1 min). Token fica só no navegador (localStorage).
