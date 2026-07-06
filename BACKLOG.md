@@ -73,8 +73,14 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [ ] **Falta o dono criar o token** (passo a passo dentro do próprio painel). URL do painel: https://zett-romao.github.io/drg-marketing/admin/
 - [ ] Futuro: painel controla os cards da HOME; as páginas de detalhe (`kronos/` etc.) ainda vêm do gerador — avaliar unificar.
 
+## 🌐 Domínio próprio — EM ANDAMENTO (2026-07-06)
+- Domínio escolhido: **drsystems.dev.br** (registro.br, DNS do próprio registro.br), raiz como principal.
+- [x] `canonical` do site apontando para https://drsystems.dev.br/.
+- [ ] **Dono:** adicionar registro(s) A no registro.br → GitHub Pages (`185.199.108.153` .109 .110 .111). Em "Configurar endereçamento".
+- [ ] **Claude (depois do DNS propagar):** criar arquivo `CNAME` = drsystems.dev.br, ligar domínio no Pages, **ativar HTTPS**.
+- [ ] Atualizar `manifest`/links absolutos se necessário (hoje relativos, ok).
+
 ## 💡 A decidir
-- [ ] **Domínio** oficial: `drglobal.com.br`? `drg.app`? (definir e apontar DNS).
 - [ ] Nome/assinatura comercial única para todas as peças.
 
 ---
