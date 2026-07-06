@@ -42,7 +42,9 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 ## 🔜 Próximo (curto prazo)
 - [x] **Publicar a landing institucional** → GitHub Pages: https://zett-romao.github.io/drg-marketing/ (2026-07-06).
 - [x] **Logo DR Systems** (conceito "Código" `</>`, SVG em `assets/mark.svg` + `assets/favicon.svg`) aplicada em nav+footer+favicon das 11 páginas (2026-07-06). Rebrand DR Global → **DR Systems**; família **DR-Systems**.
-- [ ] **CNPJ real** — hoje está o placeholder `00.000.000/0001-00` no rodapé (razão social: DR Global Multi Services). ➜ AGUARDANDO o número real do dono.
+- [x] **CNPJ real** no rodapé: DR Global Multi Services · CNPJ **49.698.112/0001-57** (obtido do Kronos, 2026-07-06).
+- [x] **Nome do produto no topo** do hero das páginas de produto (antes só aparecia o emoji).
+- [ ] ⚠️ Conferir razão social: no Kronos o CNPJ 49.698.112/0001-57 está como *"D.R. Global - Gestão de Condomínios, Imóveis, Assessoria Financeira e Administrativa Ltda"*; no site usamos "DR Global Multi Services". Confirmar qual usar.
 - [ ] Confirmar status "Em breve" de **Rently, Garantidora, CondoGest** — ligar link quando cada um puder ser divulgado.
 - [ ] Revisar rotas de destino (Sign/Jurídico vão pra vendas/signup — confirmar).
 - [ ] Canal de **contato** além do e-mail (WhatsApp comercial?).
