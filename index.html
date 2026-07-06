@@ -103,7 +103,7 @@
 <script>
 (function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  fetch('data/site.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(cfg){
+  fetch('data/site.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(function(cfg){
     var prods=(cfg.produtos||[]).filter(function(p){return p.visivel!==false;});
     var dest=prods.filter(function(p){return p.destaque;});
     var grid=prods.filter(function(p){return !p.destaque;});
