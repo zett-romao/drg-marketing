@@ -39,7 +39,7 @@ nav a.nav-link{color:#cbd8e8;font-size:14px;font-weight:600;display:none}
 .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% -10%,rgba(255,255,255,.14),transparent 45%)}
 .hero .wrap{position:relative;z-index:1}
 .hero .pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:30px;font-size:13px;font-weight:600;margin-bottom:22px}
-.hero h1{font-size:46px;line-height:1.1;font-weight:850;letter-spacing:-.6px;max-width:860px;margin:0 auto}
+.hero h1{font-size:clamp(30px,7vw,46px);line-height:1.1;font-weight:850;letter-spacing:-.6px;max-width:860px;margin:0 auto}
 .hero h1 em{font-style:normal;color:var(--clara)}
 .hero p.sub{font-size:19px;color:#dce7f3;max-width:660px;margin:20px auto 32px}
 .hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
@@ -61,7 +61,7 @@ nav a.nav-link{color:#cbd8e8;font-size:14px;font-weight:600;display:none}
 /* SEÇÕES */
 section{padding:64px 0}
 .eyebrow{color:var(--acc);font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-align:center}
-h2.tt{font-size:32px;font-weight:820;text-align:center;margin:8px auto 10px;letter-spacing:-.4px}
+h2.tt{font-size:clamp(24px,5vw,32px);font-weight:820;text-align:center;margin:8px auto 10px;letter-spacing:-.4px}
 .lead{color:var(--mut);text-align:center;max-width:640px;margin:0 auto 40px;font-size:17px}
 
 .grid{display:grid;gap:18px}
@@ -155,4 +155,24 @@ footer{background:#0e1c2e;color:#8fa3b8;padding:30px 0;text-align:center;font-si
 footer .brand{justify-content:center;margin-bottom:8px;font-size:16px}
 footer a{color:var(--clara)}
 
+/* ---- responsivo: celular ---- */
+@media(max-width:600px){
+  .wrap{padding:0 16px}
+  nav .wrap{gap:8px}
+  nav .brand{font-size:16px}
+  nav .brand .tile{width:30px;height:30px}
+  nav .btn{padding:9px 13px;font-size:13px}
+  nav .btn-ghost{display:none}
+  .hero{padding:52px 0 60px}
+  .hero .sub{font-size:16.5px}
+  section{padding:48px 0}
+  .kbanner{padding:22px 18px}
+  .kbanner h3{font-size:22px}
+  .final h2,.fam h2.tt{font-size:24px}
+  .btn-lg{padding:13px 22px;font-size:15px}
+}
+@media(max-width:380px){
+  .hero .cta{flex-direction:column}
+  .hero .cta .btn{width:100%;text-align:center}
+}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}

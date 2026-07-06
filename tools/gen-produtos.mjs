@@ -44,6 +44,9 @@ function page(p){
   <meta property="og:description" content="${p.desc}" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  <link rel="manifest" href="../manifest.webmanifest" />
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
