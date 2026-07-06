@@ -61,6 +61,13 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [ ] Formulário de **captação de leads** (em vez de só `mailto:`).
 - [ ] Kit de **campanha** (e-mail marketing, banner, texto padrão).
 
+## 🛠️ Painel de edição — FEITO (2026-07-06)
+- [x] Cards da home passam a vir de `data/site.json` (fonte única; home renderiza via JS).
+- [x] **Painel privado `/admin/`**: login com token do GitHub (fine-grained, Contents R/W no repo `drg-marketing`), edita mostrar/ocultar, ativo/em breve, textos, emoji, ordem (↑↓), destaque e adicionar/remover; botão **Salvar e publicar** grava `data/site.json` via API do GitHub → Pages atualiza sozinho (~1 min). Token fica só no navegador (localStorage).
+- [x] Prévia local via `node tools/serve.mjs` (o `ABRIR LANDING.bat` já sobe o servidor) — necessário porque `file://` bloqueia a leitura do JSON.
+- [ ] **Falta o dono criar o token** (passo a passo dentro do próprio painel). URL do painel: https://zett-romao.github.io/drg-marketing/admin/
+- [ ] Futuro: painel controla os cards da HOME; as páginas de detalhe (`kronos/` etc.) ainda vêm do gerador — avaliar unificar.
+
 ## 💡 A decidir
 - [ ] **Domínio** oficial: `drglobal.com.br`? `drg.app`? (definir e apontar DNS).
 - [ ] Nome/assinatura comercial única para todas as peças.
