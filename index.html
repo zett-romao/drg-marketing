@@ -16,116 +16,7 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%23152a45'/%3E%3Ctext%20x='16'%20y='22'%20font-family='Arial,sans-serif'%20font-size='13'%20font-weight='bold'%20fill='white'%20text-anchor='middle'%3EDR%3C/text%3E%3C/svg%3E" />
-
-<style>
-  :root{
-    --azul:#152a45; --azul2:#1e3a5f; --acc:#3182ce; --acc2:#4299e1;
-    --bg:#f7fafc; --card:#fff; --txt:#1a202c; --mut:#5a6b7f; --linha:#e2e8f0;
-    --ok:#2f855a; --grad:linear-gradient(135deg,#1e3a5f,#3182ce);
-    --clara:#90cdf4;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:system-ui,'Segoe UI',Roboto,sans-serif;color:var(--txt);background:var(--bg);line-height:1.6}
-  a{color:inherit;text-decoration:none}
-  img{max-width:100%}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 20px}
-  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;cursor:pointer;border:0;font-size:15px;transition:.15s}
-  .btn-primary{background:var(--acc);color:#fff}
-  .btn-primary:hover{background:var(--azul2);transform:translateY(-1px)}
-  .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.3)}
-  .btn-ghost:hover{background:rgba(255,255,255,.22)}
-  .btn-lg{padding:15px 30px;font-size:17px}
-
-  /* NAV */
-  nav{position:sticky;top:0;z-index:30;background:rgba(21,42,69,.92);backdrop-filter:blur(8px)}
-  nav .wrap{display:flex;align-items:center;gap:14px;height:64px}
-  .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:19px}
-  .brand .tile{background:#fff;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--azul);font-weight:800;font-size:15px}
-  .brand span{color:var(--clara)}
-  nav .sp{flex:1}
-  nav a.nav-link{color:#cbd8e8;font-size:14px;font-weight:600;display:none}
-  @media(min-width:820px){nav a.nav-link{display:inline}}
-
-  /* HERO */
-  .hero{background:var(--grad);color:#fff;padding:74px 0 92px;text-align:center;position:relative;overflow:hidden}
-  .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% -10%,rgba(255,255,255,.14),transparent 45%)}
-  .hero .wrap{position:relative;z-index:1}
-  .hero .pill{display:inline-block;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:30px;font-size:13px;font-weight:600;margin-bottom:22px}
-  .hero h1{font-size:46px;line-height:1.1;font-weight:850;letter-spacing:-.6px;max-width:860px;margin:0 auto}
-  .hero h1 em{font-style:normal;color:var(--clara)}
-  .hero p.sub{font-size:19px;color:#dce7f3;max-width:660px;margin:20px auto 32px}
-  .hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-  .hero .mini{margin-top:16px;font-size:13px;color:#a9c0d8}
-
-  /* STATS */
-  .stats{background:#fff;border-bottom:1px solid var(--linha)}
-  .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:26px 20px}
-  .stat{text-align:center;padding:6px 4px}
-  .stat .n{font-size:34px;font-weight:850;color:var(--azul2);letter-spacing:-1px}
-  .stat .n small{font-size:16px;color:var(--acc)}
-  .stat .l{font-size:13px;color:var(--mut);margin-top:2px}
-  .stat:not(:last-child){border-right:1px solid var(--linha)}
-  @media(max-width:640px){.stats .wrap{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--linha);padding-bottom:16px;margin-bottom:6px}}
-
-  /* SEÇÕES */
-  section{padding:64px 0}
-  .eyebrow{color:var(--acc);font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;text-align:center}
-  h2.tt{font-size:32px;font-weight:820;text-align:center;margin:8px auto 10px;letter-spacing:-.4px}
-  .lead{color:var(--mut);text-align:center;max-width:640px;margin:0 auto 40px;font-size:17px}
-
-  .grid{display:grid;gap:18px}
-  .g3{grid-template-columns:repeat(3,1fr)}
-  @media(max-width:820px){.g3{grid-template-columns:1fr}}
-  .feat{background:var(--card);border:1px solid var(--linha);border-radius:16px;padding:26px}
-  .feat .ico{width:46px;height:46px;border-radius:12px;background:#ebf3fb;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:14px}
-  .feat h3{font-size:18px;margin-bottom:6px}
-  .feat p{color:var(--mut);font-size:15px}
-
-  /* PRODUTOS (fundo azul) */
-  .fam{background:var(--azul);color:#fff}
-  .fam h2.tt{color:#fff}
-  .fam .eyebrow{color:var(--clara)}
-  .fam .lead{color:#b8cade}
-
-  /* Kronos destaque */
-  .kbanner{background:#fff;color:var(--txt);border-radius:20px;padding:32px;display:grid;grid-template-columns:1.25fr 1fr;gap:30px;align-items:center;position:relative;margin-bottom:24px;box-shadow:0 18px 40px rgba(0,0,0,.28)}
-  @media(max-width:820px){.kbanner{grid-template-columns:1fr;padding:26px 24px}}
-  .kbanner .tag{position:absolute;top:-14px;left:32px;background:var(--acc);color:#fff;font-size:12px;font-weight:800;letter-spacing:.6px;padding:5px 15px;border-radius:20px}
-  .kbanner .fi{font-size:30px}
-  .kbanner h3{color:var(--azul);font-size:27px;margin:8px 0 8px;letter-spacing:-.4px;line-height:1.15}
-  .kbanner h3 b{color:var(--acc)}
-  .kbanner .kp{color:var(--mut);font-size:15.5px;margin-bottom:18px}
-  .kbanner .caps{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:9px 18px}
-  @media(max-width:520px){.kbanner .caps{grid-template-columns:1fr}}
-  .kbanner .caps li{position:relative;padding-left:24px;font-size:14px;font-weight:600}
-  .kbanner .caps li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
-  .kbanner .capsttl{font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--acc);margin-bottom:12px}
-
-  .famgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-  @media(max-width:820px){.famgrid{grid-template-columns:1fr}}
-  @media(max-width:1000px) and (min-width:821px){.famgrid{grid-template-columns:repeat(2,1fr)}}
-  .fcard{display:flex;flex-direction:column;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px;transition:.15s}
-  a.fcard:hover{background:rgba(255,255,255,.12);transform:translateY(-3px);border-color:rgba(144,205,244,.5)}
-  .fcard .fi{font-size:26px;margin-bottom:8px}
-  .fcard h3{font-size:16px;margin-bottom:4px}
-  .fcard h3 b{color:var(--clara)}
-  .fcard p{color:#c2d3e5;font-size:13.5px;flex:1}
-  .fcard .ir{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:13px;font-weight:700;color:var(--clara)}
-  .fcard .ir .d{width:7px;height:7px;border-radius:50%;background:#48bb78}
-  .fcard.grey{opacity:.5;filter:grayscale(.35)}
-  .fcard.grey .ir{color:#9fb2c6;font-weight:600}
-  .fcard.grey .ir .d{background:#9fb2c6}
-
-  /* CTA FINAL */
-  .final{background:var(--grad);color:#fff;text-align:center}
-  .final h2{font-size:32px;font-weight:820}
-  .final p{color:#dce7f3;margin:10px auto 26px;max-width:560px;font-size:17px}
-
-  footer{background:#0e1c2e;color:#8fa3b8;padding:30px 0;text-align:center;font-size:13px}
-  footer .brand{justify-content:center;margin-bottom:8px;font-size:16px}
-  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
-</style>
+  <link rel="stylesheet" href="assets/style.css" />
 </head>
 <body>
 
@@ -176,7 +67,10 @@
         <div class="fi">👥</div>
         <h3>DRG·<b>Kronos</b> — a plataforma de RH ponta a ponta</h3>
         <p class="kp">O departamento de pessoal inteiro num sistema só, da admissão à rescisão. Ponto eletrônico, folha de pagamento, escalas, férias, benefícios e holerite — com <b>contabilidade integrada</b>: eSocial, encargos e a planilha pronta para o contador. Tudo sob trilha LGPD carimbada em blockchain.</p>
-        <a class="btn btn-primary" href="https://zett-romao.github.io/drg-sistema/cadastro.html" target="_blank" rel="noopener">Criar conta →</a>
+        <div class="btnrow">
+          <a class="btn btn-primary" href="kronos/">Ver detalhes →</a>
+          <a class="btn" style="background:#edf2f7;color:var(--azul2)" href="https://zett-romao.github.io/drg-sistema/cadastro.html" target="_blank" rel="noopener">Criar conta</a>
+        </div>
       </div>
       <div>
         <div class="capsttl">O que ele cobre</div>
@@ -195,51 +89,51 @@
 
     <!-- DEMAIS PRODUTOS -->
     <div class="famgrid">
-      <a class="fcard" href="https://drg-buscanfe.onrender.com/vendas" target="_blank" rel="noopener">
+      <a class="fcard" href="buscanfe/">
         <div class="fi">🔎</div><h3>DRG·<b>BuscaNFe</b></h3>
         <p>Captura automática de NF-e por competência, direto da SEFAZ — XML, DANFE em PDF e planilha pro contador.</p>
         <span class="ir"><span class="d"></span>Conhecer →</span>
       </a>
-      <a class="fcard" href="https://drg-check-app.onrender.com/login" target="_blank" rel="noopener">
+      <a class="fcard" href="check/">
         <div class="fi">📨</div><h3>DRG·<b>Check</b></h3>
         <p>Notificações com prova de entrega e cadeia de custódia registrada em blockchain (SHA-256 + OpenTimestamps).</p>
-        <span class="ir"><span class="d"></span>Acessar →</span>
+        <span class="ir"><span class="d"></span>Conhecer →</span>
       </a>
-      <a class="fcard" href="https://drg-sign-app.onrender.com/vendas" target="_blank" rel="noopener">
+      <a class="fcard" href="sign/">
         <div class="fi">✍️</div><h3>DRG·<b>Sign</b></h3>
         <p>Assinatura eletrônica de documentos com validade jurídica, IP, geolocalização e trilha de auditoria.</p>
         <span class="ir"><span class="d"></span>Conhecer →</span>
       </a>
-      <a class="fcard" href="https://drg-juridico-app.onrender.com/signup" target="_blank" rel="noopener">
+      <a class="fcard" href="juridico/">
         <div class="fi">⚖️</div><h3>DRG·<b>Jurídico</b></h3>
         <p>Gestão de advocacia + monitoramento de publicações (DJEN/DataJud), prazos, execução penal e livro-caixa.</p>
-        <span class="ir"><span class="d"></span>Criar conta →</span>
+        <span class="ir"><span class="d"></span>Conhecer →</span>
       </a>
-      <a class="fcard" href="https://drg-hidro.onrender.com/index.html" target="_blank" rel="noopener">
+      <a class="fcard" href="hidro/">
         <div class="fi">💧</div><h3>DRG·<b>Hidro</b></h3>
         <p>Monitoramento IoT do nível das caixas d'água (ESP32), com alertas por e-mail, WhatsApp e push.</p>
-        <span class="ir"><span class="d"></span>Acessar →</span>
+        <span class="ir"><span class="d"></span>Conhecer →</span>
       </a>
-      <a class="fcard" href="https://drg-fit.vercel.app" target="_blank" rel="noopener">
+      <a class="fcard" href="fit/">
         <div class="fi">🏋️</div><h3>DRG·<b>Fit</b></h3>
         <p>Gestão de academia: alunos, planos, controle de acesso e agendamentos.</p>
-        <span class="ir"><span class="d"></span>Acessar →</span>
+        <span class="ir"><span class="d"></span>Conhecer →</span>
       </a>
-      <div class="fcard grey">
+      <a class="fcard" href="rently/">
         <div class="fi">🏠</div><h3>DRG·<b>Rently</b></h3>
         <p>Gestão de locações de imóveis: contratos, análise de crédito e cobrança, ponta a ponta.</p>
-        <span class="ir"><span class="d"></span>Em breve</span>
-      </div>
-      <div class="fcard grey">
+        <span class="ir"><span class="d"></span>Conhecer →</span>
+      </a>
+      <a class="fcard" href="garantidora/">
         <div class="fi">🛡️</div><h3>DRG·<b>Garantidora</b></h3>
         <p>Cobrança garantida de condomínios, com antecipação de recebíveis e régua de inadimplência.</p>
-        <span class="ir"><span class="d"></span>Em breve</span>
-      </div>
-      <div class="fcard grey">
+        <span class="ir"><span class="d"></span>Conhecer →</span>
+      </a>
+      <a class="fcard" href="condogest/">
         <div class="fi">🏢</div><h3>GDR·<b>CondoGest</b></h3>
         <p>Gestão condominial completa, do financeiro à comunicação com os moradores.</p>
-        <span class="ir"><span class="d"></span>Em breve</span>
-      </div>
+        <span class="ir"><span class="d"></span>Conhecer →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -264,7 +158,7 @@
   <div class="wrap">
     <h2>Precisa de um sistema que ainda não existe?</h2>
     <p>É esse o padrão da casa: entender a regra do seu setor e entregar software que já nasce em produção.</p>
-    <a class="btn btn-primary btn-lg" href="mailto:zett.romao@gmail.com" style="background:#fff;color:var(--azul2)">Falar com a DR Global</a>
+    <a class="btn btn-light btn-lg" href="mailto:zett.romao@gmail.com">Falar com a DR Global</a>
   </div>
 </section>
 

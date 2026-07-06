@@ -47,7 +47,10 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [ ] Canal de **contato** além do e-mail (WhatsApp comercial?).
 
 ## 📌 Médio prazo — mais peças (por isso virou "Marketing")
-- [ ] **Landing dedicada por produto** no mesmo visual (`landing-kronos/`, `landing-juridico/`, ...).
+- [x] **Landing dedicada por produto** (10 subpastas) no mesmo visual — geradas por `tools/gen-produtos.mjs` (2026-07-06). Kronos/BuscaNFe/Check/Sign/Jurídico/Hidro/Fit com link real; Rently/Garantidora/CondoGest como "lista de espera".
+- [x] **SEO por página**: title, meta description, Open Graph e favicon em cada landing.
+- [ ] Revisar textos/claims de cada produto com o dono (gerados a partir da memória).
+- [ ] Adicionar **preços/planos** onde já existirem (BuscaNFe, Kronos, Hidro).
 - [ ] **Artes para redes sociais** (posts, stories, capa) reaproveitando a identidade DRG.
 - [ ] **SEO** em cada página: title, meta description, Open Graph, favicon.
 - [ ] **Analytics** de visitas e cliques por produto.
