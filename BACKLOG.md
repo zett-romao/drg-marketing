@@ -8,6 +8,7 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 (azul `#152a45` / `#3182ce`, gradiente, cards com ícone, fonte de sistema).
 
 - **Última atualização:** 2026-07-06.
+- **🌐 NO AR:** https://zett-romao.github.io/drg-marketing/ (repo `zett-romao/drg-marketing`, GitHub Pages/main).
 
 ---
 
@@ -39,7 +40,7 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [x] Responsivo + `prefers-reduced-motion`.
 
 ## 🔜 Próximo (curto prazo)
-- [ ] **Publicar a landing institucional** (definir onde: GitHub Pages, Render static ou domínio próprio).
+- [x] **Publicar a landing institucional** → GitHub Pages: https://zett-romao.github.io/drg-marketing/ (2026-07-06).
 - [ ] **Logo real** da DR Global no lugar do tile "DR" (nav + footer). Lembrete: logo sempre sobre fundo branco.
 - [ ] Confirmar status "Em breve" de **Rently, Garantidora, CondoGest** — ligar link quando cada um puder ser divulgado.
 - [ ] Revisar rotas de destino (Sign/Jurídico vão pra vendas/signup — confirmar).
