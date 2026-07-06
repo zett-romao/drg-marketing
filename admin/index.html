@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Painel · DR Systems</title>
+  <link rel="icon" href="../assets/favicon.svg" />
+  <style>
+    :root{--azul:#152a45;--azul2:#1e3a5f;--acc:#3182ce;--bg:#eef1f6;--card:#fff;--txt:#1a202c;--mut:#5a6b7f;--linha:#dbe2ec;--ok:#2f855a;--warn:#c05621;--err:#c53030}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+    .top{background:var(--azul);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5}
+    .top img{width:30px;height:30px;border-radius:7px}
+    .top b{font-weight:800}
+    .top .sp{flex:1}
+    .wrap{max-width:920px;margin:0 auto;padding:22px 16px 80px}
+    .btn{border:0;border-radius:9px;padding:10px 16px;font-weight:700;font-size:14px;cursor:pointer;font-family:inherit}
+    .btn-p{background:var(--acc);color:#fff}.btn-p:hover{background:var(--azul2)}
+    .btn-g{background:#e6edf5;color:var(--azul2)}.btn-g:hover{background:#d8e3ef}
+    .btn-d{background:#fed7d7;color:#9b2c2c}.btn-d:hover{background:#feb2b2}
+    .btn:disabled{opacity:.5;cursor:not-allowed}
+    .box{background:var(--card);border:1px solid var(--linha);border-radius:14px;padding:20px;margin-bottom:16px}
+    label{font-size:12px;font-weight:700;color:var(--mut);display:block;margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em}
+    input[type=text],textarea,select{width:100%;border:1px solid var(--linha);border-radius:8px;padding:8px 10px;font-family:inherit;font-size:14px;background:#fff;color:var(--txt)}
+    textarea{resize:vertical;min-height:54px}
+    .muted{color:var(--mut);font-size:13px}
+    .msg{padding:10px 14px;border-radius:9px;margin:12px 0;font-size:14px;font-weight:600;display:none}
+    .msg.ok{background:#f0fff4;color:var(--ok);border:1px solid #c6f6d5;display:block}
+    .msg.err{background:#fff5f5;color:var(--err);border:1px solid #fed7d7;display:block}
+    .msg.info{background:#ebf8ff;color:#2b6cb0;border:1px solid #bee3f8;display:block}
+    /* login */
+    #login{max-width:520px;margin:40px auto}
+    #login ol{margin:12px 0 0 18px;font-size:13.5px;color:var(--mut)}
+    #login li{margin-bottom:6px}
+    #login a{color:var(--acc)}
+    /* rows */
+    .prod{background:var(--card);border:1px solid var(--linha);border-radius:14px;margin-bottom:14px;overflow:hidden}
+    .prod.hidden-card{opacity:.6}
+    .phead{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#f7fafc;border-bottom:1px solid var(--linha);cursor:pointer}
+    .phead .em{font-size:22px}
+    .phead .nm{font-weight:800}
+    .phead .tagpill{font-size:11px;font-weight:800;padding:3px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
+    .tp-on{background:#c6f6d5;color:#22543d}.tp-soon{background:#feebc8;color:#7b341e}.tp-off{background:#e2e8f0;color:#4a5568}.tp-dest{background:#bee3f8;color:#2a4365}
+    .phead .sp{flex:1}
+    .ord{display:flex;gap:4px}
+    .ord button{width:30px;height:30px;border-radius:7px;border:1px solid var(--linha);background:#fff;cursor:pointer;font-size:14px}
+    .pbody{padding:16px 14px;display:none;grid-template-columns:repeat(2,1fr);gap:12px}
+    .prod.open .pbody{display:grid}
+    .full{grid-column:1 / -1}
+    .toggles{display:flex;flex-wrap:wrap;gap:16px;align-items:center;grid-column:1 / -1;padding-bottom:4px}
+    .toggles label{display:inline-flex;align-items:center;gap:7px;text-transform:none;letter-spacing:0;font-size:14px;color:var(--txt);margin:0;cursor:pointer}
+    .toggles input{width:auto}
+    .dest-only{display:none}
+    .prod.is-dest .dest-only{display:block}
+    .savebar{position:sticky;bottom:0;background:rgba(238,241,246,.95);backdrop-filter:blur(6px);border-top:1px solid var(--linha);padding:14px 16px;display:flex;gap:10px;align-items:center;margin:0 -16px -80px;justify-content:flex-end}
+    .savebar .sp{flex:1}
+  </style>
+</head>
+<body>
+
+<div class="top">
+  <img src="../assets/favicon.svg" alt="" />
+  <b>Painel DR Systems</b>
+  <span class="muted" style="color:#9fb4cc">edição dos cards</span>
+  <span class="sp"></span>
+  <a href="../" target="_blank" style="color:#cbd8e8;font-size:13px;text-decoration:none">abrir site ↗</a>
+  <button class="btn btn-g" id="logout" style="display:none">Sair</button>
+</div>
+
+<div class="wrap">
+
+  <!-- LOGIN -->
+  <div id="login">
+    <div class="box">
+      <h2 style="margin-bottom:6px">Entrar no painel</h2>
+      <p class="muted" style="margin-bottom:14px">Cole sua chave do GitHub (fica salva só neste navegador). Com ela o painel publica as mudanças sozinho.</p>
+      <label>Chave do GitHub (token)</label>
+      <input type="text" id="token" placeholder="github_pat_..." autocomplete="off" />
+      <div style="margin-top:12px;display:flex;gap:10px">
+        <button class="btn btn-p" id="entrar">Entrar</button>
+        <label style="display:inline-flex;align-items:center;gap:7px;text-transform:none;letter-spacing:0;margin:0;font-size:13px;color:var(--mut)"><input type="checkbox" id="lembrar" checked style="width:auto"/> Manter conectado neste computador</label>
+      </div>
+      <div class="msg" id="loginmsg"></div>
+      <details style="margin-top:16px">
+        <summary style="cursor:pointer;font-weight:700;color:var(--acc)">Como criar a chave (uma vez só)</summary>
+        <ol>
+          <li>Abra <a href="https://github.com/settings/personal-access-tokens/new" target="_blank">github.com/settings/personal-access-tokens/new</a> (logado como zett-romao).</li>
+          <li>Em <b>Repository access</b> → <b>Only select repositories</b> → escolha <b>drg-marketing</b>.</li>
+          <li>Em <b>Permissions</b> → <b>Repository permissions</b> → <b>Contents</b> = <b>Read and write</b>.</li>
+          <li>Clique em <b>Generate token</b>, copie e cole aqui.</li>
+        </ol>
+      </details>
+    </div>
+  </div>
+
+  <!-- EDITOR -->
+  <div id="editor" style="display:none">
+    <div class="msg" id="msg"></div>
+    <div class="box" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <div><b>Cards dos produtos</b><div class="muted">Arraste a ordem com ↑ ↓ · marque o que mostrar · edite os textos · clique num card para abrir.</div></div>
+      <span style="flex:1"></span>
+      <button class="btn btn-g" id="add">＋ Adicionar produto</button>
+    </div>
+    <div id="list"></div>
+  </div>
+
+</div>
+
+<div class="savebar" id="savebar" style="display:none">
+  <span class="muted">As mudanças só vão pro ar quando você publicar.</span>
+  <span class="sp"></span>
+  <button class="btn btn-g" id="reload">Descartar</button>
+  <button class="btn btn-p" id="save">Salvar e publicar</button>
+</div>
+
+<script>
+(function(){
+  var OWNER='zett-romao', REPO='drg-marketing', PATH='data/site.json', BRANCH='main';
+  var API='https://api.github.com/repos/'+OWNER+'/'+REPO+'/contents/'+PATH;
+  var token='', sha='', PRODS=[];
+
+  var $=function(id){return document.getElementById(id);};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function b64enc(str){return btoa(unescape(encodeURIComponent(str)));}
+  function b64dec(b){return decodeURIComponent(escape(atob(String(b).replace(/\s/g,''))));}
+  function headers(){return {'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};}
+  function show(el,cls,txt){el.className='msg '+cls;el.textContent=txt;el.style.display='block';}
+
+  // ---- login ----
+  var saved=localStorage.getItem('drs_token');
+  if(saved){ token=saved; $('token').value=saved; verificar(); }
+
+  $('entrar').addEventListener('click',function(){
+    token=$('token').value.trim();
+    if(!token){show($('loginmsg'),'err','Cole a chave primeiro.');return;}
+    verificar();
+  });
+
+  function verificar(){
+    show($('loginmsg'),'info','Verificando…');
+    fetch(API+'?ref='+BRANCH,{headers:headers()}).then(function(r){
+      if(r.status===401||r.status===403){throw new Error('Chave inválida ou sem permissão de escrita no repositório.');}
+      if(!r.ok){throw new Error('Erro '+r.status+' ao acessar o GitHub.');}
+      return r.json();
+    }).then(function(data){
+      sha=data.sha;
+      var cfg=JSON.parse(b64dec(data.content));
+      PRODS=cfg.produtos||[];
+      if($('lembrar').checked!==false){localStorage.setItem('drs_token',token);}
+      entrarEditor();
+    }).catch(function(e){ show($('loginmsg'),'err',e.message); });
+  }
+
+  function entrarEditor(){
+    $('login').style.display='none';
+    $('editor').style.display='block';
+    $('savebar').style.display='flex';
+    $('logout').style.display='inline-block';
+    render();
+  }
+
+  $('logout').addEventListener('click',function(){
+    localStorage.removeItem('drs_token'); location.reload();
+  });
+  $('reload').addEventListener('click',function(){ location.reload(); });
+
+  // ---- render ----
+  function render(){
+    var list=$('list'); list.innerHTML='';
+    PRODS.forEach(function(p,i){
+      var soon=p.status==='embreve';
+      var pillCls=p.visivel===false?'tp-off':(soon?'tp-soon':'tp-on');
+      var pillTxt=p.visivel===false?'Oculto':(soon?'Em breve':'Ativo');
+      var el=document.createElement('div');
+      el.className='prod'+(p.destaque?' is-dest':'')+(p.visivel===false?' hidden-card':'');
+      el.innerHTML=''+
+        '<div class="phead" data-act="toggle">'+
+          '<span class="em">'+esc(p.emoji)+'</span>'+
+          '<span class="nm">'+esc(p.marca)+'·'+esc(p.nome)+'</span>'+
+          '<span class="tagpill '+pillCls+'">'+pillTxt+'</span>'+
+          (p.destaque?'<span class="tagpill tp-dest">Destaque</span>':'')+
+          '<span class="sp"></span>'+
+          '<span class="ord">'+
+            '<button data-act="up" title="Subir">↑</button>'+
+            '<button data-act="down" title="Descer">↓</button>'+
+          '</span>'+
+        '</div>'+
+        '<div class="pbody">'+
+          '<div class="toggles">'+
+            '<label><input type="checkbox" data-f="visivel" '+(p.visivel!==false?'checked':'')+'/> Mostrar no site</label>'+
+            '<label><input type="checkbox" data-f="destaque" '+(p.destaque?'checked':'')+'/> Card de destaque (banner)</label>'+
+            '<label>Status: <select data-f="status"><option value="ativo"'+(!soon?' selected':'')+'>Ativo</option><option value="embreve"'+(soon?' selected':'')+'>Em breve</option></select></label>'+
+          '</div>'+
+          '<div><label>Emoji</label><input type="text" data-f="emoji" value="'+esc(p.emoji)+'"/></div>'+
+          '<div><label>Marca (DRG / GDR)</label><input type="text" data-f="marca" value="'+esc(p.marca)+'"/></div>'+
+          '<div><label>Nome</label><input type="text" data-f="nome" value="'+esc(p.nome)+'"/></div>'+
+          '<div><label>Categoria</label><input type="text" data-f="cat" value="'+esc(p.cat)+'"/></div>'+
+          '<div class="full"><label>Descrição (no card)</label><textarea data-f="desc">'+esc(p.desc)+'</textarea></div>'+
+          '<div><label>Link do card (página)</label><input type="text" data-f="href" value="'+esc(p.href)+'"/></div>'+
+          '<div><label>Link do app (opcional)</label><input type="text" data-f="app" value="'+esc(p.app)+'"/></div>'+
+          '<div class="dest-only full"><label>Frase do destaque (tagline)</label><input type="text" data-f="tagline" value="'+esc(p.tagline)+'"/></div>'+
+          '<div class="dest-only full"><label>Descrição longa (destaque)</label><textarea data-f="descLonga">'+esc(p.descLonga)+'</textarea></div>'+
+          '<div class="dest-only full"><label>O que ele cobre (um item por linha)</label><textarea data-f="caps" style="min-height:120px">'+esc((p.caps||[]).join('\n'))+'</textarea></div>'+
+          '<div class="full" style="text-align:right"><button class="btn btn-d" data-act="del">Remover este produto</button></div>'+
+        '</div>';
+
+      // header toggle open/close
+      el.querySelector('.phead').addEventListener('click',function(ev){
+        if(ev.target.closest('.ord')) return;
+        el.classList.toggle('open');
+      });
+      el.querySelector('[data-act=up]').addEventListener('click',function(ev){ev.stopPropagation();move(i,-1);});
+      el.querySelector('[data-act=down]').addEventListener('click',function(ev){ev.stopPropagation();move(i,1);});
+      el.querySelector('[data-act=del]').addEventListener('click',function(){ if(confirm('Remover '+p.nome+' do site?')){PRODS.splice(i,1);render();} });
+
+      // field bindings
+      el.querySelectorAll('[data-f]').forEach(function(inp){
+        var f=inp.getAttribute('data-f');
+        inp.addEventListener(inp.type==='checkbox'?'change':'input',function(){
+          if(f==='visivel'){p.visivel=inp.checked;render();return;}
+          if(f==='destaque'){ if(inp.checked){PRODS.forEach(function(x){x.destaque=false;});p.destaque=true;} else {p.destaque=false;} render();return;}
+          if(f==='caps'){p.caps=inp.value.split('\n').map(function(s){return s.trim();}).filter(Boolean);return;}
+          if(f==='status'){p.status=inp.value;render();return;}
+          p[f]=inp.value;
+        });
+      });
+
+      list.appendChild(el);
+    });
+  }
+
+  function move(i,d){
+    var j=i+d; if(j<0||j>=PRODS.length) return;
+    var t=PRODS[i]; PRODS[i]=PRODS[j]; PRODS[j]=t; render();
+  }
+
+  $('add').addEventListener('click',function(){
+    PRODS.push({key:'novo'+PRODS.length,marca:'DRG',nome:'Novo produto',emoji:'✨',cat:'Categoria',destaque:false,visivel:false,status:'embreve',href:'#',desc:'Descrição do produto.'});
+    render();
+    window.scrollTo(0,document.body.scrollHeight);
+  });
+
+  // ---- save ----
+  $('save').addEventListener('click',function(){
+    var dest=PRODS.filter(function(p){return p.destaque;});
+    if(dest.length>1){ show($('msg'),'err','Só pode haver 1 card de destaque. Desmarque os extras.'); window.scrollTo(0,0); return; }
+    $('save').disabled=true; show($('msg'),'info','Publicando…');
+    var body={ message:'painel: atualiza cards ('+new Date().toISOString().slice(0,16).replace('T',' ')+')',
+      content:b64enc(JSON.stringify({produtos:PRODS},null,2)+'\n'), sha:sha, branch:BRANCH };
+    fetch(API,{method:'PUT',headers:headers(),body:JSON.stringify(body)}).then(function(r){
+      return r.json().then(function(j){return {ok:r.ok,j:j};});
+    }).then(function(res){
+      $('save').disabled=false;
+      if(!res.ok){ throw new Error((res.j&&res.j.message)||'Erro ao salvar.'); }
+      sha=res.j.content.sha;
+      show($('msg'),'ok','✓ Publicado! O site atualiza em cerca de 1 minuto. Recarregue a página do site para ver.');
+      window.scrollTo(0,0);
+    }).catch(function(e){ $('save').disabled=false; show($('msg'),'err',e.message); window.scrollTo(0,0); });
+  });
+
+})();
+</script>
+</body>
+</html>

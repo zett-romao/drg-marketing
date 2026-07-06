@@ -1,4 +1,5 @@
 @echo off
-REM Abre a landing institucional no navegador padrao
+REM Prévia local do site (mini-servidor Node). Feche esta janela para parar.
 cd /d "%~dp0"
-start "" "index.html"
+start "" http://localhost:8080/
+node tools\serve.mjs

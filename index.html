@@ -59,82 +59,11 @@
     <div class="eyebrow">O ecossistema</div>
     <h2 class="tt">Conheça a família DR-Systems</h2>
     <p class="lead">Um sistema para cada setor — todos partindo da mesma fundação técnica.</p>
-
-    <!-- KRONOS DESTAQUE -->
-    <div class="kbanner" id="kronos">
-      <div class="tag">⭐ CARRO-CHEFE</div>
-      <div>
-        <div class="fi">👥</div>
-        <h3>DRG·<b>Kronos</b> — a plataforma de RH ponta a ponta</h3>
-        <p class="kp">O departamento de pessoal inteiro num sistema só, da admissão à rescisão. Ponto eletrônico, folha de pagamento, escalas, férias, benefícios e holerite — com <b>contabilidade integrada</b>: eSocial, encargos e a planilha pronta para o contador. Tudo sob trilha LGPD carimbada em blockchain.</p>
-        <div class="btnrow">
-          <a class="btn btn-primary" href="kronos/">Ver detalhes →</a>
-          <a class="btn" style="background:#edf2f7;color:var(--azul2)" href="https://zett-romao.github.io/drg-sistema/cadastro.html" target="_blank" rel="noopener">Criar conta</a>
-        </div>
-      </div>
-      <div>
-        <div class="capsttl">O que ele cobre</div>
-        <ul class="caps">
-          <li>Ponto eletrônico</li>
-          <li>Folha de pagamento</li>
-          <li>Contabilidade / contador</li>
-          <li>eSocial &amp; encargos</li>
-          <li>Todos os padrões de escalas</li>
-          <li>Férias &amp; benefícios</li>
-          <li>Rescisão automática</li>
-          <li>Monitor da LGPD</li>
-        </ul>
-      </div>
-    </div>
-
-    <!-- DEMAIS PRODUTOS -->
-    <div class="famgrid">
-      <a class="fcard" href="buscanfe/">
-        <div class="fi">🔎</div><h3>DRG·<b>BuscaNFe</b></h3>
-        <p>Captura automática de NF-e por competência, direto da SEFAZ — XML, DANFE em PDF e planilha pro contador.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="check/">
-        <div class="fi">📨</div><h3>DRG·<b>Check</b></h3>
-        <p>Notificações com prova de entrega e cadeia de custódia registrada em blockchain (SHA-256 + OpenTimestamps).</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="sign/">
-        <div class="fi">✍️</div><h3>DRG·<b>Sign</b></h3>
-        <p>Assinatura eletrônica de documentos com validade jurídica, IP, geolocalização e trilha de auditoria.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="juridico/">
-        <div class="fi">⚖️</div><h3>DRG·<b>Jurídico</b></h3>
-        <p>Gestão de advocacia + monitoramento de publicações (DJEN/DataJud), prazos, execução penal e livro-caixa.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="hidro/">
-        <div class="fi">💧</div><h3>DRG·<b>Hidro</b></h3>
-        <p>Monitoramento IoT do nível das caixas d'água (ESP32), com alertas por e-mail, WhatsApp e push.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="fit/">
-        <div class="fi">🏋️</div><h3>DRG·<b>Fit</b></h3>
-        <p>Gestão de academia: alunos, planos, controle de acesso e agendamentos.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="rently/">
-        <div class="fi">🏠</div><h3>DRG·<b>Rently</b></h3>
-        <p>Gestão de locações de imóveis: contratos, análise de crédito e cobrança, ponta a ponta.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="garantidora/">
-        <div class="fi">🛡️</div><h3>DRG·<b>Garantidora</b></h3>
-        <p>Cobrança garantida de condomínios, com antecipação de recebíveis e régua de inadimplência.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-      <a class="fcard" href="condogest/">
-        <div class="fi">🏢</div><h3>GDR·<b>CondoGest</b></h3>
-        <p>Gestão condominial completa, do financeiro à comunicação com os moradores.</p>
-        <span class="ir"><span class="d"></span>Conhecer →</span>
-      </a>
-    </div>
+    <div id="kbanner-root"></div>
+    <div class="famgrid" id="famgrid-root"></div>
+    <noscript>
+      <p class="lead">Produtos: <a href="kronos/" style="color:var(--clara)">Kronos</a>, <a href="buscanfe/" style="color:var(--clara)">BuscaNFe</a>, <a href="check/" style="color:var(--clara)">Check</a>, <a href="sign/" style="color:var(--clara)">Sign</a>, <a href="juridico/" style="color:var(--clara)">Jurídico</a>, <a href="hidro/" style="color:var(--clara)">Hidro</a>, <a href="fit/" style="color:var(--clara)">Fit</a>, <a href="rently/" style="color:var(--clara)">Rently</a>, <a href="garantidora/" style="color:var(--clara)">Garantidora</a>, <a href="condogest/" style="color:var(--clara)">CondoGest</a>.</p>
+    </noscript>
   </div>
 </section>
 
@@ -170,6 +99,49 @@
     <div style="margin-top:8px">DR Global Multi Services · CNPJ 49.698.112/0001-57 · Todos os direitos reservados</div>
   </div>
 </footer>
+
+<script>
+(function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  fetch('data/site.json',{cache:'no-store'}).then(function(r){return r.json();}).then(function(cfg){
+    var prods=(cfg.produtos||[]).filter(function(p){return p.visivel!==false;});
+    var dest=prods.filter(function(p){return p.destaque;});
+    var grid=prods.filter(function(p){return !p.destaque;});
+
+    var kroot=document.getElementById('kbanner-root');
+    if(dest.length){
+      var p=dest[0];
+      var caps=(p.caps||[]).map(function(c){return '<li>'+esc(c)+'</li>';}).join('');
+      kroot.innerHTML=''+
+        '<div class="kbanner" id="kronos">'+
+          '<div class="tag">⭐ CARRO-CHEFE</div>'+
+          '<div>'+
+            '<div class="fi">'+esc(p.emoji)+'</div>'+
+            '<h3>'+esc(p.marca)+'·<b>'+esc(p.nome)+'</b>'+(p.tagline?' — '+esc(p.tagline):'')+'</h3>'+
+            '<p class="kp">'+esc(p.descLonga||p.desc)+'</p>'+
+            '<div class="btnrow">'+
+              '<a class="btn btn-primary" href="'+esc(p.href||'#')+'">Ver detalhes →</a>'+
+              (p.app?'<a class="btn" style="background:#edf2f7;color:var(--azul2)" href="'+esc(p.app)+'" target="_blank" rel="noopener">Criar conta</a>':'')+
+            '</div>'+
+          '</div>'+
+          '<div><div class="capsttl">O que ele cobre</div><ul class="caps">'+caps+'</ul></div>'+
+        '</div>';
+    }
+
+    var g=document.getElementById('famgrid-root');
+    g.innerHTML=grid.map(function(p){
+      var soon=p.status==='embreve';
+      var label=soon?'Em breve':'Conhecer →';
+      return ''+
+        '<a class="fcard'+(soon?' grey':'')+'" href="'+esc(p.href||'#')+'">'+
+          '<div class="fi">'+esc(p.emoji)+'</div><h3>'+esc(p.marca)+'·<b>'+esc(p.nome)+'</b></h3>'+
+          '<p>'+esc(p.desc)+'</p>'+
+          '<span class="ir"><span class="d"></span>'+label+'</span>'+
+        '</a>';
+    }).join('');
+  }).catch(function(e){ console.error('Falha ao carregar produtos:',e); });
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,65 @@
+{
+  "produtos": [
+    {
+      "key": "kronos",
+      "marca": "DRG",
+      "nome": "Kronos",
+      "emoji": "👥",
+      "cat": "RH ponta a ponta",
+      "destaque": true,
+      "visivel": true,
+      "status": "ativo",
+      "href": "kronos/",
+      "app": "https://zett-romao.github.io/drg-sistema/cadastro.html",
+      "tagline": "a plataforma de RH ponta a ponta",
+      "desc": "Ponto, folha, escalas, benefícios e contabilidade integrada, com trilha LGPD em blockchain.",
+      "descLonga": "O departamento de pessoal inteiro num sistema só, da admissão à rescisão. Ponto eletrônico, folha de pagamento, escalas, férias, benefícios e holerite — com contabilidade integrada: eSocial, encargos e a planilha pronta para o contador. Tudo sob trilha LGPD carimbada em blockchain.",
+      "caps": ["Ponto eletrônico", "Folha de pagamento", "Contabilidade / contador", "eSocial & encargos", "Todos os padrões de escalas", "Férias & benefícios", "Rescisão automática", "Monitor da LGPD"]
+    },
+    {
+      "key": "buscanfe", "marca": "DRG", "nome": "BuscaNFe", "emoji": "🔎", "cat": "Captura fiscal",
+      "destaque": false, "visivel": true, "status": "ativo", "href": "buscanfe/",
+      "desc": "Captura automática de NF-e por competência, direto da SEFAZ — XML, DANFE em PDF e planilha pro contador."
+    },
+    {
+      "key": "check", "marca": "DRG", "nome": "Check", "emoji": "📨", "cat": "Prova de entrega",
+      "destaque": false, "visivel": true, "status": "ativo", "href": "check/",
+      "desc": "Notificações com prova de entrega e cadeia de custódia registrada em blockchain (SHA-256 + OpenTimestamps)."
+    },
+    {
+      "key": "sign", "marca": "DRG", "nome": "Sign", "emoji": "✍️", "cat": "Assinatura eletrônica",
+      "destaque": false, "visivel": true, "status": "ativo", "href": "sign/",
+      "desc": "Assinatura eletrônica de documentos com validade jurídica, IP, geolocalização e trilha de auditoria."
+    },
+    {
+      "key": "juridico", "marca": "DRG", "nome": "Jurídico", "emoji": "⚖️", "cat": "Gestão de advocacia",
+      "destaque": false, "visivel": true, "status": "ativo", "href": "juridico/",
+      "desc": "Gestão de advocacia + monitoramento de publicações (DJEN/DataJud), prazos, execução penal e livro-caixa."
+    },
+    {
+      "key": "hidro", "marca": "DRG", "nome": "Hidro", "emoji": "💧", "cat": "IoT · nível de água",
+      "destaque": false, "visivel": true, "status": "ativo", "href": "hidro/",
+      "desc": "Monitoramento IoT do nível das caixas d'água (ESP32), com alertas por e-mail, WhatsApp e push."
+    },
+    {
+      "key": "fit", "marca": "DRG", "nome": "Fit", "emoji": "🏋️", "cat": "Gestão de academia",
+      "destaque": false, "visivel": true, "status": "ativo", "href": "fit/",
+      "desc": "Gestão de academia: alunos, planos, controle de acesso e agendamentos."
+    },
+    {
+      "key": "rently", "marca": "DRG", "nome": "Rently", "emoji": "🏠", "cat": "Locações",
+      "destaque": false, "visivel": true, "status": "embreve", "href": "rently/",
+      "desc": "Gestão de locações de imóveis: contratos, análise de crédito e cobrança, ponta a ponta."
+    },
+    {
+      "key": "garantidora", "marca": "DRG", "nome": "Garantidora", "emoji": "🛡️", "cat": "Cobrança garantida",
+      "destaque": false, "visivel": true, "status": "embreve", "href": "garantidora/",
+      "desc": "Cobrança garantida de condomínios, com antecipação de recebíveis e régua de inadimplência."
+    },
+    {
+      "key": "condogest", "marca": "GDR", "nome": "CondoGest", "emoji": "🏢", "cat": "Gestão condominial",
+      "destaque": false, "visivel": true, "status": "embreve", "href": "condogest/",
+      "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores."
+    }
+  ]
+}
