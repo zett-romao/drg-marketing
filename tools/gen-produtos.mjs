@@ -67,6 +67,7 @@ function page(p){
 <header class="hero">
   <div class="wrap">
     <div class="emojibig">${p.emoji}</div>
+    <div class="prodname">${marca}·<b>${p.nome}</b></div>
     ${pill}
     <h1>${p.h1}</h1>
     <p class="sub">${p.sub}</p>
@@ -130,7 +131,7 @@ ${steps(p.passos)}
   <div class="wrap">
     <div class="brand"><img class="tile" src="../assets/mark.svg" alt="DR Systems" style="width:26px;height:26px" />DR&nbsp;Systems</div>
     <div>${marca}·${p.nome} faz parte da família DR-Systems · <a href="../">ver todos os produtos</a></div>
-    <div style="margin-top:8px">DR Global Multi Services · CNPJ 00.000.000/0001-00 · Todos os direitos reservados</div>
+    <div style="margin-top:8px">DR Global Multi Services · CNPJ 49.698.112/0001-57 · Todos os direitos reservados</div>
   </div>
 </footer>
 
