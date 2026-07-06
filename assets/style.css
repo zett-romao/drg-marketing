@@ -28,7 +28,7 @@ img{max-width:100%}
 nav{position:sticky;top:0;z-index:30;background:rgba(21,42,69,.92);backdrop-filter:blur(8px)}
 nav .wrap{display:flex;align-items:center;gap:14px;height:64px}
 .brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:19px}
-.brand .tile{background:#fff;border-radius:8px;width:34px;height:34px;display:flex;align-items:center;justify-content:center;color:var(--azul);font-weight:800;font-size:15px}
+.brand .tile{width:34px;height:34px;border-radius:8px;display:block;flex:none}
 .brand span{color:var(--clara)}
 nav .sp{flex:1}
 nav a.nav-link{color:#cbd8e8;font-size:14px;font-weight:600;display:none}

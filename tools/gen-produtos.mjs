@@ -35,15 +35,15 @@ function page(p){
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>${marca}·${p.nome} — ${p.cat} | DR Global</title>
+  <title>${marca}·${p.nome} — ${p.cat} | DR Systems</title>
   <meta name="description" content="${p.desc}" />
   <meta name="theme-color" content="#152a45" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="DR Global" />
+  <meta property="og:site_name" content="DR Systems" />
   <meta property="og:title" content="${marca}·${p.nome} — ${p.cat}" />
   <meta property="og:description" content="${p.desc}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="${ICON(p.emoji)}" />
+  <link rel="icon" href="../assets/favicon.svg" />
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
 <body>
@@ -54,7 +54,7 @@ function page(p){
 
 <nav>
   <div class="wrap">
-    <a class="brand" href="../"><span class="tile">DR</span>DR<span>·</span>Global</a>
+    <a class="brand" href="../"><img class="tile" src="../assets/mark.svg" alt="DR Systems" />DR&nbsp;Systems</a>
     <a class="nav-link" href="#recursos">Recursos</a>
     <a class="nav-link" href="#como">Como funciona</a>
     <span class="sp"></span>
@@ -128,9 +128,9 @@ ${steps(p.passos)}
 
 <footer>
   <div class="wrap">
-    <div class="brand"><span class="tile" style="width:26px;height:26px;font-size:12px">DR</span>DR<span style="color:var(--clara)">·</span>Global</div>
-    <div>${marca}·${p.nome} faz parte da família DRG · <a href="../">ver todos os produtos</a></div>
-    <div style="margin-top:8px">© DRG · Todos os direitos reservados</div>
+    <div class="brand"><img class="tile" src="../assets/mark.svg" alt="DR Systems" style="width:26px;height:26px" />DR&nbsp;Systems</div>
+    <div>${marca}·${p.nome} faz parte da família DR-Systems · <a href="../">ver todos os produtos</a></div>
+    <div style="margin-top:8px">DR Global Multi Services · CNPJ 00.000.000/0001-00 · Todos os direitos reservados</div>
   </div>
 </footer>
 
