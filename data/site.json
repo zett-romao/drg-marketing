@@ -26,28 +26,16 @@
       ]
     },
     {
-      "key": "buscanfe",
+      "key": "juridico",
       "marca": "DRG",
-      "nome": "BuscaNFe",
-      "emoji": "🔎",
-      "cat": "Captura fiscal",
+      "nome": "Jurídico",
+      "emoji": "⚖️",
+      "cat": "Gestão de advocacia",
       "destaque": false,
       "visivel": true,
       "status": "ativo",
-      "href": "buscanfe/",
-      "desc": "Captura automática de NF-e por competência, direto da SEFAZ — XML, DANFE em PDF e planilha pro contador."
-    },
-    {
-      "key": "check",
-      "marca": "DRG",
-      "nome": "Check",
-      "emoji": "📨",
-      "cat": "Prova de entrega",
-      "destaque": false,
-      "visivel": true,
-      "status": "ativo",
-      "href": "check/",
-      "desc": "Notificações com prova de entrega e cadeia de custódia registrada em blockchain (SHA-256 + OpenTimestamps)."
+      "href": "juridico/",
+      "desc": "Gestão de advocacia + monitoramento de publicações (DJEN/DataJud), prazos, execução penal e livro-caixa."
     },
     {
       "key": "sign",
@@ -62,16 +50,16 @@
       "desc": "Assinatura eletrônica de documentos com validade jurídica, IP, geolocalização e trilha de auditoria."
     },
     {
-      "key": "juridico",
+      "key": "check",
       "marca": "DRG",
-      "nome": "Jurídico",
-      "emoji": "⚖️",
-      "cat": "Gestão de advocacia",
+      "nome": "Check",
+      "emoji": "📨",
+      "cat": "Prova de entrega",
       "destaque": false,
       "visivel": true,
       "status": "ativo",
-      "href": "juridico/",
-      "desc": "Gestão de advocacia + monitoramento de publicações (DJEN/DataJud), prazos, execução penal e livro-caixa."
+      "href": "check/",
+      "desc": "Notificações com prova de entrega e cadeia de custódia registrada em blockchain (SHA-256 + OpenTimestamps)."
     },
     {
       "key": "hidro",
@@ -84,6 +72,18 @@
       "status": "ativo",
       "href": "hidro/",
       "desc": "Monitoramento IoT do nível das caixas d'água (ESP32), com alertas por e-mail, WhatsApp e push."
+    },
+    {
+      "key": "buscanfe",
+      "marca": "DRG",
+      "nome": "BuscaNFe",
+      "emoji": "🔎",
+      "cat": "Captura fiscal",
+      "destaque": false,
+      "visivel": true,
+      "status": "ativo",
+      "href": "buscanfe/",
+      "desc": "Captura automática de NF-e por competência, direto da SEFAZ — XML, DANFE em PDF e planilha pro contador."
     },
     {
       "key": "fit",
