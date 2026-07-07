@@ -53,7 +53,7 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [x] **Landing dedicada por produto** (10 subpastas) no mesmo visual — geradas por `tools/gen-produtos.mjs` (2026-07-06). Kronos/BuscaNFe/Check/Sign/Jurídico/Hidro/Fit com link real; Rently/Garantidora/CondoGest como "lista de espera".
 - [x] **SEO por página**: title, meta description, Open Graph e favicon em cada landing.
 - [ ] Revisar textos/claims de cada produto com o dono (gerados a partir da memória).
-- [ ] Adicionar **preços/planos** onde já existirem (BuscaNFe, Kronos, Hidro).
+- [x] **Preços/planos por produto** ✅ (2026-07-06) — seção "Planos" em cada landing, **editável no /admin** (dados em `data/site.json` → `produtos[].planos[]`). Kronos, BuscaNFe, Jurídico, Check, Sign, Hidro e Garantidora com tabelas; Fit/Rently/CondoGest sem planos ainda. Valores: Hidro subiu (79/139/229/Sob consulta) após pesquisa de mercado; Check/Sign com cortesia "3/mês por 6 meses"; Jurídico com os reais do app (89→269). Dono pode adicionar intermediários pelo painel.
 - [ ] **Artes para redes sociais** (posts, stories, capa) reaproveitando a identidade DRG.
 - [ ] **SEO** em cada página: title, meta description, Open Graph, favicon.
 - [ ] **Analytics** de visitas e cliques por produto.
