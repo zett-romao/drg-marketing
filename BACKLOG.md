@@ -7,14 +7,16 @@ redes sociais, campanhas e material de vendas.
 Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 (azul `#152a45` / `#3182ce`, gradiente, cards com ícone, fonte de sistema).
 
-- **Última atualização:** 2026-07-06.
+- **Última atualização:** 2026-07-07.
 - **🌐 NO AR:** https://drsystems.dev.br (domínio próprio + HTTPS; repo `zett-romao/drg-marketing`, GitHub Pages/main).
+- **11 produtos** na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, Fit, Rently, Garantidora, **Liftalk**, CondoGest).
 
 ---
 
 ## 🔒 REGRAS TRAVADAS (lock 2026-07-06) — só alterar se o dono pedir "DESTRAVAR/ALTERAR"
 1. **Identidade visual**: espelha a `/vendas` do DRG-BuscaNFe — azul `#152a45`/`#3182ce`, gradiente, cards com emoji, fonte de sistema. Dono REJEITOU versão painel escuro/técnico.
 2. **Marca**: **DR Systems** · logo conceito "Código" `</>` (`assets/mark.svg` branco p/ barra escura + `assets/favicon.svg` + PNGs de app). Família = **DR-Systems**. Logo sempre sobre fundo branco na barra escura.
+   - **Logo exclusiva por produto (opcional)**: um produto pode ter logo própria em `assets/<key>.svg`, declarada no gerador via campo `logo:` — substitui o emoji grande do hero e o favicon daquela landing. **Liftalk** é o 1º com logo própria (`assets/liftalk.svg`: elevador + ondas de voz 4G + pictogramas amarelo/verde da NBR 16858). Padrão mantido: tile branco, paleta azul.
 3. **Domínio**: **drsystems.dev.br** (registro.br, A na raiz → 185.199.108–111.153; HTTPS enforced; arquivo `CNAME`).
 4. **Fonte única de dados**: cards E planos vêm de `data/site.json`. Home e páginas de produto renderizam via JS com **cache-bust** (`?t=Date.now()`). Nunca hardcodar card/plano no HTML.
 5. **Painel `/admin/`**: edita cards, planos e a nota; publica gravando `site.json` via API do GitHub (token fine-grained, Contents R/W, só no localStorage). Fluxo de deploy: **`git pull --rebase` ANTES de push** (o painel também commita).
@@ -66,6 +68,7 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 ## 📌 Médio prazo — mais peças (por isso virou "Marketing")
 - [x] **Landing dedicada por produto** (10 subpastas) no mesmo visual — geradas por `tools/gen-produtos.mjs` (2026-07-06). Kronos/BuscaNFe/Check/Sign/Jurídico/Hidro/Fit com link real; Rently/Garantidora/CondoGest como "lista de espera".
 - [x] **SEO por página**: title, meta description, Open Graph e favicon em cada landing.
+- [x] **DRG-Liftalk adicionado** (2026-07-07) — 11º produto. Logo exclusiva `assets/liftalk.svg`; landing `liftalk/` (status "Em breve", conteúdo da Cartilha: NBR 16858/EN 81‑28, voz via 4G, central 24h, bateria de backup, autoteste); card na home via `site.json`; contador 10→11 produtos / 9→10 setores; gerador ganhou suporte a `logo:` por produto. **Sem planos ainda** (produto em F0; licença por elevador/mês virá na F4). Hífen não-quebrável em "EN 81‑28" p/ não quebrar no card.
 - [ ] Revisar textos/claims de cada produto com o dono (gerados a partir da memória).
 - [x] **Preços/planos por produto** ✅ (2026-07-06) — seção "Planos" em cada landing, **editável no /admin** (dados em `data/site.json` → `produtos[].planos[]`). Kronos, BuscaNFe, Jurídico, Check, Sign, Hidro e Garantidora com tabelas; Fit/Rently/CondoGest sem planos ainda. Valores: Hidro subiu (79/139/229/Sob consulta) após pesquisa de mercado; Check/Sign com cortesia "3/mês por 6 meses"; Jurídico com os reais do app (89→269). Dono pode adicionar intermediários pelo painel.
 - [ ] **Artes para redes sociais** (posts, stories, capa) reaproveitando a identidade DRG.
