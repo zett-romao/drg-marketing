@@ -8,7 +8,21 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 (azul `#152a45` / `#3182ce`, gradiente, cards com ícone, fonte de sistema).
 
 - **Última atualização:** 2026-07-06.
-- **🌐 NO AR:** https://zett-romao.github.io/drg-marketing/ (repo `zett-romao/drg-marketing`, GitHub Pages/main).
+- **🌐 NO AR:** https://drsystems.dev.br (domínio próprio + HTTPS; repo `zett-romao/drg-marketing`, GitHub Pages/main).
+
+---
+
+## 🔒 REGRAS TRAVADAS (lock 2026-07-06) — só alterar se o dono pedir "DESTRAVAR/ALTERAR"
+1. **Identidade visual**: espelha a `/vendas` do DRG-BuscaNFe — azul `#152a45`/`#3182ce`, gradiente, cards com emoji, fonte de sistema. Dono REJEITOU versão painel escuro/técnico.
+2. **Marca**: **DR Systems** · logo conceito "Código" `</>` (`assets/mark.svg` branco p/ barra escura + `assets/favicon.svg` + PNGs de app). Família = **DR-Systems**. Logo sempre sobre fundo branco na barra escura.
+3. **Domínio**: **drsystems.dev.br** (registro.br, A na raiz → 185.199.108–111.153; HTTPS enforced; arquivo `CNAME`).
+4. **Fonte única de dados**: cards E planos vêm de `data/site.json`. Home e páginas de produto renderizam via JS com **cache-bust** (`?t=Date.now()`). Nunca hardcodar card/plano no HTML.
+5. **Painel `/admin/`**: edita cards, planos e a nota; publica gravando `site.json` via API do GitHub (token fine-grained, Contents R/W, só no localStorage). Fluxo de deploy: **`git pull --rebase` ANTES de push** (o painel também commita).
+6. **Páginas de produto** geradas por `tools/gen-produtos.mjs` (rodar após mexer no template). Prévia local por `tools/serve.mjs` (`file://` bloqueia o fetch do JSON).
+7. **Rodapé**: `DR Global Multi Services · CNPJ 49.698.112/0001-57`.
+8. **Copy travada**: pill "Software House · Produtos Multi-Tenant"; H1 "Exclusiva arquitetura de desenvolvimento dedicado."; base **end-to-end** com **ICP-Brasil** (card próprio); Kronos cobre "Todos os padrões de escalas" e "Monitor da LGPD".
+9. **Preços** (2026-07-06): Kronos 39/79/149/249 · BuscaNFe 0/49/99/199 · Jurídico 0/89/159/219/269 · Check cortesia(3/mês·6m)/49/149/399 · Sign cortesia(3/mês·6m)/47/119/299 · Hidro 79/139/229/Sob consulta **(comodato + instalação grátis + fidelidade 12m)** · Garantidora 8%.
+10. **Commit + push automático** do Claude a cada alteração (preferência do dono).
 
 ---
 
