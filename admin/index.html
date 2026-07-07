@@ -13,7 +13,7 @@
   <style>
     :root{--azul:#152a45;--azul2:#1e3a5f;--acc:#3182ce;--bg:#eef1f6;--card:#fff;--txt:#1a202c;--mut:#5a6b7f;--linha:#dbe2ec;--ok:#2f855a;--warn:#c05621;--err:#c53030}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5}
+    body{font-family:system-ui,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;overflow-x:hidden}
     .top{background:var(--azul);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5}
     .top img{width:30px;height:30px;border-radius:7px}
     .top b{font-weight:800}
@@ -57,17 +57,25 @@
     .toggles input{width:auto}
     .dest-only{display:none}
     .prod.is-dest .dest-only{display:block}
-    .savebar{position:sticky;bottom:0;background:rgba(238,241,246,.95);backdrop-filter:blur(6px);border-top:1px solid var(--linha);padding:14px 16px;display:flex;gap:10px;align-items:center;margin:0 -16px -80px;justify-content:flex-end}
+    .savebar{position:sticky;bottom:0;background:rgba(238,241,246,.97);backdrop-filter:blur(6px);border-top:1px solid var(--linha);padding:14px 16px;display:flex;gap:10px;align-items:center;justify-content:flex-end}
+    .savebar .inner{max-width:920px;margin:0 auto;width:100%;display:flex;gap:10px;align-items:center}
     .savebar .sp{flex:1}
     @media(max-width:640px){
-      .top{flex-wrap:wrap;height:auto;gap:8px 12px}
-      .wrap{padding:16px 12px 96px}
+      .top{flex-wrap:wrap;height:auto;gap:6px 10px;padding:12px 14px}
+      .top .muted{display:none}
+      .wrap{padding:16px 12px 100px}
+      #editor .box{flex-direction:column;align-items:stretch}
+      #editor .box>span{display:none}
+      #editor .box #add{width:100%}
       .prod.open .pbody{grid-template-columns:1fr}
-      .phead{flex-wrap:wrap;row-gap:6px}
-      .savebar{flex-wrap:wrap;gap:8px;margin-bottom:-96px}
-      .savebar .muted{width:100%;text-align:center;order:3}
-      .savebar .sp{display:none}
-      .savebar .btn{flex:1}
+      .phead{flex-wrap:wrap;row-gap:8px}
+      .phead .sp{display:none}
+      .ord{margin-left:auto}
+      .savebar{padding:12px}
+      .savebar .inner{flex-wrap:wrap;gap:8px}
+      .savebar .inner .muted{width:100%;text-align:center;order:3;margin-top:2px}
+      .savebar .inner .sp{display:none}
+      .savebar .inner .btn{flex:1;min-width:0}
     }
   </style>
 </head>
@@ -122,10 +130,12 @@
 </div>
 
 <div class="savebar" id="savebar" style="display:none">
-  <span class="muted">As mudanças só vão pro ar quando você publicar.</span>
-  <span class="sp"></span>
-  <button class="btn btn-g" id="reload">Descartar</button>
-  <button class="btn btn-p" id="save">Salvar e publicar</button>
+  <div class="inner">
+    <span class="muted">As mudanças só vão pro ar quando você publicar.</span>
+    <span class="sp"></span>
+    <button class="btn btn-g" id="reload">Descartar</button>
+    <button class="btn btn-p" id="save">Salvar e publicar</button>
+  </div>
 </div>
 
 <script>
