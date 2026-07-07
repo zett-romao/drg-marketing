@@ -28,6 +28,7 @@
     <a class="brand" href="../"><img class="tile" src="../assets/mark.svg" alt="DR Systems" />DR&nbsp;Systems</a>
     <a class="nav-link" href="#recursos">Recursos</a>
     <a class="nav-link" href="#como">Como funciona</a>
+    <a class="nav-link" id="nav-planos" href="#planos" hidden>Planos</a>
     <span class="sp"></span>
     <a class="btn btn-primary" href="mailto:zett.romao@gmail.com?subject=Interesse%20DRG-Garantidora">Tenho interesse</a>
   </div>
@@ -101,6 +102,45 @@
     </div>
   </div>
 </section>
+
+<section id="planos" class="price" hidden>
+  <div class="wrap">
+    <div class="eyebrow">Planos</div>
+    <h2 class="tt">Preços simples, sem pegadinha</h2>
+    <p class="lead">Escolha o plano que cabe no seu momento. Cancele quando quiser.</p>
+    <div class="plans" id="planos-root"></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var KEY="garantidora";
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function brl(v){return 'R\u0024 '+Number(v).toLocaleString('pt-br');}
+  fetch('../data/site.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(function(cfg){
+    var pr=(cfg.produtos||[]).filter(function(x){return x.key===KEY;})[0];
+    var pl=(pr&&pr.planos)||[];
+    if(!pl.length) return;
+    document.getElementById('planos').hidden=false;
+    var nv=document.getElementById('nav-planos'); if(nv) nv.hidden=false;
+    var root=document.getElementById('planos-root');
+    root.className='plans n'+Math.min(pl.length,4);
+    root.innerHTML=pl.map(function(x){
+      var preco=x.precoTexto?esc(x.precoTexto):(Number(x.preco)>0?brl(x.preco)+'<small>'+esc(x.periodo||'/mês')+'</small>':'Grátis');
+      var itens=(x.itens||[]).map(function(i){return '<li>'+esc(i)+'</li>';}).join('');
+      var cta=esc(x.cta||'Assinar'); var href=esc(x.ctaHref||'mailto:zett.romao@gmail.com');
+      return '<div class="plan'+(x.destaque?' dest':'')+'">'+
+        (x.destaque?'<div class="tag">MAIS POPULAR</div>':'')+
+        '<h3>'+esc(x.nome)+'</h3>'+
+        '<div class="val">'+preco+'</div>'+
+        '<div class="lim">'+esc(x.sub||'')+'</div>'+
+        '<ul>'+itens+'</ul>'+
+        '<a class="btn '+(x.destaque?'btn-primary':'')+'"'+(x.destaque?'':' style="background:#edf2f7;color:var(--azul2)"')+' href="'+href+'">'+cta+'</a>'+
+      '</div>';
+    }).join('');
+  }).catch(function(e){console.error(e);});
+})();
+</script>
 
 <section class="final">
   <div class="wrap">

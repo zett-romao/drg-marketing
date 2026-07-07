@@ -23,6 +23,12 @@
         "Férias & benefícios",
         "Rescisão automática",
         "Monitor da LGPD"
+      ],
+      "planos": [
+        { "nome": "Start", "preco": 39, "sub": "até 10 colaboradores", "destaque": false, "itens": ["Grátis nos 6 primeiros meses", "Ponto eletrônico + folha", "eSocial e contabilidade"], "cta": "Começar", "ctaHref": "https://zett-romao.github.io/drg-sistema/cadastro.html" },
+        { "nome": "Pro", "preco": 79, "sub": "até 25 colaboradores", "destaque": true, "itens": ["Tudo do Start", "Escalas 12×36 e 6×1", "Benefícios e rubricas"], "cta": "Assinar", "ctaHref": "https://zett-romao.github.io/drg-sistema/cadastro.html" },
+        { "nome": "Business", "preco": 149, "sub": "até 50 colaboradores", "destaque": false, "itens": ["Tudo do Pro", "Monitor LGPD + blockchain", "Suporte prioritário"], "cta": "Assinar", "ctaHref": "https://zett-romao.github.io/drg-sistema/cadastro.html" },
+        { "nome": "Enterprise", "preco": 249, "sub": "até 100 colaboradores", "destaque": false, "itens": ["Tudo do Business", "Multi-unidade", "Onboarding assistido"], "cta": "Falar com a gente", "ctaHref": "mailto:zett.romao@gmail.com" }
       ]
     },
     {
@@ -35,7 +41,14 @@
       "visivel": true,
       "status": "ativo",
       "href": "juridico/",
-      "desc": "Gestão de advocacia + monitoramento de publicações (DJEN/DataJud), prazos, execução penal e livro-caixa."
+      "desc": "Gestão de advocacia + monitoramento de publicações (DJEN/DataJud), prazos, execução penal e livro-caixa.",
+      "planos": [
+        { "nome": "Cortesia", "preco": 0, "sub": "grátis por 12 meses", "destaque": false, "itens": ["1 OAB", "50 processos", "15 peças/mês"], "cta": "Criar conta", "ctaHref": "https://drg-juridico-app.onrender.com/signup" },
+        { "nome": "1 OAB", "preco": 89, "sub": "1 OAB · 100 processos", "destaque": false, "itens": ["Monitoramento DJEN/DataJud", "30 peças com IA/mês", "Prazos e agenda"], "cta": "Assinar", "ctaHref": "https://drg-juridico-app.onrender.com/signup" },
+        { "nome": "2 OABs", "preco": 159, "sub": "2 OABs · 200 processos", "destaque": true, "itens": ["Tudo do 1 OAB", "60 peças/mês", "Execução penal + livro-caixa"], "cta": "Assinar", "ctaHref": "https://drg-juridico-app.onrender.com/signup" },
+        { "nome": "3 OABs", "preco": 219, "sub": "3 OABs · 300 processos", "destaque": false, "itens": ["100 peças/mês", "Tudo incluso"], "cta": "Assinar", "ctaHref": "https://drg-juridico-app.onrender.com/signup" },
+        { "nome": "4 OABs", "preco": 269, "sub": "4 OABs · 400 processos", "destaque": false, "itens": ["150 peças/mês", "Tudo incluso"], "cta": "Assinar", "ctaHref": "https://drg-juridico-app.onrender.com/signup" }
+      ]
     },
     {
       "key": "sign",
@@ -47,7 +60,13 @@
       "visivel": true,
       "status": "ativo",
       "href": "sign/",
-      "desc": "Assinatura eletrônica de documentos com validade jurídica, IP, geolocalização e trilha de auditoria."
+      "desc": "Assinatura eletrônica de documentos com validade jurídica, IP, geolocalização e trilha de auditoria.",
+      "planos": [
+        { "nome": "Cortesia", "preco": 0, "sub": "3 documentos/mês por 6 meses", "destaque": false, "itens": ["Validade jurídica (MP 2.200-2)", "Hash por folha", "IP + geolocalização"], "cta": "Conhecer", "ctaHref": "https://drg-sign-app.onrender.com/vendas" },
+        { "nome": "Pessoal", "preco": 47, "sub": "20 documentos/mês", "destaque": false, "itens": ["Tudo da cortesia", "Trilha de auditoria"], "cta": "Assinar", "ctaHref": "https://drg-sign-app.onrender.com/vendas" },
+        { "nome": "Pro", "preco": 119, "sub": "100 documentos/mês", "destaque": true, "itens": ["Selfie/OTP opcionais", "Suporte prioritário"], "cta": "Assinar", "ctaHref": "https://drg-sign-app.onrender.com/vendas" },
+        { "nome": "Empresarial", "preco": 299, "sub": "500 documentos/mês", "destaque": false, "itens": ["Alto volume", "Onboarding assistido"], "cta": "Falar com a gente", "ctaHref": "mailto:zett.romao@gmail.com" }
+      ]
     },
     {
       "key": "check",
@@ -59,7 +78,13 @@
       "visivel": true,
       "status": "ativo",
       "href": "check/",
-      "desc": "Notificações com prova de entrega e cadeia de custódia registrada em blockchain (SHA-256 + OpenTimestamps)."
+      "desc": "Notificações com prova de entrega e cadeia de custódia registrada em blockchain (SHA-256 + OpenTimestamps).",
+      "planos": [
+        { "nome": "Cortesia", "preco": 0, "sub": "3 envios/mês por 6 meses", "destaque": false, "itens": ["Prova de entrega", "Carimbo em blockchain", "PDF probatório"], "cta": "Acessar", "ctaHref": "https://drg-check-app.onrender.com/login" },
+        { "nome": "Essencial", "preco": 49, "sub": "100 envios/mês", "destaque": false, "itens": ["Tudo da cortesia", "WhatsApp oficial"], "cta": "Assinar", "ctaHref": "https://drg-check-app.onrender.com/login" },
+        { "nome": "Pro", "preco": 149, "sub": "500 envios/mês", "destaque": true, "itens": ["Cadeia de custódia completa", "Suporte prioritário"], "cta": "Assinar", "ctaHref": "https://drg-check-app.onrender.com/login" },
+        { "nome": "Escala", "preco": 399, "sub": "2.000 envios/mês", "destaque": false, "itens": ["Alto volume", "Excedente por pacote"], "cta": "Falar com a gente", "ctaHref": "mailto:zett.romao@gmail.com" }
+      ]
     },
     {
       "key": "hidro",
@@ -71,7 +96,13 @@
       "visivel": true,
       "status": "ativo",
       "href": "hidro/",
-      "desc": "Monitoramento IoT do nível das caixas d'água (ESP32), com alertas por e-mail, WhatsApp e push."
+      "desc": "Monitoramento IoT do nível das caixas d'água (ESP32), com alertas por e-mail, WhatsApp e push.",
+      "planos": [
+        { "nome": "Essencial", "preco": 79, "sub": "1 caixa · casa/sítio", "destaque": false, "itens": ["Sensor incluso (comodato)", "Nível em tempo real", "Alertas e-mail/WhatsApp/push"], "cta": "Acessar", "ctaHref": "https://drg-hidro.onrender.com/" },
+        { "nome": "Plus", "preco": 139, "sub": "até 3 caixas", "destaque": true, "itens": ["Tudo do Essencial", "Histórico e gráficos"], "cta": "Assinar", "ctaHref": "https://drg-hidro.onrender.com/" },
+        { "nome": "Pro", "preco": 229, "sub": "até 6 caixas · prédio", "destaque": false, "itens": ["Multi-reservatório", "Suporte prioritário"], "cta": "Assinar", "ctaHref": "https://drg-hidro.onrender.com/" },
+        { "nome": "Condomínio", "precoTexto": "Sob consulta", "sub": "8+ caixas · 4G · SLA", "destaque": false, "itens": ["4G dedicado", "Troca de sensor grátis", "SLA e suporte"], "cta": "Falar com a gente", "ctaHref": "mailto:zett.romao@gmail.com" }
+      ]
     },
     {
       "key": "buscanfe",
@@ -83,7 +114,13 @@
       "visivel": true,
       "status": "ativo",
       "href": "buscanfe/",
-      "desc": "Captura automática de NF-e por competência, direto da SEFAZ — XML, DANFE em PDF e planilha pro contador."
+      "desc": "Captura automática de NF-e por competência, direto da SEFAZ — XML, DANFE em PDF e planilha pro contador.",
+      "planos": [
+        { "nome": "Grátis", "preco": 0, "sub": "1 CNPJ/CPF · para testar", "destaque": false, "itens": ["Coleta automática da SEFAZ", "XML + DANFE + planilha"], "cta": "Começar grátis", "ctaHref": "https://drg-buscanfe.onrender.com/?signup=1" },
+        { "nome": "Lite", "preco": 49, "sub": "até 3 CNPJs/CPFs", "destaque": true, "itens": ["Notas por competência", "Exportações num clique"], "cta": "Assinar", "ctaHref": "https://drg-buscanfe.onrender.com/?signup=1" },
+        { "nome": "Pro", "preco": 99, "sub": "até 15 CNPJs/CPFs", "destaque": false, "itens": ["Multi-empresa", "Prioridade no suporte"], "cta": "Assinar", "ctaHref": "https://drg-buscanfe.onrender.com/?signup=1" },
+        { "nome": "Contábil", "preco": 199, "sub": "até 50 CNPJs/CPFs", "destaque": false, "itens": ["Ideal para contabilidade", "Alto volume"], "cta": "Falar com a gente", "ctaHref": "mailto:zett.romao@gmail.com" }
+      ]
     },
     {
       "key": "fit",
@@ -95,7 +132,8 @@
       "visivel": true,
       "status": "embreve",
       "href": "fit/",
-      "desc": "Gestão de academia: alunos, planos, controle de acesso e agendamentos."
+      "desc": "Gestão de academia: alunos, planos, controle de acesso e agendamentos.",
+      "planos": []
     },
     {
       "key": "rently",
@@ -107,7 +145,8 @@
       "visivel": true,
       "status": "embreve",
       "href": "rently/",
-      "desc": "Gestão de locações de imóveis: contratos, análise de crédito e cobrança, ponta a ponta."
+      "desc": "Gestão de locações de imóveis: contratos, análise de crédito e cobrança, ponta a ponta.",
+      "planos": []
     },
     {
       "key": "garantidora",
@@ -119,7 +158,10 @@
       "visivel": true,
       "status": "embreve",
       "href": "garantidora/",
-      "desc": "Cobrança garantida de condomínios, com antecipação de recebíveis e régua de inadimplência."
+      "desc": "Cobrança garantida de condomínios, com antecipação de recebíveis e régua de inadimplência.",
+      "planos": [
+        { "nome": "Garantido", "precoTexto": "8%", "sub": "sobre o valor cobrado", "destaque": true, "itens": ["Receita garantida ao condomínio", "Régua de cobrança + antecipação", "Gestão da carteira de inadimplentes"], "cta": "Falar com a gente", "ctaHref": "mailto:zett.romao@gmail.com" }
+      ]
     },
     {
       "key": "condogest",
@@ -131,7 +173,8 @@
       "visivel": true,
       "status": "embreve",
       "href": "condogest/",
-      "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores."
+      "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
+      "planos": []
     }
   ]
 }

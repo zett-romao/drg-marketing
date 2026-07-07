@@ -57,6 +57,12 @@
     .toggles input{width:auto}
     .dest-only{display:none}
     .prod.is-dest .dest-only{display:block}
+    .planos-box{grid-column:1/-1;border:1px dashed var(--linha);border-radius:10px;padding:12px;background:#f7fafc;margin-top:4px}
+    .plano-row{border:1px solid var(--linha);border-radius:10px;padding:12px;margin:8px 0;background:#fff}
+    .plano-head{font-weight:700;font-size:13px;color:var(--azul2);margin-bottom:10px}
+    .plano-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .plano-grid .full{grid-column:1/-1}
+    @media(max-width:640px){.plano-grid{grid-template-columns:1fr}}
     .savebar{position:sticky;bottom:0;background:rgba(238,241,246,.97);backdrop-filter:blur(6px);border-top:1px solid var(--linha);padding:14px 16px;display:flex;gap:10px;align-items:center;justify-content:flex-end}
     .savebar .inner{max-width:920px;margin:0 auto;width:100%;display:flex;gap:10px;align-items:center}
     .savebar .sp{flex:1}
@@ -189,6 +195,30 @@
   });
   $('reload').addEventListener('click',function(){ location.reload(); });
 
+  var OPEN={};
+  function planosEditorHTML(p){
+    var pls=p.planos||[];
+    var rows=pls.map(function(pl,j){
+      var resumo=pl.precoTexto?esc(pl.precoTexto):(Number(pl.preco)>0?'R$ '+esc(pl.preco):'Grátis');
+      return '<div class="plano-row">'+
+        '<div class="plano-head">'+esc(pl.nome||'(plano)')+' — '+resumo+(pl.destaque?' · ⭐ destaque':'')+'</div>'+
+        '<div class="plano-grid">'+
+          '<div><label>Nome do plano</label><input type="text" data-pf="nome" data-pj="'+j+'" value="'+esc(pl.nome)+'"/></div>'+
+          '<div><label>Preço R$/mês (0 = Grátis)</label><input type="text" inputmode="decimal" data-pf="preco" data-pj="'+j+'" value="'+esc(pl.preco==null?'':pl.preco)+'"/></div>'+
+          '<div><label>OU preço em texto (Sob consulta, 8%…)</label><input type="text" data-pf="precoTexto" data-pj="'+j+'" value="'+esc(pl.precoTexto)+'"/></div>'+
+          '<div><label>Linha abaixo do preço</label><input type="text" data-pf="sub" data-pj="'+j+'" value="'+esc(pl.sub)+'"/></div>'+
+          '<div class="full"><label>Itens (um por linha)</label><textarea data-pf="itens" data-pj="'+j+'">'+esc((pl.itens||[]).join('\n'))+'</textarea></div>'+
+          '<div><label>Rótulo do botão</label><input type="text" data-pf="cta" data-pj="'+j+'" value="'+esc(pl.cta)+'"/></div>'+
+          '<div><label>Link do botão</label><input type="text" data-pf="ctaHref" data-pj="'+j+'" value="'+esc(pl.ctaHref)+'"/></div>'+
+          '<div class="toggles full"><label><input type="checkbox" data-pf="destaque" data-pj="'+j+'" '+(pl.destaque?'checked':'')+'/> Plano em destaque ("Mais popular")</label>'+
+            '<button class="btn btn-d" data-act="delplano" data-pj="'+j+'" style="margin-left:auto">Remover plano</button></div>'+
+        '</div>'+
+      '</div>';
+    }).join('');
+    return '<div class="full planos-box"><label>💰 Planos / preços</label>'+(rows||'<div class="muted" style="padding:4px 0 8px">Nenhum plano ainda.</div>')+
+      '<button class="btn btn-g" data-act="addplano" style="margin-top:8px">＋ Adicionar plano</button></div>';
+  }
+
   // ---- render ----
   function render(){
     var list=$('list'); list.innerHTML='';
@@ -226,13 +256,16 @@
           '<div class="dest-only full"><label>Frase do destaque (tagline)</label><input type="text" data-f="tagline" value="'+esc(p.tagline)+'"/></div>'+
           '<div class="dest-only full"><label>Descrição longa (destaque)</label><textarea data-f="descLonga">'+esc(p.descLonga)+'</textarea></div>'+
           '<div class="dest-only full"><label>O que ele cobre (um item por linha)</label><textarea data-f="caps" style="min-height:120px">'+esc((p.caps||[]).join('\n'))+'</textarea></div>'+
+          planosEditorHTML(p)+
           '<div class="full" style="text-align:right"><button class="btn btn-d" data-act="del">Remover este produto</button></div>'+
         '</div>';
+      if(OPEN[p.key]) el.classList.add('open');
 
       // header toggle open/close
       el.querySelector('.phead').addEventListener('click',function(ev){
         if(ev.target.closest('.ord')) return;
         el.classList.toggle('open');
+        OPEN[p.key]=el.classList.contains('open');
       });
       el.querySelector('[data-act=up]').addEventListener('click',function(ev){ev.stopPropagation();move(i,-1);});
       el.querySelector('[data-act=down]').addEventListener('click',function(ev){ev.stopPropagation();move(i,1);});
@@ -250,6 +283,23 @@
         });
       });
 
+      // ---- planos bindings ----
+      el.querySelectorAll('[data-pf]').forEach(function(inp){
+        var f=inp.getAttribute('data-pf'); var j=+inp.getAttribute('data-pj');
+        inp.addEventListener(inp.type==='checkbox'?'change':'input',function(){
+          var pl=(p.planos||[])[j]; if(!pl) return;
+          if(f==='destaque'){pl.destaque=inp.checked;return;}
+          if(f==='itens'){pl.itens=inp.value.split('\n').map(function(s){return s.trim();}).filter(Boolean);return;}
+          if(f==='preco'){var v=String(inp.value).trim().replace(',','.'); pl.preco=(v===''||isNaN(parseFloat(v)))?0:parseFloat(v); return;}
+          pl[f]=inp.value;
+        });
+      });
+      el.querySelectorAll('[data-act=delplano]').forEach(function(b){
+        b.addEventListener('click',function(){var j=+b.getAttribute('data-pj'); if(confirm('Remover este plano?')){p.planos.splice(j,1); render();}});
+      });
+      var addp=el.querySelector('[data-act=addplano]');
+      if(addp) addp.addEventListener('click',function(){ if(!p.planos)p.planos=[]; p.planos.push({nome:'Novo plano',preco:0,sub:'',itens:[],destaque:false,cta:'Assinar',ctaHref:''}); OPEN[p.key]=true; render();});
+
       list.appendChild(el);
     });
   }
@@ -260,7 +310,9 @@
   }
 
   $('add').addEventListener('click',function(){
-    PRODS.push({key:'novo'+PRODS.length,marca:'DRG',nome:'Novo produto',emoji:'✨',cat:'Categoria',destaque:false,visivel:false,status:'embreve',href:'#',desc:'Descrição do produto.'});
+    var k='novo'+PRODS.length;
+    PRODS.push({key:k,marca:'DRG',nome:'Novo produto',emoji:'✨',cat:'Categoria',destaque:false,visivel:false,status:'embreve',href:'#',desc:'Descrição do produto.',planos:[]});
+    OPEN[k]=true;
     render();
     window.scrollTo(0,document.body.scrollHeight);
   });

@@ -104,6 +104,12 @@ h2.tt{font-size:clamp(24px,5vw,32px);font-weight:820;text-align:center;margin:8p
 .plan li{padding:6px 0 6px 26px;position:relative}
 .plan li:before{content:"✓";position:absolute;left:0;color:var(--ok);font-weight:800}
 .plan .btn{margin-top:auto}
+.plan .val small{white-space:nowrap}
+@media(min-width:821px){
+  .plans.n1{grid-template-columns:minmax(0,340px);justify-content:center}
+  .plans.n2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:700px;margin:0 auto}
+  .plans.n4{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
 
 /* PRODUTOS (fundo azul) */
 .fam{background:var(--azul);color:#fff}
