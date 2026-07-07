@@ -29,6 +29,16 @@ function page(p){
   const finalCta = p.status === 'live'
     ? `<a class="btn btn-light btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>`
     : `<a class="btn btn-light btn-lg" href="mailto:zett.romao@gmail.com?subject=Tenho%20interesse%20no%20${marca}-${p.nome}">Entrar na lista de espera</a>`;
+  // Logo própria do produto (opcional): substitui o emoji grande e o favicon.
+  const favicon = p.logo
+    ? `<link rel="icon" href="../assets/${p.logo}" />
+  <link rel="apple-touch-icon" href="../assets/${p.logo}" />`
+    : `<link rel="icon" href="../assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />`;
+  const heroMark = p.logo
+    ? `<img class="prodlogo" src="../assets/${p.logo}" alt="${marca}·${p.nome}" width="88" height="88" style="display:block;margin:0 auto 10px;width:88px;height:88px" />`
+    : `<div class="emojibig">${p.emoji}</div>`;
 
   return `<!doctype html>
 <html lang="pt-br">
@@ -43,9 +53,7 @@ function page(p){
   <meta property="og:title" content="${marca}·${p.nome} — ${p.cat}" />
   <meta property="og:description" content="${p.desc}" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="icon" href="../assets/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
-  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+  ${favicon}
   <link rel="manifest" href="../manifest.webmanifest" />
   <link rel="stylesheet" href="../assets/style.css" />
 </head>
@@ -70,7 +78,7 @@ function page(p){
 
 <header class="hero">
   <div class="wrap">
-    <div class="emojibig">${p.emoji}</div>
+    ${heroMark}
     <div class="prodname">${marca}·<b>${p.nome}</b></div>
     ${pill}
     <h1>${p.h1}</h1>
@@ -480,6 +488,38 @@ const PRODUTOS = [
       {h:'Receba garantido',p:'Caixa previsível todo mês, com antecipação quando precisar.'}],
     finalH:'Caixa previsível para o seu condomínio.',
     finalP:'Entre na lista e seja avisado quando a DRG-Garantidora abrir.'
+  },
+  {
+    key:'liftalk', emoji:'🛗', nome:'Liftalk', cat:'Emergência em elevadores', status:'soon', marca:'DRG', logo:'liftalk.svg',
+    desc:'Liftalk: comunicação de emergência sem fio para elevadores — a cabine fala com uma central 24h por voz via 4G, atendendo à NBR 16858 / EN 81-28.',
+    h1:'Quem fica preso no elevador <em>fala com alguém na hora</em>.',
+    sub:'Comunicação de emergência bidirecional por voz, da cabine para uma central de atendimento 24h, via 4G. Atende à exigência legal da NBR 16858 (EN 81-28) — não é conforto, é norma.',
+    mini:'Voz via 4G · Central 24h · Bateria de backup · Homologável ANATEL/NBR 16858',
+    doresT:'Elevador sem comunicação é multa e risco', dores:[
+      'A norma obriga meio de comunicação 24h — e a fiscalização cobra',
+      'O poço do elevador é uma gaiola de Faraday: interfone comum não funciona',
+      'Produtos amadores reprovam na certificação (pictograma, bateria, autoteste)',
+      'Quando falta luz é justamente quando alguém fica preso'],
+    solT:'Conformidade legal, de verdade', sol:[
+      'Voz bidirecional da cabine para uma central 24h via 4G',
+      'Antena no topo do poço resolve a gaiola de Faraday',
+      'Pictograma amarelo (registrada) e verde (atendida) conforme a norma',
+      'Bateria de backup e autoteste automático a cada 3 dias'],
+    recT:'Feito para passar na certificação', recL:'Do botão de emergência ao registro da chamada — atendendo item por item da NBR 16858 / EN 81-28.',
+    rec:[
+      {i:'🗣️',h:'Voz bidirecional 4G',p:'Alto-falante e microfone full-duplex na cabine, falando com a central pela rede celular.'},
+      {i:'🎧',h:'Central 24h',p:'Painel do atendente na nuvem, multi-tenant, com registro de cada chamada.'},
+      {i:'🟡',h:'Pictograma amarelo',p:'Luz que confirma para a pessoa presa que o pedido de socorro foi registrado.'},
+      {i:'🟢',h:'Pictograma verde',p:'Luz que acende quando o atendente atende — ela vê que tem alguém na linha.'},
+      {i:'🔋',h:'Bateria de backup',p:'Continua funcionando quando falta energia, com supervisão e aviso de bateria fraca.'},
+      {i:'🩺',h:'Autoteste automático',p:'O aparelho testa o link com a central a cada 3 dias e avisa se houver defeito.'}],
+    comoL:'Instala na cabine, conecta pela rede 4G e a central passa a atender.',
+    passos:[
+      {h:'Instale a unidade na cabine',p:'Botão SOS, alto-falante e as luzes amarela e verde, com antena no topo do poço.'},
+      {h:'Conecte pela rede 4G',p:'A cabine se identifica na central: qual prédio e qual elevador.'},
+      {h:'A central atende 24h',p:'Ao apertar o botão, a chamada cai na central e a conversa começa por voz.'}],
+    finalH:'Coloque seus elevadores dentro da norma.',
+    finalP:'Entre na lista e seja avisado quando o DRG-Liftalk abrir para instalação.'
   },
   {
     key:'condogest', emoji:'🏢', nome:'CondoGest', cat:'Gestão condominial', status:'soon', marca:'GDR',

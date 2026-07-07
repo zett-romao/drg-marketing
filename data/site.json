@@ -165,6 +165,19 @@
       ]
     },
     {
+      "key": "liftalk",
+      "marca": "DRG",
+      "nome": "Liftalk",
+      "emoji": "🛗",
+      "cat": "Emergência em elevadores",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "liftalk/",
+      "desc": "Comunicação de emergência sem fio para elevadores: a cabine fala com uma central 24h por voz via 4G, atendendo à NBR 16858 / EN 81-28.",
+      "planos": []
+    },
+    {
       "key": "condogest",
       "marca": "GDR",
       "nome": "CondoGest",
