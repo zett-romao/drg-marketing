@@ -491,9 +491,9 @@ const PRODUTOS = [
   },
   {
     key:'liftalk', emoji:'🛗', nome:'Liftalk', cat:'Emergência em elevadores', status:'soon', marca:'DRG', logo:'liftalk.svg',
-    desc:'Liftalk: comunicação de emergência sem fio para elevadores — a cabine fala com uma central 24h por voz via 4G, atendendo à NBR 16858 / EN 81-28.',
+    desc:'Liftalk: comunicação de emergência sem fio para elevadores — a cabine fala com uma central 24h por voz via 4G, atendendo à NBR 16858 / EN 81‑28.',
     h1:'Quem fica preso no elevador <em>fala com alguém na hora</em>.',
-    sub:'Comunicação de emergência bidirecional por voz, da cabine para uma central de atendimento 24h, via 4G. Atende à exigência legal da NBR 16858 (EN 81-28) — não é conforto, é norma.',
+    sub:'Comunicação de emergência bidirecional por voz, da cabine para uma central de atendimento 24h, via 4G. Atende à exigência legal da NBR 16858 (EN 81‑28) — não é conforto, é norma.',
     mini:'Voz via 4G · Central 24h · Bateria de backup · Homologável ANATEL/NBR 16858',
     doresT:'Elevador sem comunicação é multa e risco', dores:[
       'A norma obriga meio de comunicação 24h — e a fiscalização cobra',
@@ -505,7 +505,7 @@ const PRODUTOS = [
       'Antena no topo do poço resolve a gaiola de Faraday',
       'Pictograma amarelo (registrada) e verde (atendida) conforme a norma',
       'Bateria de backup e autoteste automático a cada 3 dias'],
-    recT:'Feito para passar na certificação', recL:'Do botão de emergência ao registro da chamada — atendendo item por item da NBR 16858 / EN 81-28.',
+    recT:'Feito para passar na certificação', recL:'Do botão de emergência ao registro da chamada — atendendo item por item da NBR 16858 / EN 81‑28.',
     rec:[
       {i:'🗣️',h:'Voz bidirecional 4G',p:'Alto-falante e microfone full-duplex na cabine, falando com a central pela rede celular.'},
       {i:'🎧',h:'Central 24h',p:'Painel do atendente na nuvem, multi-tenant, com registro de cada chamada.'},
