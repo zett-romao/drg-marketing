@@ -109,6 +109,7 @@
     <h2 class="tt">Preços simples, sem pegadinha</h2>
     <p class="lead">Escolha o plano que cabe no seu momento. Cancele quando quiser.</p>
     <div class="plans" id="planos-root"></div>
+    <p class="plans-nota" id="planos-nota" hidden></p>
   </div>
 </section>
 
@@ -123,6 +124,7 @@
     if(!pl.length) return;
     document.getElementById('planos').hidden=false;
     var nv=document.getElementById('nav-planos'); if(nv) nv.hidden=false;
+    if(pr.planosNota){ var nt=document.getElementById('planos-nota'); nt.textContent=pr.planosNota; nt.hidden=false; }
     var root=document.getElementById('planos-root');
     root.className='plans n'+Math.min(pl.length,4);
     root.innerHTML=pl.map(function(x){

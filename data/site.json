@@ -97,6 +97,7 @@
       "status": "ativo",
       "href": "hidro/",
       "desc": "Monitoramento IoT do nível das caixas d'água (ESP32), com alertas por e-mail, WhatsApp e push.",
+      "planosNota": "🛠️ Equipamento cedido em comodato e instalação gratuita — fidelidade mínima de 12 meses.",
       "planos": [
         { "nome": "Essencial", "preco": 79, "sub": "1 caixa · casa/sítio", "destaque": false, "itens": ["Sensor incluso (comodato)", "Nível em tempo real", "Alertas e-mail/WhatsApp/push"], "cta": "Acessar", "ctaHref": "https://drg-hidro.onrender.com/" },
         { "nome": "Plus", "preco": 139, "sub": "até 3 caixas", "destaque": true, "itens": ["Tudo do Essencial", "Histórico e gráficos"], "cta": "Assinar", "ctaHref": "https://drg-hidro.onrender.com/" },
