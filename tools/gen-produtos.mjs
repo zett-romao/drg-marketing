@@ -527,7 +527,8 @@ const PRODUTOS = [
     finalP:'Entre na lista e seja avisado quando o DRG-Liftalk abrir para instalação.'
   },
   {
-    key:'sindia', emoji:'💬', nome:'Sind.ia', cat:'Síndico digital com IA', status:'soon', marca:'DRG', logo:'sindia.svg',
+    key:'sindia', emoji:'💬', nome:'Sind.ia', cat:'Síndico digital com IA', status:'live', marca:'DRG', logo:'sindia.svg',
+    app:'https://sind-ia.onrender.com/', cta:'Acessar',
     desc:'Sind.ia: síndico digital com IA que responde os moradores por WhatsApp e aplicativo, com base só nos documentos do próprio condomínio. Multi-condomínio e isolado.',
     h1:'O <em>síndico digital</em> que responde o morador na hora.',
     sub:'Uma IA treinada nos documentos do seu condomínio — convenção, regimento, atas e comunicados — responde as dúvidas dos moradores 24h por WhatsApp e aplicativo. O que ela não souber, encaminha para o síndico.',
@@ -556,7 +557,7 @@ const PRODUTOS = [
       {h:'A IA aprende o condomínio',p:'Ela lê tudo e monta a base de conhecimento, isolada por condomínio.'},
       {h:'O morador pergunta e recebe',p:'Pelo WhatsApp ou pelo app — e o que faltar vai direto para o síndico.'}],
     finalH:'Devolva o tempo do síndico.',
-    finalP:'Entre na lista e seja avisado quando o Sind.ia abrir para o seu condomínio.'
+    finalP:'Acesse agora e deixe a IA atender os moradores do seu condomínio.'
   },
   {
     key:'condogest', emoji:'🏢', nome:'CondoGest', cat:'Gestão condominial', status:'soon', marca:'GDR',
