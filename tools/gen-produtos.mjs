@@ -22,8 +22,14 @@ function steps(arr){
 
 function page(p){
   const marca = p.marca || 'DRG';
+  // CTA secundário opcional (ex.: "Área do síndico" do Sind.ia). Some quando o produto não declara.
+  const cta2 = p.ctaSecundario
+    ? `<a class="btn btn-ghost btn-lg" href="${p.ctaSecundario.href}" target="_blank" rel="noopener">${p.ctaSecundario.rotulo}</a>`
+    : '';
+
   const heroCta = p.status === 'live'
     ? `<a class="btn btn-primary btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>
+      ${cta2}
       <a class="btn btn-ghost btn-lg" href="#recursos">Ver recursos</a>`
     : `<a class="btn btn-primary btn-lg" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + ' e quero entrar na lista de espera.')}" target="_blank" rel="noopener">Entrar na lista de espera</a>
       <a class="btn btn-ghost btn-lg" href="#recursos">Ver recursos</a>`;
@@ -31,7 +37,8 @@ function page(p){
     ? `<div class="pill">${p.emoji} ${p.cat} · No ar</div>`
     : `<div class="pill">${p.emoji} ${p.cat} · Em breve</div>`;
   const finalCta = p.status === 'live'
-    ? `<a class="btn btn-light btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>`
+    ? `<a class="btn btn-light btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>
+      ${p.ctaSecundario ? `<a class="btn btn-ghost btn-lg" href="${p.ctaSecundario.href}" target="_blank" rel="noopener">${p.ctaSecundario.rotulo}</a>` : ''}`
     : `<a class="btn btn-light btn-lg" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + ' e quero entrar na lista de espera.')}" target="_blank" rel="noopener">Entrar na lista de espera</a>`;
   // Logo própria do produto (opcional): substitui o emoji grande e o favicon.
   const favicon = p.logo
@@ -528,7 +535,9 @@ const PRODUTOS = [
   },
   {
     key:'sindia', emoji:'💬', nome:'Sind.ia', cat:'Síndico digital com IA', status:'live', marca:'DRG', logo:'sindia.svg',
-    app:'https://sind-ia.onrender.com/', cta:'Acessar',
+    app:'https://sind-ia.onrender.com/?acesso=morador', cta:'Acessar (morador)',
+    // O síndico entra por uma porta própria: é lá que ele sobe os documentos do condomínio.
+    ctaSecundario:{ rotulo:'Área do síndico', href:'https://sind-ia.onrender.com/?acesso=sindico' },
     desc:'Sind.ia: síndico digital com IA que responde os moradores por WhatsApp e aplicativo, com base só nos documentos do próprio condomínio. Multi-condomínio e isolado.',
     h1:'O <em>síndico digital</em> que responde o morador na hora.',
     sub:'Uma IA treinada nos documentos do seu condomínio — convenção, regimento, atas e comunicados — responde as dúvidas dos moradores 24h por WhatsApp e aplicativo. O que ela não souber, encaminha para o síndico.',
@@ -553,7 +562,7 @@ const PRODUTOS = [
       {i:'⚙️',h:'IA de ponta, configurável',p:'Motor de IA ajustável nas configurações, conforme a necessidade de cada condomínio.'}],
     comoL:'Suba os documentos uma vez. A IA passa a atender os moradores sozinha.',
     passos:[
-      {h:'Envie os documentos',p:'Convenção, regimento, atas e comunicados do condomínio.'},
+      {h:'O síndico envia os documentos',p:'Na Área do síndico, ele sobe convenção, regimento, atas e comunicados (PDF, Word ou Excel).'},
       {h:'A IA aprende o condomínio',p:'Ela lê tudo e monta a base de conhecimento, isolada por condomínio.'},
       {h:'O morador pergunta e recebe',p:'Pelo WhatsApp ou pelo app — e o que faltar vai direto para o síndico.'}],
     finalH:'Devolva o tempo do síndico.',
