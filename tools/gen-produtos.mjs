@@ -187,6 +187,7 @@ ${steps(p.passos)}
 <footer>
   <div class="wrap">
     <div class="brand"><img class="tile" src="../assets/mark.svg" alt="DR Systems" style="width:26px;height:26px" />DR&nbsp;Systems</div>
+    <div>Software House · Produtos Multi-Tenant · Engenharia Própria</div>
     <div>${marca}·${p.nome} faz parte da família DR-Systems · <a href="../">ver todos os produtos</a></div>
     <div style="margin-top:8px">DR Global Multi Services · CNPJ 49.698.112/0001-57 · Todos os direitos reservados</div>
   </div>
