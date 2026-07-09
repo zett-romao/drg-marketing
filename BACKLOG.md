@@ -7,9 +7,9 @@ redes sociais, campanhas e material de vendas.
 Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 (azul `#152a45` / `#3182ce`, gradiente, cards com ícone, fonte de sistema).
 
-- **Última atualização:** 2026-07-07.
+- **Última atualização:** 2026-07-09.
 - **🌐 NO AR:** https://drsystems.dev.br (domínio próprio + HTTPS; repo `zett-romao/drg-marketing`, GitHub Pages/main).
-- **11 produtos** na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, Fit, Rently, Garantidora, **Liftalk**, CondoGest).
+- **12 produtos** na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, Fit, Rently, Garantidora, **Liftalk**, **Sind.ia**, CondoGest).
 
 ---
 
@@ -21,10 +21,16 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 4. **Fonte única de dados**: cards E planos vêm de `data/site.json`. Home e páginas de produto renderizam via JS com **cache-bust** (`?t=Date.now()`). Nunca hardcodar card/plano no HTML.
 5. **Painel `/admin/`**: edita cards, planos e a nota; publica gravando `site.json` via API do GitHub (token fine-grained, Contents R/W, só no localStorage). Fluxo de deploy: **`git pull --rebase` ANTES de push** (o painel também commita).
 6. **Páginas de produto** geradas por `tools/gen-produtos.mjs` (rodar após mexer no template). Prévia local por `tools/serve.mjs` (`file://` bloqueia o fetch do JSON).
-7. **Rodapé**: `DR Global Multi Services · CNPJ 49.698.112/0001-57`.
-8. **Copy travada**: pill "Software House · Produtos Multi-Tenant"; H1 "Exclusiva arquitetura de desenvolvimento dedicado."; base **end-to-end** com **ICP-Brasil** (card próprio); Kronos cobre "Todos os padrões de escalas" e "Monitor da LGPD".
-9. **Preços** (2026-07-06): Kronos 39/79/149/249 · BuscaNFe 0/49/99/199 · Jurídico 0/89/159/219/269 · Check cortesia(3/mês·6m)/49/149/399 · Sign cortesia(3/mês·6m)/47/119/299 · Hidro 79/139/229/Sob consulta **(comodato + instalação grátis + fidelidade 12m)** · Garantidora 8%.
-10. **Commit + push automático** do Claude a cada alteração (preferência do dono).
+7. **🔒 Rodapé-assinatura DR Systems (marca-mãe) — padrão da FAMÍLIA, em TODOS os apps e landings** (lock 2026-07-09): 3 linhas centralizadas, **grudadas no fundo** (sticky footer: body flex column + rodapé `margin-top:auto`) — nunca flutua no meio:
+   - `</> DR Systems`
+   - `Software House · Produtos Multi-Tenant · Engenharia Própria` (**Engenharia Própria** com iniciais maiúsculas)
+   - `DR Global Multi Services · CNPJ 49.698.112/0001-57 · Todos os direitos reservados`
+   - Rollout feito: Marketing (todas as landings), Sind.ia, Check, Sign, Jurídico, Hidro, BuscaNFe, Fit. **Pendente: CondoGest e Kronos.**
+8. **🔒 CTAs de contato/interesse → WhatsApp** (lock 2026-07-09): **NUNCA `mailto:`** (não abre sem cliente de e-mail). Todos os botões "Falar com a gente/Tenho interesse/lista de espera" vão para **`https://wa.me/5511997347272`** com mensagem pré-preenchida. Nº oficial: **11 99734-7272**.
+9. **Copy travada**: pill "Software House · Produtos Multi-Tenant"; H1 "Exclusiva arquitetura de desenvolvimento dedicado."; **home reescrita SEM traços "—"** (usar vírgulas; "de ponta a ponta" no lugar de "end-to-end"); **ICP-Brasil** (card próprio); Kronos cobre "Todos os padrões de escalas" e "Monitor da LGPD".
+10. **Preços** (2026-07-06/09): Kronos 39/79/149/249 · BuscaNFe 0/49/99/199 · Jurídico 0/89/159/219/269 · Check cortesia(3/mês·6m)/49/149/399 · Sign cortesia(3/mês·6m)/47/119/299 · Hidro 79/139/229/Sob consulta **(comodato + instalação grátis + fidelidade 12m)** · **Sind.ia por unidade: 189(≤50)/289(≤100)/379(≤200)/599(≤400)/Sob medida 599+R$1,20/unid · 30 dias grátis** · Garantidora 8%.
+11. **🔒 Sind.ia = 12º produto, LANÇADO** (lock 2026-07-09): **NO AR** em `https://sind-ia.onrender.com/` (síndico digital com IA). Landing `/sindia/` com `status:'live'`, logo própria `assets/sindia.svg` (ícone speech-bubble/prédio, tile branco). Preços via `site.json` (lê ao vivo → editar tabela/painel atualiza a landing sozinha).
+12. **Commit + push automático** do Claude a cada alteração (preferência do dono).
 
 ---
 
