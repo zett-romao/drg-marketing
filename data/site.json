@@ -157,6 +157,19 @@
       ]
     },
     {
+      "key": "sindia",
+      "marca": "DRG",
+      "nome": "Sind.ia",
+      "emoji": "💬",
+      "cat": "Síndico digital com IA",
+      "destaque": false,
+      "visivel": true,
+      "status": "ativo",
+      "href": "sindia/",
+      "desc": "Síndico digital com IA que responde os moradores por WhatsApp e app, com base nos documentos do próprio condomínio. Multi-condomínio e isolado.",
+      "planos": []
+    },
+    {
       "key": "sign",
       "marca": "DRG",
       "nome": "Sign",
@@ -473,19 +486,6 @@
       "status": "embreve",
       "href": "liftalk/",
       "desc": "Comunicação de emergência sem fio para elevadores: a cabine fala com uma central 24h por voz via 4G, atendendo à NBR 16858 / EN 81‑28.",
-      "planos": []
-    },
-    {
-      "key": "sindia",
-      "marca": "DRG",
-      "nome": "Sind.ia",
-      "emoji": "💬",
-      "cat": "Síndico digital com IA",
-      "destaque": false,
-      "visivel": true,
-      "status": "ativo",
-      "href": "sindia/",
-      "desc": "Síndico digital com IA que responde os moradores por WhatsApp e app, com base nos documentos do próprio condomínio. Multi-condomínio e isolado.",
       "planos": []
     },
     {
