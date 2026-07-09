@@ -167,7 +167,74 @@
       "status": "ativo",
       "href": "sindia/",
       "desc": "Síndico digital com IA que responde os moradores por WhatsApp e app, com base nos documentos do próprio condomínio. Multi-condomínio e isolado.",
-      "planos": []
+      "planosNota": "🎁 30 dias grátis para testar, em qualquer plano. Preço por total de unidades (apartamentos) — vários condomínios na mesma conta.",
+      "planos": [
+        {
+          "nome": "Essencial",
+          "preco": 189,
+          "sub": "até 50 unidades",
+          "destaque": false,
+          "itens": [
+            "IA treinada nos documentos",
+            "WhatsApp + app do morador",
+            "1 conta, vários condomínios"
+          ],
+          "cta": "Entrar na lista de espera",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Sind.ia%20e%20quero%20entrar%20na%20lista%20de%20espera."
+        },
+        {
+          "nome": "Pro",
+          "preco": 289,
+          "sub": "até 100 unidades",
+          "destaque": true,
+          "itens": [
+            "Tudo do Essencial",
+            "Mural de avisos do condomínio",
+            "Encaminha ao síndico"
+          ],
+          "cta": "Entrar na lista de espera",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Sind.ia%20e%20quero%20entrar%20na%20lista%20de%20espera."
+        },
+        {
+          "nome": "Avançado",
+          "preco": 379,
+          "sub": "até 200 unidades",
+          "destaque": false,
+          "itens": [
+            "Tudo do Pro",
+            "Ideal para administradoras",
+            "Vários condomínios"
+          ],
+          "cta": "Entrar na lista de espera",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Sind.ia%20e%20quero%20entrar%20na%20lista%20de%20espera."
+        },
+        {
+          "nome": "Master",
+          "preco": 599,
+          "sub": "até 400 unidades",
+          "destaque": false,
+          "itens": [
+            "Tudo do Avançado",
+            "Grandes carteiras",
+            "Suporte prioritário"
+          ],
+          "cta": "Entrar na lista de espera",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Tenho%20interesse%20no%20Sind.ia%20e%20quero%20entrar%20na%20lista%20de%20espera."
+        },
+        {
+          "nome": "Sob medida",
+          "precoTexto": "R$ 599+",
+          "sub": "acima de 400 unidades · R$ 1,20 por unidade extra",
+          "destaque": false,
+          "itens": [
+            "Acima de 400 unidades",
+            "Preço por unidade adicional",
+            "Suporte dedicado"
+          ],
+          "cta": "Falar com a gente",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems%20sobre%20o%20Sind.ia."
+        }
+      ]
     },
     {
       "key": "sign",
