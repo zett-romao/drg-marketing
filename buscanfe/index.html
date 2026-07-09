@@ -130,7 +130,7 @@
     root.innerHTML=pl.map(function(x){
       var preco=x.precoTexto?esc(x.precoTexto):(Number(x.preco)>0?brl(x.preco)+'<small>'+esc(x.periodo||'/mês')+'</small>':'Grátis');
       var itens=(x.itens||[]).map(function(i){return '<li>'+esc(i)+'</li>';}).join('');
-      var cta=esc(x.cta||'Assinar'); var href=esc(x.ctaHref||'mailto:zett.romao@gmail.com');
+      var cta=esc(x.cta||'Assinar'); var href=esc(x.ctaHref||'https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems.');
       return '<div class="plan'+(x.destaque?' dest':'')+'">'+
         (x.destaque?'<div class="tag">MAIS POPULAR</div>':'')+
         '<h3>'+esc(x.nome)+'</h3>'+

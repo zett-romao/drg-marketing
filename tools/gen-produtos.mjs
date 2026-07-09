@@ -5,6 +5,10 @@ import { join } from 'node:path';
 
 const ROOT = process.cwd();
 
+// Contato oficial da DR Systems (WhatsApp) — usado nos CTAs de interesse/lista de espera.
+const WHATS = '5511997347272';
+const wa = (msg) => `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+
 const ICON = (emoji) =>
   `data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%23152a45'/%3E%3Ctext%20x='16'%20y='23'%20font-size='18'%20text-anchor='middle'%3E${emoji}%3C/text%3E%3C/svg%3E`;
 
@@ -21,14 +25,14 @@ function page(p){
   const heroCta = p.status === 'live'
     ? `<a class="btn btn-primary btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>
       <a class="btn btn-ghost btn-lg" href="#recursos">Ver recursos</a>`
-    : `<a class="btn btn-primary btn-lg" href="mailto:zett.romao@gmail.com?subject=Tenho%20interesse%20no%20${marca}-${p.nome}">Entrar na lista de espera</a>
+    : `<a class="btn btn-primary btn-lg" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + ' e quero entrar na lista de espera.')}" target="_blank" rel="noopener">Entrar na lista de espera</a>
       <a class="btn btn-ghost btn-lg" href="#recursos">Ver recursos</a>`;
   const pill = p.status === 'live'
     ? `<div class="pill">${p.emoji} ${p.cat} · No ar</div>`
     : `<div class="pill">${p.emoji} ${p.cat} · Em breve</div>`;
   const finalCta = p.status === 'live'
     ? `<a class="btn btn-light btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>`
-    : `<a class="btn btn-light btn-lg" href="mailto:zett.romao@gmail.com?subject=Tenho%20interesse%20no%20${marca}-${p.nome}">Entrar na lista de espera</a>`;
+    : `<a class="btn btn-light btn-lg" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + ' e quero entrar na lista de espera.')}" target="_blank" rel="noopener">Entrar na lista de espera</a>`;
   // Logo própria do produto (opcional): substitui o emoji grande e o favicon.
   const favicon = p.logo
     ? `<link rel="icon" href="../assets/${p.logo}" />
@@ -72,7 +76,7 @@ function page(p){
     <span class="sp"></span>
     ${p.status==='live'
       ? `<a class="btn btn-primary" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>`
-      : `<a class="btn btn-primary" href="mailto:zett.romao@gmail.com?subject=Interesse%20${marca}-${p.nome}">Tenho interesse</a>`}
+      : `<a class="btn btn-primary" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + '.')}" target="_blank" rel="noopener">Tenho interesse</a>`}
   </div>
 </nav>
 
@@ -158,7 +162,7 @@ ${steps(p.passos)}
     root.innerHTML=pl.map(function(x){
       var preco=x.precoTexto?esc(x.precoTexto):(Number(x.preco)>0?brl(x.preco)+'<small>'+esc(x.periodo||'/mês')+'</small>':'Grátis');
       var itens=(x.itens||[]).map(function(i){return '<li>'+esc(i)+'</li>';}).join('');
-      var cta=esc(x.cta||'Assinar'); var href=esc(x.ctaHref||'mailto:zett.romao@gmail.com');
+      var cta=esc(x.cta||'Assinar'); var href=esc(x.ctaHref||'https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems.');
       return '<div class="plan'+(x.destaque?' dest':'')+'">'+
         (x.destaque?'<div class="tag">MAIS POPULAR</div>':'')+
         '<h3>'+esc(x.nome)+'</h3>'+
