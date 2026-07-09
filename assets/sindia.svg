@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG Sind.ia">
+  <defs>
+    <linearGradient id="sindTile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#12707A"/>
+      <stop offset="1" stop-color="#0B4A50"/>
+    </linearGradient>
+  </defs>
+  <!-- tile branco (logo sempre sobre fundo branco) -->
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <!-- icone Sind.ia (512 -> 48px, centralizado com folga) -->
+  <g transform="translate(8,8) scale(0.09375)">
+    <rect width="512" height="512" rx="116" fill="url(#sindTile)"/>
+    <path d="M160 126 H352 A40 40 0 0 1 392 166 V296 A40 40 0 0 1 352 336
+             H216 L196 388 L176 336 H160 A40 40 0 0 1 120 296 V166 A40 40 0 0 1 160 126 Z"
+          fill="#FFFFFF"/>
+    <g fill="#0E5C63">
+      <rect x="180" y="166" width="32" height="32" rx="6"/>
+      <rect x="240" y="166" width="32" height="32" rx="6"/>
+      <rect x="300" y="166" width="32" height="32" rx="6"/>
+      <rect x="180" y="212" width="32" height="32" rx="6"/>
+      <rect x="300" y="212" width="32" height="32" rx="6"/>
+      <rect x="236" y="212" width="40" height="104" rx="10"/>
+    </g>
+    <circle cx="266" cy="266" r="6" fill="#E0A03C"/>
+    <circle cx="384" cy="150" r="30" fill="#E0A03C" stroke="url(#sindTile)" stroke-width="8"/>
+  </g>
+</svg>

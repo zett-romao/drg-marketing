@@ -522,6 +522,38 @@ const PRODUTOS = [
     finalP:'Entre na lista e seja avisado quando o DRG-Liftalk abrir para instalação.'
   },
   {
+    key:'sindia', emoji:'💬', nome:'Sind.ia', cat:'Síndico digital com IA', status:'soon', marca:'DRG', logo:'sindia.svg',
+    desc:'Sind.ia: síndico digital com IA que responde os moradores por WhatsApp e aplicativo, com base só nos documentos do próprio condomínio. Multi-condomínio e isolado.',
+    h1:'O <em>síndico digital</em> que responde o morador na hora.',
+    sub:'Uma IA treinada nos documentos do seu condomínio — convenção, regimento, atas e comunicados — responde as dúvidas dos moradores 24h por WhatsApp e aplicativo. O que ela não souber, encaminha para o síndico.',
+    mini:'Responde só pelos documentos do condomínio · WhatsApp + app · Cada condomínio isolado',
+    doresT:'O síndico virou central de atendimento', dores:[
+      'Morador manda a mesma pergunta no WhatsApp o dia todo',
+      'Convenção e regimento que ninguém lê — e todo mundo pergunta',
+      '“Pode animal?”, “horário do salão?”, “meu boleto?” sem parar',
+      'Informação espalhada em PDFs, atas e grupos de WhatsApp'],
+    solT:'Uma IA que conhece o seu condomínio', sol:[
+      'Responde com base só nos documentos do próprio condomínio',
+      'Atende por WhatsApp e pelo aplicativo, 24 horas',
+      'Não inventa: se não achar a resposta, encaminha ao síndico',
+      'Cada condomínio com seus documentos e moradores isolados'],
+    recT:'Atendimento ao morador no piloto automático', recL:'Feito para síndicos e administradoras que querem parar de responder a mesma dúvida mil vezes.',
+    rec:[
+      {i:'🧠',h:'Treinada nos seus documentos',p:'Convenção, regimento, atas, comunicados e planilhas viram a base de conhecimento — em PDF, Word ou Excel.'},
+      {i:'💬',h:'Responde no WhatsApp',p:'O morador pergunta pelo WhatsApp e recebe a resposta na hora, a qualquer momento do dia.'},
+      {i:'📱',h:'Aplicativo do morador',p:'App (PWA) com chat da IA e mural de avisos do condomínio, direto no celular.'},
+      {i:'🙋',h:'Encaminha ao síndico',p:'Quando a resposta não está nos documentos, a IA passa a pergunta ao síndico — sem inventar.'},
+      {i:'🏢',h:'Multi-condomínio isolado',p:'Cada condomínio enxerga só os próprios documentos e moradores. Nada vaza de um para o outro.'},
+      {i:'⚙️',h:'IA de ponta, configurável',p:'Motor de IA ajustável nas configurações, conforme a necessidade de cada condomínio.'}],
+    comoL:'Suba os documentos uma vez. A IA passa a atender os moradores sozinha.',
+    passos:[
+      {h:'Envie os documentos',p:'Convenção, regimento, atas e comunicados do condomínio.'},
+      {h:'A IA aprende o condomínio',p:'Ela lê tudo e monta a base de conhecimento, isolada por condomínio.'},
+      {h:'O morador pergunta e recebe',p:'Pelo WhatsApp ou pelo app — e o que faltar vai direto para o síndico.'}],
+    finalH:'Devolva o tempo do síndico.',
+    finalP:'Entre na lista e seja avisado quando o Sind.ia abrir para o seu condomínio.'
+  },
+  {
     key:'condogest', emoji:'🏢', nome:'CondoGest', cat:'Gestão condominial', status:'soon', marca:'GDR',
     desc:'CondoGest: gestão condominial completa, do financeiro à comunicação com os moradores, feita para o síndico.',
     h1:'A gestão do condomínio <em>completa</em>, num lugar só.',

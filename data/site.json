@@ -178,6 +178,19 @@
       "planos": []
     },
     {
+      "key": "sindia",
+      "marca": "DRG",
+      "nome": "Sind.ia",
+      "emoji": "💬",
+      "cat": "Síndico digital com IA",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "sindia/",
+      "desc": "Síndico digital com IA que responde os moradores por WhatsApp e app, com base nos documentos do próprio condomínio. Multi-condomínio e isolado.",
+      "planos": []
+    },
+    {
       "key": "condogest",
       "marca": "GDR",
       "nome": "CondoGest",
