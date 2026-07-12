@@ -600,6 +600,38 @@ const PRODUTOS = [
     finalH:'Administre o condomínio sem improviso.',
     finalP:'Entre na lista e seja avisado quando o GDR-CondoGest abrir.'
   },
+  {
+    key:'open', emoji:'👁️', nome:'Open', cat:'Acessos do condomínio', status:'soon', marca:'DRG', logo:'open.svg',
+    desc:'Open: o painel de acessos do condomínio. No instante em que alguém passa, a portaria vê quem é, de qual unidade e se entrou ou saiu — sem trocar o portão nem o controle.',
+    h1:'Saiba <em>quem passou</em> pela portaria, no instante em que passa.',
+    sub:'O morador continua abrindo o portão como sempre — controle, tag ou facial. O DRG-Open não troca o seu equipamento: ele escuta o acionamento e acende na tela um cartão com nome, unidade, entrada ou saída, placa e horário.',
+    mini:'Não troca o portão nem o controle · Uma portaria por rede, sem cabo entre guaritas · Registro que fica como prova',
+    doresT:'A portaria vê o portão abrir e não sabe quem é', dores:[
+      'O portão abre e ninguém sabe quem entrou',
+      'Registro de acesso em caderno, quando existe',
+      'Trocar toda a automação do condomínio custa uma fortuna',
+      'Quando dá problema, não há o que mostrar depois'],
+    solT:'Enxergar é o produto — abrir continua com você', sol:[
+      'O acionamento vira um cartão na tela, na hora',
+      'Nome, bloco, unidade, entrada ou saída, placa e horário',
+      'Convive com o que já está instalado, sem obra',
+      'Cada passagem fica registrada, com trilha de auditoria'],
+    recT:'A portaria enxergando o condomínio inteiro', recL:'Feito para síndicos e administradoras que querem saber quem passou, sem trocar o que já funciona.',
+    rec:[
+      {i:'🪪',h:'Cartão do acionamento',p:'No momento em que alguém passa, acende o cartão: nome completo, bloco, unidade, entrada ou saída, placa e horário.'},
+      {i:'📜',h:'Lista do que passou',p:'Todo o movimento da portaria correndo abaixo do cartão, pesquisável depois.'},
+      {i:'🧬',h:'Facial e controle juntos',p:'Integra com o controle de acesso facial (Control iD e outros) e convive com o receptor antigo, sem substituir nada.'},
+      {i:'🛰️',h:'Várias portarias',p:'Cada guarita na própria internet. Sem cabo entre elas, sem VPN, sem IP fixo — quem junta na tela é a nuvem.'},
+      {i:'🔌',h:'Internet caiu? Nada se perde',p:'O agente local guarda os eventos e sobe quando a conexão volta. O portão nunca deixa de abrir.'},
+      {i:'⚖️',h:'LGPD levada a sério',p:'Morador saiu: a credencial cai na hora e a biometria é apagada. O registro de acesso fica — apaga o rosto, guarda o fato.'}],
+    comoL:'Instala junto do que já existe. Ninguém precisa mudar de hábito.',
+    passos:[
+      {h:'Ligamos o agente na portaria',p:'Um computador simples na guarita escuta os acionamentos do equipamento que já está lá.'},
+      {h:'Cadastramos moradores e unidades',p:'Direto no DRG-Open, ou puxando do GDR·CondoGest — um registro só, duas portas de entrada.'},
+      {h:'A tela passa a mostrar quem passou',p:'Cada passagem vira cartão e vai para o histórico. O que não for identificado aparece como “unidade 42, não identificado” — nunca chutamos um nome.'}],
+    finalH:'Sua portaria vendo tudo, sem trocar nada.',
+    finalP:'Entre na lista e seja avisado quando o DRG-Open abrir para instalação.'
+  },
 ];
 
 let n = 0;

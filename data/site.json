@@ -567,6 +567,19 @@
       "href": "condogest/",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
       "planos": []
+    },
+    {
+      "key": "open",
+      "marca": "DRG",
+      "nome": "Open",
+      "emoji": "👁️",
+      "cat": "Acessos do condomínio",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "open/",
+      "desc": "O painel de acessos do condomínio: no instante em que alguém passa, a portaria vê quem é, de qual unidade e se entrou ou saiu.",
+      "planos": []
     }
   ]
 }
