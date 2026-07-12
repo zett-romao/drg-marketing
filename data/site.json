@@ -578,7 +578,7 @@
       "visivel": true,
       "status": "embreve",
       "href": "open/",
-      "desc": "O painel de acessos do condomínio: no instante em que alguém passa, a portaria vê quem é, de qual unidade e se entrou ou saiu.",
+      "desc": "Gestão completa dos acessos ao condomínio. Toda entrada e saída registrada, com identificação inteligente de quem passou: mais segurança e organização na portaria.",
       "planos": []
     }
   ]

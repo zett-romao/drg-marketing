@@ -602,9 +602,9 @@ const PRODUTOS = [
   },
   {
     key:'open', emoji:'👁️', nome:'Open', cat:'Acessos do condomínio', status:'soon', marca:'DRG', logo:'open.svg',
-    desc:'Open: o painel de acessos do condomínio. No instante em que alguém passa, a portaria vê quem é, de qual unidade e se entrou ou saiu — sem trocar o portão nem o controle.',
-    h1:'Saiba <em>quem passou</em> pela portaria, no instante em que passa.',
-    sub:'O morador continua abrindo o portão como sempre — controle, tag ou facial. O DRG-Open não troca o seu equipamento: ele escuta o acionamento e acende na tela um cartão com nome, unidade, entrada ou saída, placa e horário.',
+    desc:'Open: gestão completa dos acessos ao condomínio. Toda entrada e saída registrada, com identificação inteligente de quem passou, sem trocar o portão nem o controle. Mais segurança e organização na portaria.',
+    h1:'Gestão completa dos <em>acessos ao condomínio</em>.',
+    sub:'Toda entrada e saída registrada, com identificação inteligente de quem passou: nome, bloco, unidade, placa e horário acendem na tela no instante do acionamento. E sem trocar nada: o morador continua abrindo o portão com o controle, a tag ou o facial de sempre.',
     mini:'Não troca o portão nem o controle · Uma portaria por rede, sem cabo entre guaritas · Registro que fica como prova',
     doresT:'A portaria vê o portão abrir e não sabe quem é', dores:[
       'O portão abre e ninguém sabe quem entrou',
