@@ -602,9 +602,9 @@ const PRODUTOS = [
   },
   {
     key:'open', emoji:'👁️', nome:'Open', cat:'Acessos do condomínio', status:'soon', marca:'DRG', logo:'open.svg',
-    desc:'Open: gestão completa dos acessos ao condomínio. Toda entrada e saída registrada, com identificação inteligente de quem passou, sem trocar o portão nem o controle. Mais segurança e organização na portaria.',
+    desc:'Open: gestão completa dos acessos ao condomínio. Todas as entradas e saídas registradas. Identificação inteligente que proporciona segurança e organização.',
     h1:'Gestão completa dos <em>acessos ao condomínio</em>.',
-    sub:'Toda entrada e saída registrada, com identificação inteligente de quem passou: nome, bloco, unidade, placa e horário acendem na tela no instante do acionamento. E sem trocar nada: o morador continua abrindo o portão com o controle, a tag ou o facial de sempre.',
+    sub:'Todas as entradas e saídas registradas. Identificação inteligente que proporciona segurança e organização. E sem trocar nada: o morador continua abrindo o portão com o controle, a tag ou o facial de sempre.',
     mini:'Não troca o portão nem o controle · Uma portaria por rede, sem cabo entre guaritas · Registro que fica como prova',
     doresT:'A portaria vê o portão abrir e não sabe quem é', dores:[
       'O portão abre e ninguém sabe quem entrou',
