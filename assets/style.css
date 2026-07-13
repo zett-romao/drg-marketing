@@ -10,6 +10,11 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
+/* 🔒 GUARDA DE ESTOURO (padrão da família DRG): nenhuma landing rola pro lado no
+   celular. É `clip`, NÃO `hidden` — hidden faria do body um container de scroll e
+   mataria o position:sticky do nav. O hidden fica de rede pra iOS <16. */
+html,body{overflow-x:hidden; max-width:100%}
+@supports (overflow-x: clip){ html,body{overflow-x:clip} }
 body{font-family:system-ui,'Segoe UI',Roboto,sans-serif;color:var(--txt);background:var(--bg);line-height:1.6;min-height:100vh;display:flex;flex-direction:column}
 body>footer{margin-top:auto}
 a{color:inherit;text-decoration:none}

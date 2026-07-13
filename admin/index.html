@@ -13,7 +13,10 @@
   <style>
     :root{--azul:#152a45;--azul2:#1e3a5f;--acc:#3182ce;--bg:#eef1f6;--card:#fff;--txt:#1a202c;--mut:#5a6b7f;--linha:#dbe2ec;--ok:#2f855a;--warn:#c05621;--err:#c53030}
     *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:system-ui,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;overflow-x:hidden}
+    /* 🔒 clip, NÃO hidden: overflow-x:hidden no body faz dele um container de scroll
+       e MATA o position:sticky da .top (ela rolava junto em vez de grudar). */
+    html,body{font-family:system-ui,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--txt);line-height:1.5;overflow-x:hidden;max-width:100%}
+    @supports (overflow-x: clip){ html,body{overflow-x:clip} }
     .top{background:var(--azul);color:#fff;padding:14px 20px;display:flex;align-items:center;gap:12px;position:sticky;top:0;z-index:5}
     .top img{width:30px;height:30px;border-radius:7px}
     .top b{font-weight:800}
