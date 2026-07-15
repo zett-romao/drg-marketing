@@ -569,11 +569,12 @@ const PRODUTOS = [
     finalP:'Acesse agora e deixe a IA atender os moradores do seu condomínio.'
   },
   {
-    key:'condo', emoji:'🏢', nome:'Condo', cat:'Gestão condominial', status:'soon', marca:'DRG', logo:'condo.svg',
+    key:'condo', emoji:'🏢', nome:'Condo', cat:'Gestão condominial', status:'live', marca:'DRG', logo:'condo.svg',
+    app:'https://drg-condo.onrender.com', cta:'Acessar',
     desc:'Condo: gestão condominial completa, do financeiro à comunicação com os moradores, feita para o síndico.',
     h1:'A gestão do condomínio <em>completa</em>, num lugar só.',
     sub:'Do financeiro à comunicação com os moradores — tudo organizado para o síndico administrar sem planilha e sem grupo de WhatsApp lotado.',
-    mini:'Em validação · Entre na lista para ser avisado no lançamento',
+    mini:'Financeiro · Comunicação · Reservas · Multi-condomínio isolado',
     doresT:'Síndico faz tudo no improviso', dores:[
       'Financeiro do condomínio no papel',
       'Comunicação com moradores dispersa',
@@ -598,7 +599,7 @@ const PRODUTOS = [
       {h:'Configure o dia a dia',p:'Financeiro, comunicados e reservas.'},
       {h:'Gerencie online',p:'Tudo num painel, sem papel e sem improviso.'}],
     finalH:'Administre o condomínio sem improviso.',
-    finalP:'Entre na lista e seja avisado quando o DRG-Condo abrir.'
+    finalP:'Acesse agora e comece a organizar o seu condomínio num lugar só.'
   },
   {
     key:'open', emoji:'👁️', nome:'Open', cat:'Acessos do condomínio', status:'soon', marca:'DRG', logo:'open.svg',

@@ -563,8 +563,9 @@
       "cat": "Gestão condominial",
       "destaque": false,
       "visivel": true,
-      "status": "embreve",
+      "status": "ativo",
       "href": "condo/",
+      "app": "https://drg-condo.onrender.com",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
       "planos": []
     },
