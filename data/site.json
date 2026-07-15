@@ -556,15 +556,15 @@
       "planos": []
     },
     {
-      "key": "easycondo",
+      "key": "condo",
       "marca": "DRG",
-      "nome": "EasyCondo",
+      "nome": "Condo",
       "emoji": "🏢",
       "cat": "Gestão condominial",
       "destaque": false,
       "visivel": true,
       "status": "embreve",
-      "href": "easycondo/",
+      "href": "condo/",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
       "planos": []
     },

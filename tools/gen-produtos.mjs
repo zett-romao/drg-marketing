@@ -569,8 +569,8 @@ const PRODUTOS = [
     finalP:'Acesse agora e deixe a IA atender os moradores do seu condomínio.'
   },
   {
-    key:'easycondo', emoji:'🏢', nome:'EasyCondo', cat:'Gestão condominial', status:'soon', marca:'DRG', logo:'easycondo.svg',
-    desc:'EasyCondo: gestão condominial completa, do financeiro à comunicação com os moradores, feita para o síndico.',
+    key:'condo', emoji:'🏢', nome:'Condo', cat:'Gestão condominial', status:'soon', marca:'DRG', logo:'condo.svg',
+    desc:'Condo: gestão condominial completa, do financeiro à comunicação com os moradores, feita para o síndico.',
     h1:'A gestão do condomínio <em>completa</em>, num lugar só.',
     sub:'Do financeiro à comunicação com os moradores — tudo organizado para o síndico administrar sem planilha e sem grupo de WhatsApp lotado.',
     mini:'Em validação · Entre na lista para ser avisado no lançamento',
@@ -598,7 +598,7 @@ const PRODUTOS = [
       {h:'Configure o dia a dia',p:'Financeiro, comunicados e reservas.'},
       {h:'Gerencie online',p:'Tudo num painel, sem papel e sem improviso.'}],
     finalH:'Administre o condomínio sem improviso.',
-    finalP:'Entre na lista e seja avisado quando o DRG-EasyCondo abrir.'
+    finalP:'Entre na lista e seja avisado quando o DRG-Condo abrir.'
   },
   {
     key:'open', emoji:'👁️', nome:'Open', cat:'Acessos do condomínio', status:'soon', marca:'DRG', logo:'open.svg',
@@ -627,7 +627,7 @@ const PRODUTOS = [
     comoL:'Instala junto do que já existe. Ninguém precisa mudar de hábito.',
     passos:[
       {h:'Ligamos o agente na portaria',p:'Um computador simples na guarita escuta os acionamentos do equipamento que já está lá.'},
-      {h:'Cadastramos moradores e unidades',p:'Direto no DRG-Open, ou puxando do DRG·EasyCondo — um registro só, duas portas de entrada.'},
+      {h:'Cadastramos moradores e unidades',p:'Direto no DRG-Open, ou puxando do DRG·Condo — um registro só, duas portas de entrada.'},
       {h:'A tela passa a mostrar quem passou',p:'Cada passagem vira cartão e vai para o histórico. O que não for identificado aparece como “unidade 42, não identificado” — nunca chutamos um nome.'}],
     finalH:'Sua portaria vendo tudo, sem trocar nada.',
     finalP:'Entre na lista e seja avisado quando o DRG-Open abrir para instalação.'
