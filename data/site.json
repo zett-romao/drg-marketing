@@ -567,7 +567,74 @@
       "href": "condo/",
       "app": "https://drg-condo.onrender.com",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
-      "planos": []
+      "planosNota": "🏢 Preço pela capacidade em unidades do condomínio. Vários condomínios na mesma conta, cada um isolado.",
+      "planos": [
+        {
+          "nome": "Essencial",
+          "preco": 190,
+          "sub": "até 100 unidades",
+          "destaque": false,
+          "itens": [
+            "Financeiro e prestação de contas",
+            "Comunicação com moradores",
+            "Reserva de áreas comuns"
+          ],
+          "cta": "Acessar",
+          "ctaHref": "https://drg-condo.onrender.com"
+        },
+        {
+          "nome": "Pro",
+          "preco": 290,
+          "sub": "até 200 unidades",
+          "destaque": true,
+          "itens": [
+            "Tudo do Essencial",
+            "Controle de cobranças",
+            "App do morador (PWA)"
+          ],
+          "cta": "Acessar",
+          "ctaHref": "https://drg-condo.onrender.com"
+        },
+        {
+          "nome": "Avançado",
+          "preco": 370,
+          "sub": "até 300 unidades",
+          "destaque": false,
+          "itens": [
+            "Tudo do Pro",
+            "Multi-condomínio isolado",
+            "Perfis e permissões"
+          ],
+          "cta": "Acessar",
+          "ctaHref": "https://drg-condo.onrender.com"
+        },
+        {
+          "nome": "Business",
+          "preco": 470,
+          "sub": "até 600 unidades",
+          "destaque": false,
+          "itens": [
+            "Tudo do Avançado",
+            "Alto volume de unidades",
+            "Suporte prioritário"
+          ],
+          "cta": "Acessar",
+          "ctaHref": "https://drg-condo.onrender.com"
+        },
+        {
+          "nome": "Corporativo",
+          "precoTexto": "Sob consulta",
+          "sub": "acima de 600 unidades",
+          "destaque": false,
+          "itens": [
+            "Grandes carteiras e administradoras",
+            "Onboarding assistido",
+            "SLA e suporte dedicado"
+          ],
+          "cta": "Falar com a gente",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems%20sobre%20o%20DRG-Condo."
+        }
+      ]
     },
     {
       "key": "open",
