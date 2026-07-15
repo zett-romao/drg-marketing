@@ -567,12 +567,12 @@
       "href": "condo/",
       "app": "https://drg-condo.onrender.com",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
-      "planosNota": "🏢 Preço pela capacidade em unidades do condomínio. Vários condomínios na mesma conta, cada um isolado.",
+      "planosNota": "🏢 O preço é pela SOMA das unidades de todos os seus condomínios — não importa quantos condomínios você administra, só o total de unidades somadas. Ex.: 3 condomínios de 30 unidades = 90 no total, cabe no Essencial. Cada condomínio fica isolado na mesma conta.",
       "planos": [
         {
           "nome": "Essencial",
           "preco": 190,
-          "sub": "até 100 unidades",
+          "sub": "até 100 unidades no total",
           "destaque": false,
           "itens": [
             "Financeiro e prestação de contas",
@@ -585,7 +585,7 @@
         {
           "nome": "Pro",
           "preco": 290,
-          "sub": "até 200 unidades",
+          "sub": "até 200 unidades no total",
           "destaque": true,
           "itens": [
             "Tudo do Essencial",
@@ -598,7 +598,7 @@
         {
           "nome": "Avançado",
           "preco": 370,
-          "sub": "até 300 unidades",
+          "sub": "até 300 unidades no total",
           "destaque": false,
           "itens": [
             "Tudo do Pro",
@@ -611,7 +611,7 @@
         {
           "nome": "Business",
           "preco": 470,
-          "sub": "até 600 unidades",
+          "sub": "até 600 unidades no total",
           "destaque": false,
           "itens": [
             "Tudo do Avançado",
@@ -624,7 +624,7 @@
         {
           "nome": "Corporativo",
           "precoTexto": "Sob consulta",
-          "sub": "acima de 600 unidades",
+          "sub": "acima de 600 unidades no total",
           "destaque": false,
           "itens": [
             "Grandes carteiras e administradoras",
