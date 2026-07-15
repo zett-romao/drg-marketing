@@ -9,7 +9,7 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 
 - **Última atualização:** 2026-07-09.
 - **🌐 NO AR:** https://drsystems.dev.br (domínio próprio + HTTPS; repo `zett-romao/drg-marketing`, GitHub Pages/main).
-- **12 produtos** na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, Fit, Rently, Garantidora, **Liftalk**, **Sind.ia**, CondoGest).
+- **12 produtos** na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, Fit, Rently, Garantidora, **Liftalk**, **Sind.ia**, EasyCondo).
 
 ---
 
@@ -25,7 +25,7 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
    - `</> DR Systems`
    - `Software House · Produtos Multi-Tenant · Engenharia Própria` (**Engenharia Própria** com iniciais maiúsculas)
    - `DR Global Multi Services · CNPJ 49.698.112/0001-57 · Todos os direitos reservados`
-   - Rollout feito: Marketing (todas as landings), Sind.ia, Check, Sign, Jurídico, Hidro, BuscaNFe, Fit. **Pendente: CondoGest e Kronos.**
+   - Rollout feito: Marketing (todas as landings), Sind.ia, Check, Sign, Jurídico, Hidro, BuscaNFe, Fit. **Pendente: EasyCondo e Kronos.**
 8. **🔒 CTAs de contato/interesse → WhatsApp** (lock 2026-07-09): **NUNCA `mailto:`** (não abre sem cliente de e-mail). Todos os botões "Falar com a gente/Tenho interesse/lista de espera" vão para **`https://wa.me/5511997347272`** com mensagem pré-preenchida. Nº oficial: **11 99734-7272**.
 9. **Copy travada**: pill "Software House · Produtos Multi-Tenant"; H1 "Exclusiva arquitetura de desenvolvimento dedicado."; **home reescrita SEM traços "—"** (usar vírgulas; "de ponta a ponta" no lugar de "end-to-end"); **ICP-Brasil** (card próprio); Kronos cobre "Todos os padrões de escalas" e "Monitor da LGPD".
 10. **Preços** (2026-07-06/09): Kronos 39/79/149/249 · BuscaNFe 0/49/99/199 · Jurídico 0/89/159/219/269 · Check cortesia(3/mês·6m)/49/149/399 · Sign cortesia(3/mês·6m)/47/119/299 · Hidro 79/139/229/Sob consulta **(comodato + instalação grátis + fidelidade 12m)** · **Sind.ia por unidade: 189(≤50)/289(≤100)/379(≤200)/599(≤400)/Sob medida 599+R$1,20/unid · 30 dias grátis** · Garantidora 8%.
@@ -67,16 +67,16 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [x] **CNPJ real** no rodapé: DR Global Multi Services · CNPJ **49.698.112/0001-57** (obtido do Kronos, 2026-07-06).
 - [x] **Nome do produto no topo** do hero das páginas de produto (antes só aparecia o emoji).
 - [ ] ⚠️ Conferir razão social: no Kronos o CNPJ 49.698.112/0001-57 está como *"D.R. Global - Gestão de Condomínios, Imóveis, Assessoria Financeira e Administrativa Ltda"*; no site usamos "DR Global Multi Services". Confirmar qual usar.
-- [ ] Confirmar status "Em breve" de **Rently, Garantidora, CondoGest** — ligar link quando cada um puder ser divulgado.
+- [ ] Confirmar status "Em breve" de **Rently, Garantidora, EasyCondo** — ligar link quando cada um puder ser divulgado.
 - [ ] Revisar rotas de destino (Sign/Jurídico vão pra vendas/signup — confirmar).
 - [ ] Canal de **contato** além do e-mail (WhatsApp comercial?).
 
 ## 📌 Médio prazo — mais peças (por isso virou "Marketing")
-- [x] **Landing dedicada por produto** (10 subpastas) no mesmo visual — geradas por `tools/gen-produtos.mjs` (2026-07-06). Kronos/BuscaNFe/Check/Sign/Jurídico/Hidro/Fit com link real; Rently/Garantidora/CondoGest como "lista de espera".
+- [x] **Landing dedicada por produto** (10 subpastas) no mesmo visual — geradas por `tools/gen-produtos.mjs` (2026-07-06). Kronos/BuscaNFe/Check/Sign/Jurídico/Hidro/Fit com link real; Rently/Garantidora/EasyCondo como "lista de espera".
 - [x] **SEO por página**: title, meta description, Open Graph e favicon em cada landing.
 - [x] **DRG-Liftalk adicionado** (2026-07-07) — 11º produto. Logo exclusiva `assets/liftalk.svg`; landing `liftalk/` (status "Em breve", conteúdo da Cartilha: NBR 16858/EN 81‑28, voz via 4G, central 24h, bateria de backup, autoteste); card na home via `site.json`; contador 10→11 produtos / 9→10 setores; gerador ganhou suporte a `logo:` por produto. **Sem planos ainda** (produto em F0; licença por elevador/mês virá na F4). Hífen não-quebrável em "EN 81‑28" p/ não quebrar no card.
 - [ ] Revisar textos/claims de cada produto com o dono (gerados a partir da memória).
-- [x] **Preços/planos por produto** ✅ (2026-07-06) — seção "Planos" em cada landing, **editável no /admin** (dados em `data/site.json` → `produtos[].planos[]`). Kronos, BuscaNFe, Jurídico, Check, Sign, Hidro e Garantidora com tabelas; Fit/Rently/CondoGest sem planos ainda. Valores: Hidro subiu (79/139/229/Sob consulta) após pesquisa de mercado; Check/Sign com cortesia "3/mês por 6 meses"; Jurídico com os reais do app (89→269). Dono pode adicionar intermediários pelo painel.
+- [x] **Preços/planos por produto** ✅ (2026-07-06) — seção "Planos" em cada landing, **editável no /admin** (dados em `data/site.json` → `produtos[].planos[]`). Kronos, BuscaNFe, Jurídico, Check, Sign, Hidro e Garantidora com tabelas; Fit/Rently/EasyCondo sem planos ainda. Valores: Hidro subiu (79/139/229/Sob consulta) após pesquisa de mercado; Check/Sign com cortesia "3/mês por 6 meses"; Jurídico com os reais do app (89→269). Dono pode adicionar intermediários pelo painel.
 - [ ] **Artes para redes sociais** (posts, stories, capa) reaproveitando a identidade DRG.
 - [ ] **SEO** em cada página: title, meta description, Open Graph, favicon.
 - [ ] **Analytics** de visitas e cliques por produto.
