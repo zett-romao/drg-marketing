@@ -560,6 +560,7 @@
       "marca": "DRG",
       "nome": "Condo",
       "emoji": "🏢",
+      "logo": "condo.svg",
       "cat": "Gestão condominial",
       "destaque": false,
       "visivel": true,

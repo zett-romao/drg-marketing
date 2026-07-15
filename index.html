@@ -119,7 +119,7 @@
         '<div class="kbanner" id="kronos">'+
           '<div class="tag">⭐ CARRO-CHEFE</div>'+
           '<div>'+
-            '<div class="fi">'+esc(p.emoji)+'</div>'+
+            '<div class="fi">'+(p.logo?'<img class="filogo" src="assets/'+esc(p.logo)+'" alt="" width="52" height="52">':esc(p.emoji))+'</div>'+
             '<h3>'+esc(p.marca)+'·<b>'+esc(p.nome)+'</b>'+(p.tagline?', '+esc(p.tagline):'')+'</h3>'+
             '<p class="kp">'+esc(p.descLonga||p.desc)+'</p>'+
             '<div class="btnrow">'+
@@ -137,7 +137,7 @@
       var label=soon?'Em breve':'Conhecer →';
       return ''+
         '<a class="fcard'+(soon?' grey':'')+'" href="'+esc(p.href||'#')+'">'+
-          '<div class="fi">'+esc(p.emoji)+'</div><h3>'+esc(p.marca)+'·<b>'+esc(p.nome)+'</b></h3>'+
+          '<div class="fi">'+(p.logo?'<img class="filogo" src="assets/'+esc(p.logo)+'" alt="" width="44" height="44">':esc(p.emoji))+'</div><h3>'+esc(p.marca)+'·<b>'+esc(p.nome)+'</b></h3>'+
           '<p>'+esc(p.desc)+'</p>'+
           '<span class="ir"><span class="d"></span>'+label+'</span>'+
         '</a>';

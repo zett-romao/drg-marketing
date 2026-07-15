@@ -145,6 +145,8 @@ h2.tt{font-size:clamp(24px,5vw,32px);font-weight:820;text-align:center;margin:8p
 .fcard{display:flex;flex-direction:column;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:20px;transition:.15s}
 a.fcard:hover{background:rgba(255,255,255,.12);transform:translateY(-3px);border-color:rgba(144,205,244,.5)}
 .fcard .fi{font-size:26px;margin-bottom:8px}
+.fcard .filogo{display:block;width:44px;height:44px;margin-bottom:8px}
+.kbanner .filogo{display:block;width:52px;height:52px}
 .fcard h3{font-size:16px;margin-bottom:4px}
 .fcard h3 b{color:var(--clara)}
 .fcard p{color:#c2d3e5;font-size:13.5px;flex:1}
