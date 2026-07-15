@@ -1,20 +1,7 @@
 <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DRG-Condo">
-  <defs>
-    <linearGradient id="ecbg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#1B2C48"/><stop offset="1" stop-color="#0C1420"/>
-    </linearGradient>
-    <filter id="ecglow" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="2.7" result="b"/>
-      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-  </defs>
-  <rect x="2" y="2" width="96" height="96" rx="24" fill="url(#ecbg)"/>
-  <rect x="18" y="84" width="64" height="4" rx="2" fill="#2C4260"/>
-  <rect x="28" y="22" width="44" height="62" rx="7" fill="#1B2C49"/>
-  <rect x="34" y="29" width="13" height="13" rx="3.2" fill="#2F9BFF" filter="url(#ecglow)"/>
-  <rect x="53" y="29" width="13" height="13" rx="3.2" fill="#B85CFF" filter="url(#ecglow)"/>
-  <rect x="34" y="46" width="13" height="13" rx="3.2" fill="#293B58"/>
-  <rect x="53" y="46" width="13" height="13" rx="3.2" fill="#2BFF88" filter="url(#ecglow)"/>
-  <rect x="34" y="63" width="13" height="13" rx="3.2" fill="#FFC42E" filter="url(#ecglow)"/>
-  <rect x="53" y="63" width="13" height="13" rx="3.2" fill="#FF4A5C" filter="url(#ecglow)"/>
+  <rect x="2" y="2" width="96" height="96" rx="24" fill="#0f1a2e"/>
+  <rect x="24" y="24" width="24" height="24" rx="6" fill="#2F9BFF"/>
+  <rect x="52" y="24" width="24" height="24" rx="6" fill="#B85CFF"/>
+  <rect x="24" y="52" width="24" height="24" rx="6" fill="#FFC42E"/>
+  <rect x="52" y="52" width="24" height="24" rx="6" fill="#FF4A5C"/>
 </svg>
