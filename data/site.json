@@ -648,7 +648,7 @@
       "cat": "Acessos do condomínio",
       "destaque": false,
       "visivel": true,
-      "status": "embreve",
+      "status": "ativo",
       "href": "open/",
       "desc": "Gestão completa dos acessos ao condomínio. Todas as entradas e saídas registradas. Identificação inteligente que proporciona segurança e organização.",
       "planos": []
