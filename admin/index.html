@@ -230,12 +230,8 @@
         return;
       }
       var total=d.totalCuHrs, limite=d.limiteFree;
-      var now=new Date(), dia=now.getDate();
-      var diasMes=new Date(now.getFullYear(),now.getMonth()+1,0).getDate();
-      var proj=dia>0?+(total/dia*diasMes).toFixed(0):total;
       var pctUso=(total/limite)*100;
-      sub.textContent='reseta dia 1º · '+d.projetos.length+' projetos';
-      var corProj=proj<=limite?'var(--ok)':'var(--err)';
+      sub.textContent='reseta 1º/mês · '+d.projetos.length+' projetos';
       var html='';
       html+='<div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline">'
         +'<span style="font-size:22px;font-weight:800;color:'+corUso(pctUso)+'">'+total
@@ -243,8 +239,7 @@
         +'<span class="muted">linha do Free: '+limite+'</span></div>';
       html+='<div style="height:14px;background:#edf1f7;border-radius:8px;overflow:hidden">'
         +'<div style="height:100%;width:'+pctClamp(total,limite).toFixed(1)+'%;background:'+corUso(pctUso)+'"></div></div>';
-      html+='<p class="muted" style="margin:8px 0 2px">Projeção fim do mês: <b style="color:'+corProj+'">~'+proj
-        +' CU-hrs</b> '+(proj<=limite?'→ caberia no Free ✅':'→ passa do Free ⚠️')+'</p>';
+      html+='<p class="muted" style="margin:8px 0 2px">Abaixo da linha do Free (100) = caberia no grátis. O contador zerou no upgrade — acompanhe crescer nesta semana pra decidir Free × pago.</p>';
       html+='<div style="border-top:1px solid var(--linha);margin-top:12px;padding-top:6px">';
       d.projetos.forEach(function(p){
         html+=barraNeon(p.nome+(p.storageMB?' · '+p.storageMB+' MB':''), p.cuHrs, limite, ' CU-h');
