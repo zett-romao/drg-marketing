@@ -245,6 +245,10 @@
         html+=barraNeon(p.nome+(p.storageMB?' · '+p.storageMB+' MB':''), p.cuHrs, limite, ' CU-h');
       });
       html+='</div>';
+      var totalMB=d.projetos.reduce(function(s,p){return s+(Number(p.storageMB)||0);},0);
+      html+='<div style="border-top:2px solid var(--linha);margin-top:10px;padding-top:10px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:6px;font-weight:800">'
+        +'<span>Total ('+d.projetos.length+' projetos)</span>'
+        +'<span>'+total+' CU-hrs · '+totalMB.toFixed(1)+' MB ('+(totalMB/1024).toFixed(2)+' GB)</span></div>';
       box.innerHTML=html;
     }).catch(function(e){
       sub.textContent='';
