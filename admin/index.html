@@ -221,7 +221,7 @@
   function carregarNeon(){
     var box=$('neonbody'), sub=$('neonsub');
     sub.textContent='carregando…'; box.innerHTML='';
-    fetch('https://drg-neon-proxy.zett-romao.workers.dev',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    fetch('https://nameless-feather-5871drg-neon-proxy.zett-romao.workers.dev',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
       if(!d.ok){
         sub.textContent='';
         box.innerHTML='<div class="msg err" style="display:block">'+esc(d.erro||'erro')
