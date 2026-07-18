@@ -7,7 +7,7 @@ redes sociais, campanhas e material de vendas.
 Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 (azul `#152a45` / `#3182ce`, gradiente, cards com ícone, fonte de sistema).
 
-- **Última atualização:** 2026-07-09.
+- **Última atualização:** 2026-07-18.
 - **🌐 NO AR:** https://drsystems.dev.br (domínio próprio + HTTPS; repo `zett-romao/drg-marketing`, GitHub Pages/main).
 - **12 produtos** na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, Fit, Rently, Garantidora, **Liftalk**, **Sind.ia**, Condo).
 
@@ -31,6 +31,7 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 10. **Preços** (2026-07-06/09): Kronos 39/79/149/249 · BuscaNFe 0/49/99/199 · Jurídico 0/89/159/219/269 · Check cortesia(3/mês·6m)/49/149/399 · Sign cortesia(3/mês·6m)/47/119/299 · Hidro 79/139/229/Sob consulta **(comodato + instalação grátis + fidelidade 12m)** · **Sind.ia por unidade: 189(≤50)/289(≤100)/379(≤200)/599(≤400)/Sob medida 599+R$1,20/unid · 30 dias grátis** · Garantidora 8%.
 11. **🔒 Sind.ia = 12º produto, LANÇADO** (lock 2026-07-09): **NO AR** em `https://sind-ia.onrender.com/` (síndico digital com IA). Landing `/sindia/` com `status:'live'`, logo própria `assets/sindia.svg` (ícone speech-bubble/prédio, tile branco). Preços via `site.json` (lê ao vivo → editar tabela/painel atualiza a landing sozinha).
 12. **Commit + push automático** do Claude a cada alteração (preferência do dono).
+13. **🔒 Cockpit de infra no `/admin/`** (lock 2026-07-18): cards **Neon** (compute/CU-hrs vs linha do Free), **Render** (status dos apps) e **Asaas** (financeiro) puxam dados de um **Cloudflare Worker** `nameless-feather-5871drg-neon-proxy` (rotas `/`=neon, `/render`, `/asaas`). Como o site é **GitHub Pages (estático)**, **NENHUMA chave de API vai no navegador** — todas vivem como secret no Worker. O card **Asaas é oculto atrás de senha**: validada no Worker (KV `PAINEL`, hash SHA-256); código chega por **e-mail (Resend, `onboarding@resend.dev`→dono)** via `/painel/nova-senha`; `⚙️ Alterar senha` (`/painel/trocar-senha`) define a própria; senha só em `sessionStorage`. Neon/Render ficam livres.
 
 ---
 
@@ -70,6 +71,13 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [ ] Confirmar status "Em breve" de **Rently, Garantidora, Condo** — ligar link quando cada um puder ser divulgado.
 - [ ] Revisar rotas de destino (Sign/Jurídico vão pra vendas/signup — confirmar).
 - [ ] Canal de **contato** além do e-mail (WhatsApp comercial?).
+
+## 🛰️ Cockpit de infra (`/admin/`) — pendências (2026-07-18)
+- [ ] **Quebra do "a receber" por produto** no card Asaas (jur/sign/hidro… via prefixo do `externalReference`) — mostra qual SaaS mais fatura. OBS: o *recebido* do mês é quase tudo entrada manual do escritório (TED/Pix/honorários), por isso a quebra faz sentido no *a receber*, não no recebido.
+- [ ] **Rate-limit em `/painel/nova-senha`** (hoje aberta; só manda e-mail pro dono, risco baixo, mas ideal limitar).
+- [ ] (opcional) **Recriar o Worker com nome limpo** `drg-neon-proxy` (o atual saiu `nameless-feather-5871...` do gerador; funciona, só é feio). Se recriar, atualizar a URL no `admin/index.html`.
+- [ ] (opcional) **Remetente próprio** (domínio verificado no Resend) no lugar de `onboarding@resend.dev`.
+- [ ] (futuro) Pendurar mais fontes no cockpit (ex.: uso do Cloudflare, filas).
 
 ## 📌 Médio prazo — mais peças (por isso virou "Marketing")
 - [x] **Landing dedicada por produto** (10 subpastas) no mesmo visual — geradas por `tools/gen-produtos.mjs` (2026-07-06). Kronos/BuscaNFe/Check/Sign/Jurídico/Hidro/Fit com link real; Rently/Garantidora/Condo como "lista de espera".
