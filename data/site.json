@@ -566,7 +566,7 @@
       "cat": "Gestão condominial",
       "destaque": false,
       "visivel": true,
-      "status": "ativo",
+      "status": "embreve",
       "href": "condo/",
       "app": "https://drg-condo.onrender.com",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
@@ -648,7 +648,7 @@
       "cat": "Acessos do condomínio",
       "destaque": false,
       "visivel": true,
-      "status": "ativo",
+      "status": "embreve",
       "href": "open/",
       "desc": "Gestão completa dos acessos ao condomínio. Todas as entradas e saídas registradas. Identificação inteligente que proporciona segurança e organização.",
       "planos": []
