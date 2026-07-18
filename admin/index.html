@@ -128,6 +128,18 @@
   <!-- EDITOR -->
   <div id="editor" style="display:none">
     <div class="msg" id="msg"></div>
+
+    <!-- MEDIDOR NEON -->
+    <div class="box" id="neonbox">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <b>☁️ Neon — compute do mês</b>
+        <span class="muted" id="neonsub">carregando…</span>
+        <span style="flex:1"></span>
+        <button class="btn btn-g" id="neonreload" type="button">↻ Atualizar</button>
+      </div>
+      <div id="neonbody"></div>
+    </div>
+
     <div class="box" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
       <div><b>Cards dos produtos</b><div class="muted">Arraste a ordem com ↑ ↓ · marque o que mostrar · edite os textos · clique num card para abrir.</div></div>
       <span style="flex:1"></span>
@@ -191,6 +203,58 @@
     $('savebar').style.display='flex';
     $('logout').style.display='inline-block';
     render();
+    $('neonreload').onclick=carregarNeon;
+    carregarNeon();
+  }
+
+  // ---- medidor Neon (dados via Pages Function /api/neon-uso; a chave fica no servidor) ----
+  function pctClamp(v,max){ return Math.max(0, Math.min(100, (v/max)*100)); }
+  function corUso(p){ return p<70?'var(--ok)':(p<100?'var(--warn)':'var(--err)'); }
+  function barraNeon(label,valor,max,suf){
+    var p=pctClamp(valor,max);
+    return '<div style="margin:8px 0">'
+      +'<div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:3px">'
+      +'<span>'+esc(label)+'</span><span style="font-weight:700">'+valor+(suf||'')+'</span></div>'
+      +'<div style="height:9px;background:#edf1f7;border-radius:6px;overflow:hidden">'
+      +'<div style="height:100%;width:'+p.toFixed(1)+'%;background:'+corUso((valor/max)*100)+'"></div></div></div>';
+  }
+  function carregarNeon(){
+    var box=$('neonbody'), sub=$('neonsub');
+    sub.textContent='carregando…'; box.innerHTML='';
+    fetch('/api/neon-uso',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      if(!d.ok){
+        sub.textContent='';
+        box.innerHTML='<div class="msg err" style="display:block">'+esc(d.erro||'erro')
+          +(d.detalhe?'<br><span class="muted" style="font-weight:400">'+esc(d.detalhe)+'</span>':'')+'</div>'
+          +'<p class="muted">Confira o secret <b>NEON_API_KEY</b> no Cloudflare Pages → Settings → Environment variables.</p>';
+        return;
+      }
+      var total=d.totalCuHrs, limite=d.limiteFree;
+      var now=new Date(), dia=now.getDate();
+      var diasMes=new Date(now.getFullYear(),now.getMonth()+1,0).getDate();
+      var proj=dia>0?+(total/dia*diasMes).toFixed(0):total;
+      var pctUso=(total/limite)*100;
+      sub.textContent='reseta dia 1º · '+d.projetos.length+' projetos';
+      var corProj=proj<=limite?'var(--ok)':'var(--err)';
+      var html='';
+      html+='<div style="margin-bottom:6px;display:flex;justify-content:space-between;align-items:baseline">'
+        +'<span style="font-size:22px;font-weight:800;color:'+corUso(pctUso)+'">'+total
+        +' <span style="font-size:13px;font-weight:600;color:var(--mut)">CU-hrs</span></span>'
+        +'<span class="muted">linha do Free: '+limite+'</span></div>';
+      html+='<div style="height:14px;background:#edf1f7;border-radius:8px;overflow:hidden">'
+        +'<div style="height:100%;width:'+pctClamp(total,limite).toFixed(1)+'%;background:'+corUso(pctUso)+'"></div></div>';
+      html+='<p class="muted" style="margin:8px 0 2px">Projeção fim do mês: <b style="color:'+corProj+'">~'+proj
+        +' CU-hrs</b> '+(proj<=limite?'→ caberia no Free ✅':'→ passa do Free ⚠️')+'</p>';
+      html+='<div style="border-top:1px solid var(--linha);margin-top:12px;padding-top:6px">';
+      d.projetos.forEach(function(p){
+        html+=barraNeon(p.nome+(p.storageMB?' · '+p.storageMB+' MB':''), p.cuHrs, limite, ' CU-h');
+      });
+      html+='</div>';
+      box.innerHTML=html;
+    }).catch(function(e){
+      sub.textContent='';
+      box.innerHTML='<div class="msg err" style="display:block">Falha ao carregar: '+esc(String(e))+'</div>';
+    });
   }
 
   $('logout').addEventListener('click',function(){
