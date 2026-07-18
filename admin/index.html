@@ -146,6 +146,28 @@
       </div>
       <div id="neonbody"></div>
     </div>
+
+    <!-- RENDER: status dos apps -->
+    <div class="box" id="renderbox">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+        <b>🟢 Render — status dos apps</b>
+        <span class="muted" id="rendersub">carregando…</span>
+        <span style="flex:1"></span>
+        <button class="btn btn-g" id="renderreload" type="button">↻ Atualizar</button>
+      </div>
+      <div id="renderbody"></div>
+    </div>
+
+    <!-- ASAAS: financeiro -->
+    <div class="box" id="asaasbox">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
+        <b>💰 Asaas — financeiro</b>
+        <span class="muted" id="asaassub">carregando…</span>
+        <span style="flex:1"></span>
+        <button class="btn btn-g" id="asaasreload" type="button">↻ Atualizar</button>
+      </div>
+      <div id="asaasbody"></div>
+    </div>
   </div>
 
 </div>
@@ -203,8 +225,65 @@
     $('savebar').style.display='flex';
     $('logout').style.display='inline-block';
     render();
-    $('neonreload').onclick=carregarNeon;
-    carregarNeon();
+    $('neonreload').onclick=carregarNeon;   carregarNeon();
+    $('renderreload').onclick=carregarRender; carregarRender();
+    $('asaasreload').onclick=carregarAsaas;  carregarAsaas();
+  }
+
+  var COCKPIT='https://nameless-feather-5871drg-neon-proxy.zett-romao.workers.dev';
+  function erroCockpit(d,secret){
+    return '<div class="msg err" style="display:block">'+esc(d.erro||'erro')
+      +(d.detalhe?'<br><span class="muted" style="font-weight:400">'+esc(d.detalhe)+'</span>':'')+'</div>'
+      +'<p class="muted">Confira o secret <b>'+secret+'</b> no Worker.</p>';
+  }
+  function brl(v){ return 'R$ '+Number(v||0).toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+
+  // ---- Render: status dos serviços ----
+  function statusRender(s){
+    if(s==='live') return {t:'no ar',c:'#22543d',b:'#c6f6d5'};
+    if(/fail/.test(s)) return {t:'falho',c:'#9b2c2c',b:'#fed7d7'};
+    if(/progress|created|queued|build/.test(s)) return {t:'subindo',c:'#7b341e',b:'#feebc8'};
+    if(s==='deactivated') return {t:'desativado',c:'#4a5568',b:'#e2e8f0'};
+    return {t:s,c:'#4a5568',b:'#e2e8f0'};
+  }
+  function carregarRender(){
+    var box=$('renderbody'), sub=$('rendersub');
+    sub.textContent='carregando…'; box.innerHTML='';
+    fetch(COCKPIT+'/render',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      if(!d.ok){ sub.textContent=''; box.innerHTML=erroCockpit(d,'RENDER_API_KEY'); return; }
+      var noar=d.servicos.filter(function(s){return s.status==='live';}).length;
+      sub.textContent=noar+'/'+d.servicos.length+' no ar';
+      var html='';
+      d.servicos.forEach(function(s){
+        var st=statusRender(s.status);
+        html+='<div style="display:flex;align-items:center;gap:8px;padding:7px 0;border-bottom:1px solid var(--linha)">'
+          +'<span style="flex:1">'+esc(s.nome)+' <span class="muted" style="font-size:11px">'+(s.tipo==='static_site'?'estático':'web')+'</span></span>'
+          +'<span style="font-size:12px;font-weight:800;padding:2px 9px;border-radius:20px;color:'+st.c+';background:'+st.b+'">'+st.t+'</span></div>';
+      });
+      box.innerHTML=html;
+    }).catch(function(e){ sub.textContent=''; box.innerHTML='<div class="msg err" style="display:block">Falha: '+esc(String(e))+'</div>'; });
+  }
+
+  // ---- Asaas: financeiro da conta compartilhada ----
+  function tileAsaas(rot,val,cor){
+    return '<div style="border:1px solid var(--linha);border-radius:10px;padding:12px">'
+      +'<div class="muted" style="font-size:11px">'+esc(rot)+'</div>'
+      +'<div style="font-size:18px;font-weight:800;color:'+cor+';margin-top:2px">'+val+'</div></div>';
+  }
+  function carregarAsaas(){
+    var box=$('asaasbody'), sub=$('asaassub');
+    sub.textContent='carregando…'; box.innerHTML='';
+    fetch(COCKPIT+'/asaas',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+      if(!d.ok){ sub.textContent=''; box.innerHTML=erroCockpit(d,'ASAAS_API_KEY'); return; }
+      sub.textContent='conta compartilhada';
+      var html='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+      html+=tileAsaas('Saldo', brl(d.saldo), 'var(--txt)');
+      html+=tileAsaas('Recebido no mês', brl(d.recebidoMes), 'var(--ok)');
+      html+=tileAsaas('A receber ('+d.receber.count+')', brl(d.receber.total), 'var(--acc)');
+      html+=tileAsaas('Vencidos ('+d.vencidos.count+')', brl(d.vencidos.total), d.vencidos.total>0?'var(--err)':'var(--mut)');
+      html+='</div>';
+      box.innerHTML=html;
+    }).catch(function(e){ sub.textContent=''; box.innerHTML='<div class="msg err" style="display:block">Falha: '+esc(String(e))+'</div>'; });
   }
 
   // ---- medidor Neon (dados via Pages Function /api/neon-uso; a chave fica no servidor) ----
