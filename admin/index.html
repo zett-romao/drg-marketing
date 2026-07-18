@@ -129,7 +129,14 @@
   <div id="editor" style="display:none">
     <div class="msg" id="msg"></div>
 
-    <!-- MEDIDOR NEON -->
+    <div class="box" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+      <div><b>Cards dos produtos</b><div class="muted">Arraste a ordem com ↑ ↓ · marque o que mostrar · edite os textos · clique num card para abrir.</div></div>
+      <span style="flex:1"></span>
+      <button class="btn btn-g" id="add">＋ Adicionar produto</button>
+    </div>
+    <div id="list"></div>
+
+    <!-- MEDIDOR NEON (por último, abaixo dos cards dos apps) -->
     <div class="box" id="neonbox">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
         <b>☁️ Neon — compute do mês</b>
@@ -139,13 +146,6 @@
       </div>
       <div id="neonbody"></div>
     </div>
-
-    <div class="box" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <div><b>Cards dos produtos</b><div class="muted">Arraste a ordem com ↑ ↓ · marque o que mostrar · edite os textos · clique num card para abrir.</div></div>
-      <span style="flex:1"></span>
-      <button class="btn btn-g" id="add">＋ Adicionar produto</button>
-    </div>
-    <div id="list"></div>
   </div>
 
 </div>
