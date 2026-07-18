@@ -306,7 +306,15 @@
         if(res.status===401 || d.bloqueado){ sessionStorage.removeItem('painel_senha'); asaasLock(d.erro||'Senha inválida.'); return; }
         if(!d.ok){ sub.textContent=''; box.innerHTML=erroCockpit(d,'ASAAS_API_KEY'); return; }
         sub.textContent='conta compartilhada';
-        var html='<div style="display:flex;justify-content:flex-end;margin-bottom:8px"><button class="btn btn-g" id="asaaslock" type="button">🔒 Ocultar</button></div>';
+        var html='<div style="display:flex;justify-content:flex-end;gap:8px;margin-bottom:8px">'
+          +'<button class="btn btn-g" id="asaastrocar" type="button">⚙️ Alterar senha</button>'
+          +'<button class="btn btn-g" id="asaaslock" type="button">🔒 Ocultar</button></div>';
+        html+='<div id="asaastrocarbox" style="display:none;border:1px dashed var(--linha);border-radius:10px;padding:12px;margin-bottom:12px">'
+          +'<label>Definir nova senha</label>'
+          +'<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:4px">'
+          +'<input type="password" id="asaasnova" placeholder="nova senha (mín. 4)" style="max-width:220px;border:1px solid var(--linha);border-radius:8px;padding:8px 10px;font-family:inherit;font-size:14px" />'
+          +'<button class="btn btn-p" id="asaassalvar" type="button">Salvar</button></div>'
+          +'<div class="msg" id="asaastrocarmsg" style="margin-top:8px"></div></div>';
         html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
         html+=tileAsaas('Saldo', brl(d.saldo), 'var(--txt)');
         html+=tileAsaas('Recebido no mês', brl(d.recebidoMes), 'var(--ok)');
@@ -315,6 +323,19 @@
         html+='</div>';
         box.innerHTML=html;
         $('asaaslock').onclick=function(){ sessionStorage.removeItem('painel_senha'); carregarAsaas(); };
+        $('asaastrocar').onclick=function(){ var b=$('asaastrocarbox'); b.style.display=(b.style.display==='none'?'block':'none'); if(b.style.display==='block') $('asaasnova').focus(); };
+        $('asaassalvar').onclick=function(){
+          var nova=$('asaasnova').value.trim(); var m=$('asaastrocarmsg');
+          if(nova.length<4){ m.className='msg err'; m.style.display='block'; m.textContent='Mínimo 4 caracteres.'; return; }
+          m.className='msg info'; m.style.display='block'; m.textContent='Salvando…';
+          fetch(COCKPIT+'/painel/trocar-senha',{method:'POST',headers:{'x-painel-senha':sessionStorage.getItem('painel_senha')||'','content-type':'application/json'},body:JSON.stringify({nova:nova})})
+            .then(function(r){return r.json();}).then(function(res){
+              if(res.ok&&res.trocada){ sessionStorage.setItem('painel_senha',nova); m.className='msg ok'; m.textContent='Senha alterada! Já vale a nova.'; $('asaasnova').value=''; }
+              else { m.className='msg err'; m.textContent=res.erro||'Falha ao alterar.'; }
+              m.style.display='block';
+            }).catch(function(e){ m.className='msg err'; m.textContent='Falha: '+e; m.style.display='block'; });
+        };
+        $('asaasnova').addEventListener('keydown',function(e){ if(e.key==='Enter') $('asaassalvar').click(); });
       }).catch(function(e){ sub.textContent=''; box.innerHTML='<div class="msg err" style="display:block">Falha: '+esc(String(e))+'</div>'; });
   }
 
