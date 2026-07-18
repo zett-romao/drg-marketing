@@ -221,12 +221,12 @@
   function carregarNeon(){
     var box=$('neonbody'), sub=$('neonsub');
     sub.textContent='carregando…'; box.innerHTML='';
-    fetch('/api/neon-uso',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+    fetch('https://drg-neon-proxy.zett-romao.workers.dev',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
       if(!d.ok){
         sub.textContent='';
         box.innerHTML='<div class="msg err" style="display:block">'+esc(d.erro||'erro')
           +(d.detalhe?'<br><span class="muted" style="font-weight:400">'+esc(d.detalhe)+'</span>':'')+'</div>'
-          +'<p class="muted">Confira o secret <b>NEON_API_KEY</b> no Cloudflare Pages → Settings → Environment variables.</p>';
+          +'<p class="muted">Confira o Worker <b>drg-neon-proxy</b> e o secret <b>NEON_API_KEY</b> nele.</p>';
         return;
       }
       var total=d.totalCuHrs, limite=d.limiteFree;
