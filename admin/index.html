@@ -270,20 +270,52 @@
       +'<div class="muted" style="font-size:11px">'+esc(rot)+'</div>'
       +'<div style="font-size:18px;font-weight:800;color:'+cor+';margin-top:2px">'+val+'</div></div>';
   }
+  function asaasLock(msg){
+    var box=$('asaasbody'), sub=$('asaassub');
+    sub.textContent='🔒 protegido';
+    box.innerHTML=''
+      +'<p class="muted" style="margin-bottom:8px">'+esc(msg||'Digite a senha pra ver o financeiro.')+'</p>'
+      +'<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">'
+      +'<input type="password" id="asaassenha" placeholder="senha" style="max-width:200px;border:1px solid var(--linha);border-radius:8px;padding:8px 10px;font-family:inherit;font-size:14px" />'
+      +'<button class="btn btn-p" id="asaasentrar" type="button">Entrar</button>'
+      +'<button class="btn btn-g" id="asaasenviar" type="button">Enviar/redefinir senha por e-mail</button>'
+      +'</div><div class="msg" id="asaasmsg" style="margin-top:8px"></div>';
+    $('asaasentrar').onclick=function(){
+      var v=$('asaassenha').value.trim(); if(!v) return;
+      sessionStorage.setItem('painel_senha', v); carregarAsaas();
+    };
+    $('asaassenha').addEventListener('keydown',function(e){ if(e.key==='Enter') $('asaasentrar').click(); });
+    $('asaasenviar').onclick=function(){
+      var m=$('asaasmsg'); m.className='msg info'; m.style.display='block'; m.textContent='Enviando…';
+      fetch(COCKPIT+'/painel/nova-senha',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
+        if(d.ok&&d.enviado){ m.className='msg ok'; m.textContent='Senha enviada pro seu e-mail. Confira e digite acima.'; }
+        else { m.className='msg err'; m.textContent=d.erro||'Falha ao enviar.'; }
+        m.style.display='block';
+      }).catch(function(e){ m.className='msg err'; m.textContent='Falha: '+e; m.style.display='block'; });
+    };
+  }
   function carregarAsaas(){
     var box=$('asaasbody'), sub=$('asaassub');
+    var senha=sessionStorage.getItem('painel_senha')||'';
+    if(!senha){ asaasLock('Financeiro oculto. Digite a senha pra revelar.'); return; }
     sub.textContent='carregando…'; box.innerHTML='';
-    fetch(COCKPIT+'/asaas',{cache:'no-store'}).then(function(r){return r.json();}).then(function(d){
-      if(!d.ok){ sub.textContent=''; box.innerHTML=erroCockpit(d,'ASAAS_API_KEY'); return; }
-      sub.textContent='conta compartilhada';
-      var html='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
-      html+=tileAsaas('Saldo', brl(d.saldo), 'var(--txt)');
-      html+=tileAsaas('Recebido no mês', brl(d.recebidoMes), 'var(--ok)');
-      html+=tileAsaas('A receber ('+d.receber.count+')', brl(d.receber.total), 'var(--acc)');
-      html+=tileAsaas('Vencidos ('+d.vencidos.count+')', brl(d.vencidos.total), d.vencidos.total>0?'var(--err)':'var(--mut)');
-      html+='</div>';
-      box.innerHTML=html;
-    }).catch(function(e){ sub.textContent=''; box.innerHTML='<div class="msg err" style="display:block">Falha: '+esc(String(e))+'</div>'; });
+    fetch(COCKPIT+'/asaas',{cache:'no-store',headers:{'x-painel-senha':senha}})
+      .then(function(r){ return r.json().then(function(d){ return { status:r.status, d:d }; }); })
+      .then(function(res){
+        var d=res.d;
+        if(res.status===401 || d.bloqueado){ sessionStorage.removeItem('painel_senha'); asaasLock(d.erro||'Senha inválida.'); return; }
+        if(!d.ok){ sub.textContent=''; box.innerHTML=erroCockpit(d,'ASAAS_API_KEY'); return; }
+        sub.textContent='conta compartilhada';
+        var html='<div style="display:flex;justify-content:flex-end;margin-bottom:8px"><button class="btn btn-g" id="asaaslock" type="button">🔒 Ocultar</button></div>';
+        html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">';
+        html+=tileAsaas('Saldo', brl(d.saldo), 'var(--txt)');
+        html+=tileAsaas('Recebido no mês', brl(d.recebidoMes), 'var(--ok)');
+        html+=tileAsaas('A receber ('+d.receber.count+')', brl(d.receber.total), 'var(--acc)');
+        html+=tileAsaas('Vencidos ('+d.vencidos.count+')', brl(d.vencidos.total), d.vencidos.total>0?'var(--err)':'var(--mut)');
+        html+='</div>';
+        box.innerHTML=html;
+        $('asaaslock').onclick=function(){ sessionStorage.removeItem('painel_senha'); carregarAsaas(); };
+      }).catch(function(e){ sub.textContent=''; box.innerHTML='<div class="msg err" style="display:block">Falha: '+esc(String(e))+'</div>'; });
   }
 
   // ---- medidor Neon (dados via Pages Function /api/neon-uso; a chave fica no servidor) ----
