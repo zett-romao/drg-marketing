@@ -1,0 +1,9 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DRG-Condo">
+  <rect x="2" y="2" width="96" height="96" rx="24" fill="#0f1a2e"/>
+  <rect x="26" y="13" width="22" height="22" rx="6" fill="#2F9BFF"/>
+  <rect x="52" y="13" width="22" height="22" rx="6" fill="#B85CFF"/>
+  <rect x="26" y="39" width="22" height="22" rx="6" fill="#293B58"/>
+  <rect x="52" y="39" width="22" height="22" rx="6" fill="#2BFF88"/>
+  <rect x="26" y="65" width="22" height="22" rx="6" fill="#FFC42E"/>
+  <rect x="52" y="65" width="22" height="22" rx="6" fill="#FF4A5C"/>
+</svg>
