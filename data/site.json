@@ -80,12 +80,12 @@
         {
           "nome": "Acima de 100 colaboradores",
           "preco": 0,
-          "sub": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems.",
+          "sub": "",
           "itens": [],
           "destaque": false,
-          "cta": "Assinar",
-          "ctaHref": "",
-          "precoTexto": "Fale consoco"
+          "cta": "Fale conosco",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems.",
+          "precoTexto": "Sob consulta"
         }
       ]
     },
