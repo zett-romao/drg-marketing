@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG Garantidora">
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="esc" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#1e3a5f"/>
+      <stop offset="1" stop-color="#3182ce"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 11 L49 17 V32 C49 42.5 41.5 48.8 32 53 C22.5 48.8 15 42.5 15 32 V17 Z" fill="url(#esc)"/>
+  <path d="M24.5 32.5 l5 5 l10.5 -12.5" fill="none" stroke="#ffffff" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
