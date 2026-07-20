@@ -419,7 +419,8 @@
     open:'1d_5LtAEBnFmQPba4Jejt7I1HjWP-dgm4'
   };
   // logos em ../assets/<key>.svg (thumbnail do card); resto cai no emoji
-  var MARCA_LOCAL={juridico:1,sindia:1,sign:1,check:1,hidro:1,buscanfe:1,fit:1,rently:1,garantidora:1,liftalk:1,condo:1,open:1};
+  // key -> extensão do arquivo em ../assets/ (thumbnail); ausente = usa emoji
+  var MARCA_LOCAL={kronos:'png',juridico:'svg',sindia:'svg',sign:'svg',check:'svg',hidro:'svg',buscanfe:'svg',fit:'svg',rently:'svg',garantidora:'svg',liftalk:'svg',condo:'svg',open:'svg'};
   function marcaFolder(id){return 'https://drive.google.com/drive/folders/'+id;}
   var MBTN='padding:7px 10px;font-size:12px;border-radius:8px;text-decoration:none;text-align:center;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:0;font-weight:700;font-family:inherit';
 
@@ -430,7 +431,7 @@
       PRODS.map(function(p){
         var k=p.key, drive=MARCA_DRIVE[k];
         var thumb=MARCA_LOCAL[k]
-          ? '<img src="../assets/'+esc(k)+'.svg" alt="" style="width:100%;height:100%;object-fit:contain;padding:5px">'
+          ? '<img src="../assets/'+esc(k)+'.'+MARCA_LOCAL[k]+'" alt="" style="width:100%;height:100%;object-fit:contain;padding:5px">'
           : esc(p.emoji||'📦');
         var driveBtn=drive
           ? '<a href="'+marcaFolder(drive)+'" target="_blank" rel="noopener" style="'+MBTN+';background:var(--acc);color:#fff">📁 Drive</a>'
