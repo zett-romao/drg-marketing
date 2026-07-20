@@ -74,8 +74,18 @@
             "Multi-unidade",
             "Onboarding assistido"
           ],
-          "cta": "Falar com a gente",
-          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems."
+          "cta": "Assinar",
+          "ctaHref": "https://zett-romao.github.io/drg-sistema/cadastro.html"
+        },
+        {
+          "nome": "Acima de 100 colaboradores",
+          "preco": 0,
+          "sub": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems.",
+          "itens": [],
+          "destaque": false,
+          "cta": "Assinar",
+          "ctaHref": "",
+          "precoTexto": "Fale consoco"
         }
       ]
     },
