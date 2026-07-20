@@ -7,7 +7,7 @@ redes sociais, campanhas e material de vendas.
 Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 (azul `#152a45` / `#3182ce`, gradiente, cards com ícone, fonte de sistema).
 
-- **Última atualização:** 2026-07-18.
+- **Última atualização:** 2026-07-19.
 - **🌐 NO AR:** https://drsystems.dev.br (domínio próprio + HTTPS; repo `zett-romao/drg-marketing`, GitHub Pages/main).
 - **12 produtos** na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, Fit, Rently, Garantidora, **Liftalk**, **Sind.ia**, Condo).
 
@@ -32,6 +32,7 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 11. **🔒 Sind.ia = 12º produto, LANÇADO** (lock 2026-07-09): **NO AR** em `https://sind-ia.onrender.com/` (síndico digital com IA). Landing `/sindia/` com `status:'live'`, logo própria `assets/sindia.svg` (ícone speech-bubble/prédio, tile branco). Preços via `site.json` (lê ao vivo → editar tabela/painel atualiza a landing sozinha).
 12. **Commit + push automático** do Claude a cada alteração (preferência do dono).
 13. **🔒 Cockpit de infra no `/admin/`** (lock 2026-07-18): cards **Neon** (compute/CU-hrs vs linha do Free), **Render** (status dos apps) e **Asaas** (financeiro) puxam dados de um **Cloudflare Worker** `nameless-feather-5871drg-neon-proxy` (rotas `/`=neon, `/render`, `/asaas`). Como o site é **GitHub Pages (estático)**, **NENHUMA chave de API vai no navegador** — todas vivem como secret no Worker. O card **Asaas é oculto atrás de senha**: validada no Worker (KV `PAINEL`, hash SHA-256); código chega por **e-mail (Resend, `onboarding@resend.dev`→dono)** via `/painel/nova-senha`; `⚙️ Alterar senha` (`/painel/trocar-senha`) define a própria; senha só em `sessionStorage`. Neon/Render ficam livres.
+14. **🔒 Kit de Marca dentro do `/admin/`** (lock 2026-07-19): central de **logos, PDFs e links** de todos os produtos — é um **box no editor do painel** (atrás do login do GitHub), **nunca uma página solta** e **nunca linkada na landing** (o dono rejeitou "página avulsa"). Os **arquivos-mestre vivem no Google Drive**, na pasta **`DR Systems — Marcas`** (raiz `1ZEYPcjt-YkSK9QijLEYej8OguRYLF_Ts`) com **1 subpasta por produto** — o mapa de IDs está fixo no JS do `admin/index.html` (`MARCA_DRIVE`). O compartilhamento com parceiros é **nativo do Drive** (Leitor = vê/baixa · Editor = sobe/troca; revogar = remover a pessoa) — o painel só é o launcher (botões 📁 Drive, 🔗 Copiar, 🖥️ Landing, 🚀 App). Miniatura reusa `assets/<key>.svg` quando existe. **Cloudflare Access foi descartado**: o domínio é GitHub Pages com DNS no registro.br (não passa pela Cloudflare), então o portão é o login do próprio painel.
 
 ---
 

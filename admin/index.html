@@ -136,6 +136,18 @@
     </div>
     <div id="list"></div>
 
+    <!-- KIT DE MARCA: logos/PDF/links · arquivos-mestre no Google Drive -->
+    <div class="box" id="marcasbox">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:8px">
+        <b>🎨 Kit de Marca</b>
+        <span class="muted" id="marcassub">logos, PDFs e links · arquivos no Google Drive</span>
+        <span style="flex:1"></span>
+        <a class="btn btn-g" id="marcasroot" href="#" target="_blank" rel="noopener">📁 Pasta-raiz no Drive</a>
+      </div>
+      <div class="muted" style="margin-bottom:12px">Cada produto tem uma pasta no Google Drive com as logos e o PDF. Para <b>ceder acesso a um parceiro</b>, abra a pasta e clique em <b>Compartilhar</b> — escolha <b>👁️ Leitor</b> (só vê e baixa) ou <b>✏️ Editor</b> (sobe e troca arquivos). Revogar = remover a pessoa.</div>
+      <div id="marcasbody"></div>
+    </div>
+
     <!-- MEDIDOR NEON (por último, abaixo dos cards dos apps) -->
     <div class="box" id="neonbox">
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px">
@@ -225,6 +237,7 @@
     $('savebar').style.display='flex';
     $('logout').style.display='inline-block';
     render();
+    renderMarcas();
     $('neonreload').onclick=carregarNeon;   carregarNeon();
     $('renderreload').onclick=carregarRender; carregarRender();
     $('asaasreload').onclick=carregarAsaas;  carregarAsaas();
@@ -387,6 +400,65 @@
       box.innerHTML='<div class="msg err" style="display:block">Falha ao carregar: '+esc(String(e))+'</div>';
     });
   }
+
+  // ---- Kit de Marca (pastas no Google Drive) ----
+  var MARCA_ROOT='1ZEYPcjt-YkSK9QijLEYej8OguRYLF_Ts';
+  var MARCA_DRIVE={
+    kronos:'1eXqhUa6bmuYis63H7MkroIYAQdkE0WTI',
+    juridico:'1VrF4_6fBvMLUwDjjIeeFQbCuiNPL1VqE',
+    sindia:'1yCAdZsV-tUy-iJPXu3Q2vI31XmRo5u9S',
+    sign:'1dKK2R4PlxE14Oc_ESM4u_cDrdjDoLABS',
+    check:'1vUiShJ6jb1XP0zUoMrKi12tTxKdLkV2e',
+    hidro:'1LsehWwYVXBDR2FeybRylNmY9Lrpm85c0',
+    buscanfe:'1OsSJgAwJqmgv4HOMW0P4Vc7FjzDmW25M',
+    fit:'1mzg9wcY_89wYzgsU-NBMGadBidAnLs-P',
+    rently:'1Bq9mDGT8tOzBOko3WMdyKgmxQdwMaK7M',
+    garantidora:'17wwMdEfb0Vm15B0fReqGq6u7ZOx2j-bU',
+    liftalk:'1sFlvRaVcB9a15_YTbANptutDuGvRtAg8',
+    condo:'1pNyDKFflwnwryNRkNiCkE6gEpYG6m8cn',
+    open:'1d_5LtAEBnFmQPba4Jejt7I1HjWP-dgm4'
+  };
+  // logos que já existem em ../assets/ (thumbnail); resto cai no emoji
+  var MARCA_LOCAL={condo:1,sindia:1,open:1,liftalk:1};
+  function marcaFolder(id){return 'https://drive.google.com/drive/folders/'+id;}
+  var MBTN='padding:7px 10px;font-size:12px;border-radius:8px;text-decoration:none;text-align:center;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;border:0;font-weight:700;font-family:inherit';
+
+  function renderMarcas(){
+    $('marcasroot').href=marcaFolder(MARCA_ROOT);
+    var box=$('marcasbody');
+    box.innerHTML='<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:12px">'+
+      PRODS.map(function(p){
+        var k=p.key, drive=MARCA_DRIVE[k];
+        var thumb=MARCA_LOCAL[k]
+          ? '<img src="../assets/'+esc(k)+'.svg" alt="" style="width:100%;height:100%;object-fit:contain;padding:5px">'
+          : esc(p.emoji||'📦');
+        var driveBtn=drive
+          ? '<a href="'+marcaFolder(drive)+'" target="_blank" rel="noopener" style="'+MBTN+';background:var(--acc);color:#fff">📁 Drive</a>'
+            +'<button type="button" data-copy="'+marcaFolder(drive)+'" style="'+MBTN+';background:#e6edf5;color:var(--azul2)">🔗 Copiar</button>'
+          : '<span class="muted" style="grid-column:1/-1;font-size:11px">sem pasta no Drive — crie manualmente</span>';
+        var landing='<a href="../'+esc(p.href||(k+'/'))+'" target="_blank" rel="noopener" style="'+MBTN+';background:#e6edf5;color:var(--azul2)">🖥️ Landing</a>';
+        var app=p.app?'<a href="'+esc(p.app)+'" target="_blank" rel="noopener" style="'+MBTN+';background:#e6edf5;color:var(--azul2)">🚀 App</a>':'';
+        return '<div style="border:1px solid var(--linha);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:10px">'+
+          '<div style="display:flex;align-items:center;gap:10px">'+
+            '<div style="width:46px;height:46px;flex:none;border-radius:11px;border:1px solid var(--linha);background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:24px">'+thumb+'</div>'+
+            '<div style="min-width:0"><div style="font-weight:800">'+esc(p.marca||'DRG')+'·'+esc(p.nome)+'</div>'+
+            '<div class="muted" style="font-size:11px">'+esc(p.cat||'')+'</div></div>'+
+          '</div>'+
+          '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:6px;margin-top:auto">'+
+            driveBtn+landing+app+
+          '</div>'+
+        '</div>';
+      }).join('')+'</div>';
+  }
+
+  // copiar link do Drive
+  document.getElementById('marcasbody').addEventListener('click',function(e){
+    var b=e.target.closest('[data-copy]'); if(!b) return;
+    navigator.clipboard.writeText(b.getAttribute('data-copy')).then(function(){
+      var t=b.textContent; b.textContent='✓ Copiado'; b.style.background='#c6f6d5'; b.style.color='#22543d';
+      setTimeout(function(){ b.textContent=t; b.style.background='#e6edf5'; b.style.color='var(--azul2)'; },1400);
+    });
+  });
 
   $('logout').addEventListener('click',function(){
     localStorage.removeItem('drs_token'); location.reload();
