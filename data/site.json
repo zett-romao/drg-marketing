@@ -662,19 +662,6 @@
       "href": "open/",
       "desc": "Gestão completa dos acessos ao condomínio. Todas as entradas e saídas registradas. Identificação inteligente que proporciona segurança e organização.",
       "planos": []
-    },
-    {
-      "key": "novo13",
-      "marca": "DRG",
-      "nome": "Novo produto",
-      "emoji": "✨",
-      "cat": "Categoria",
-      "destaque": false,
-      "visivel": false,
-      "status": "embreve",
-      "href": "#",
-      "desc": "Descrição do produto.",
-      "planos": []
     }
   ]
 }
