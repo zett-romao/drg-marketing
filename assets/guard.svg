@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG Guard">
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="gShield" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a86e6"/>
+      <stop offset="0.55" stop-color="#0d4a9c"/>
+      <stop offset="1" stop-color="#07295a"/>
+    </linearGradient>
+    <linearGradient id="gChev" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#cfe2ff"/>
+    </linearGradient>
+  </defs>
+  <path d="M32 9 L52 16 V34 C52 49 43 57 32 61 C21 57 12 49 12 34 V16 Z"
+        fill="url(#gShield)" stroke="#06213f" stroke-width="2.4"/>
+  <path d="M32 15 L47 20.5 V34 C47 45 40 52 32 55 C24 52 17 45 17 34 V20.5 Z"
+        fill="none" stroke="#8fbdf5" stroke-width="1.4" opacity="0.6"/>
+  <path d="M20 43 L32 31 L44 43 L38 43 L32 37 L26 43 Z" fill="url(#gChev)"/>
+  <path d="M32 20 l2 4.1 4.5 0.6 -3.25 3.2 0.8 4.5 -4.05 -2.1 -4.05 2.1 0.8 -4.5 -3.25 -3.2 4.5 -0.6 Z" fill="#eaf3ff"/>
+  <circle cx="23" cy="49" r="2.6" fill="#eaf3ff"/>
+  <circle cx="41" cy="49" r="2.6" fill="#eaf3ff"/>
+</svg>
