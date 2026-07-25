@@ -1005,6 +1005,7 @@
       "marca": "DRG",
       "nome": "Guard",
       "emoji": "👮",
+      "logo": "guard.svg",
       "cat": "Portaria & rondas",
       "destaque": false,
       "visivel": true,
