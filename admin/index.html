@@ -416,7 +416,30 @@
     garantidora:'17wwMdEfb0Vm15B0fReqGq6u7ZOx2j-bU',
     liftalk:'1sFlvRaVcB9a15_YTbANptutDuGvRtAg8',
     condo:'1pNyDKFflwnwryNRkNiCkE6gEpYG6m8cn',
-    open:'1d_5LtAEBnFmQPba4Jejt7I1HjWP-dgm4'
+    open:'1d_5LtAEBnFmQPba4Jejt7I1HjWP-dgm4',
+    guard:'166ISIs9gm0DvaajcKlFjMdeEqi_VjOwr',
+    access:'1mCyY2Ab4du3syF47thFE_aIglF1YkUzw',
+    energy:'1uqLiC0RlaMamFal2C1MTULEjeY5uGu2_',
+    sense:'1gnamtE8FQ0Vk-u4yL2ROQE77CK1yOLZ9'
+  };
+  // Subpasta "Docs" dentro de cada pasta de produto no Drive (documentação por produto).
+  var MARCA_DOCS={
+    kronos:'1ml488b1k0OkMBXIazHf6MbRyR_I2nBBI',
+    juridico:'1YSXBeOZnr1qtvWMEvhRpXKd91Aze5kha',
+    sindia:'1_NLkO9wactoHNkdHQ58NAPoH-jwg7-lo',
+    sign:'1eB9DGZhhr2FDkDZ8ZLrxIISKY_kD-XF8',
+    check:'11YGhbkIPSP7U5E_c-muhMlRE_BMLcVJ1',
+    hidro:'1EgPnvvomfqCKWA5ZadYAZxwMQNwk_5Zv',
+    buscanfe:'1R8hJzRprklrjwFWzFJghRxhVXdoFTt6n',
+    fit:'1X6VXVeL50bAYc3ulCXEdvP0-4z52EmfF',
+    rently:'1_vDZvGniaqoGXUZNw8Uij_585A5GehnT',
+    garantidora:'1QXdQS6A8-lXhRV95TlO4z8c29Suh_BXx',
+    liftalk:'18gqGPUzox-YeqIgbsI_ug1hVvBurFshr',
+    condo:'1eLuBatgp6o8DuPE8hdQT4P4sYYGQXvyY',
+    guard:'1DP7ajwzSHPzfGTFgNIQ-vKS50Hbu0KLP',
+    access:'1fYjOIOl_yr_gSYizGEEqoD_5OGxh9Mct',
+    energy:'15hYy5G5CFRjZIF4s8zkx1TXzngSP8q9C',
+    sense:'1xWCzUOvf4Ua83ZM2f9qcMPyhvKrr8X8D'
   };
   // logos em ../assets/<key>.svg (thumbnail do card); resto cai no emoji
   // key -> extensão do arquivo em ../assets/ (thumbnail); ausente = usa emoji
@@ -437,6 +460,8 @@
           ? '<a href="'+marcaFolder(drive)+'" target="_blank" rel="noopener" style="'+MBTN+';background:var(--acc);color:#fff">📁 Drive</a>'
             +'<button type="button" data-copy="'+marcaFolder(drive)+'" style="'+MBTN+';background:#e6edf5;color:var(--azul2)">🔗 Copiar</button>'
           : '<span class="muted" style="grid-column:1/-1;font-size:11px">sem pasta no Drive — crie manualmente</span>';
+        var docs=MARCA_DOCS[k];
+        var docsBtn=docs?'<a href="'+marcaFolder(docs)+'" target="_blank" rel="noopener" style="'+MBTN+';background:#e6edf5;color:var(--azul2)">📄 Docs</a>':'';
         var landing='<a href="../'+esc(p.href||(k+'/'))+'" target="_blank" rel="noopener" style="'+MBTN+';background:#e6edf5;color:var(--azul2)">🖥️ Landing</a>';
         var app=p.app?'<a href="'+esc(p.app)+'" target="_blank" rel="noopener" style="'+MBTN+';background:#e6edf5;color:var(--azul2)">🚀 App</a>':'';
         return '<div style="border:1px solid var(--linha);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:10px">'+
@@ -446,7 +471,7 @@
             '<div class="muted" style="font-size:11px">'+esc(p.cat||'')+'</div></div>'+
           '</div>'+
           '<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(92px,1fr));gap:6px;margin-top:auto">'+
-            driveBtn+landing+app+
+            driveBtn+docsBtn+landing+app+
           '</div>'+
         '</div>';
       }).join('')+'</div>';

@@ -50,8 +50,8 @@
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><div class="n">13</div><div class="l">produtos construídos</div></div>
-    <div class="stat"><div class="n">11</div><div class="l">setores atendidos</div></div>
+    <div class="stat"><div class="n" id="stat-produtos">16</div><div class="l">produtos construídos</div></div>
+    <div class="stat"><div class="n">13</div><div class="l">setores atendidos</div></div>
     <div class="stat"><div class="n">1</div><div class="l">base de engenharia comum</div></div>
     <div class="stat"><div class="n">100<small>%</small></div><div class="l">multi-tenant por design</div></div>
   </div>
@@ -65,7 +65,7 @@
     <div id="kbanner-root"></div>
     <div class="famgrid" id="famgrid-root"></div>
     <noscript>
-      <p class="lead">Produtos: <a href="kronos/" style="color:var(--clara)">Kronos</a>, <a href="buscanfe/" style="color:var(--clara)">BuscaNFe</a>, <a href="check/" style="color:var(--clara)">Check</a>, <a href="sign/" style="color:var(--clara)">Sign</a>, <a href="juridico/" style="color:var(--clara)">Jurídico</a>, <a href="hidro/" style="color:var(--clara)">Hidro</a>, <a href="fit/" style="color:var(--clara)">Fit</a>, <a href="rently/" style="color:var(--clara)">Rently</a>, <a href="garantidora/" style="color:var(--clara)">Garantidora</a>, <a href="liftalk/" style="color:var(--clara)">Liftalk</a>, <a href="sindia/" style="color:var(--clara)">Sind.ia</a>, <a href="condo/" style="color:var(--clara)">Condo</a>.</p>
+      <p class="lead">Produtos: <a href="kronos/" style="color:var(--clara)">Kronos</a>, <a href="buscanfe/" style="color:var(--clara)">BuscaNFe</a>, <a href="check/" style="color:var(--clara)">Check</a>, <a href="sign/" style="color:var(--clara)">Sign</a>, <a href="juridico/" style="color:var(--clara)">Jurídico</a>, <a href="hidro/" style="color:var(--clara)">Hidro</a>, <a href="guard/" style="color:var(--clara)">Guard</a>, <a href="fit/" style="color:var(--clara)">Fit</a>, <a href="rently/" style="color:var(--clara)">Rently</a>, <a href="garantidora/" style="color:var(--clara)">Garantidora</a>, <a href="liftalk/" style="color:var(--clara)">Liftalk</a>, <a href="sindia/" style="color:var(--clara)">Sind.ia</a>, <a href="condo/" style="color:var(--clara)">Condo</a>, <a href="access/" style="color:var(--clara)">Access</a>, <a href="energy/" style="color:var(--clara)">Energy</a>, <a href="sense/" style="color:var(--clara)">Sense</a>.</p>
     </noscript>
   </div>
 </section>
@@ -110,6 +110,8 @@
     var prods=(cfg.produtos||[]).filter(function(p){return p.visivel!==false;});
     var dest=prods.filter(function(p){return p.destaque;});
     var grid=prods.filter(function(p){return !p.destaque;});
+    // Contador de produtos se atualiza sozinho com o site.json (fonte única).
+    var sp=document.getElementById('stat-produtos'); if(sp) sp.textContent=prods.length;
 
     var kroot=document.getElementById('kbanner-root');
     if(dest.length){
