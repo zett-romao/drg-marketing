@@ -636,7 +636,16 @@
       sha=res.j.content.sha;
       show($('msg'),'ok','✓ Publicado! O site atualiza em cerca de 1 minuto. Recarregue a página do site para ver.');
       window.scrollTo(0,0);
-    }).catch(function(e){ $('save').disabled=false; show($('msg'),'err',e.message); window.scrollTo(0,0); });
+    }).catch(function(e){
+      $('save').disabled=false;
+      var m=(e&&e.message)||'Erro ao salvar.';
+      // Conflito de versao (o site.json mudou por outra origem/deploy depois que o painel abriu):
+      // o GitHub barra o PUT com sha antigo. Nao sobrescreve nada — mas o painel esta desatualizado.
+      if(/does not match|is at least|409|conflict/i.test(m)){
+        m='⚠️ O site foi atualizado por outra origem (deploy recente) depois que você abriu o painel. Nada foi sobrescrito. Clique em "Descartar" para recarregar a versão atual e refazer suas edições.';
+      }
+      show($('msg'),'err',m); window.scrollTo(0,0);
+    });
   });
 
 })();
