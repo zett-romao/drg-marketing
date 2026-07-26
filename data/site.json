@@ -2096,7 +2096,7 @@
       "logo": "ai.svg",
       "cat": "Inteligência da suíte",
       "destaque": false,
-      "visivel": true,
+      "visivel": false,
       "status": "embreve",
       "href": "ai/",
       "cta": "Tenho interesse",
@@ -2170,7 +2170,8 @@
       ],
       "finalH": "Dê inteligência a toda a sua operação.",
       "finalP": "Entre na lista e seja avisado quando o DRG-AI abrir.",
-      "planos": []
+      "planos": [],
+      "motivoOculto": "decisao do dono: AI e motor interno, sem card na landing"
     }
   ]
 }
