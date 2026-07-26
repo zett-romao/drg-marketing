@@ -9,7 +9,8 @@ Identidade visual base: design system da `/vendas` do DRG-BuscaNFe
 
 - **Última atualização:** 2026-07-19.
 - **🌐 NO AR:** https://drsystems.dev.br (domínio próprio + HTTPS; repo `zett-romao/drg-marketing`, GitHub Pages/main).
-- **16 produtos** visíveis na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, **Guard**, Fit, Rently, Garantidora, Liftalk, Sind.ia, Condo, **Access**, **Energy**, **Sense**). O **Open** foi aposentado (o **Access** absorve a finalidade) — fica `visivel:false` no `site.json`, reativável no `/admin`.
+- **19 produtos** visíveis na família (Kronos, BuscaNFe, Check, Sign, Jurídico, Hidro, **Guard**, Fit, Rently, Garantidora, Liftalk, Sind.ia, Condo, **Access**, **Energy**, **Sense**, **Pulse**, **View**, **AI**). O **Open** foi aposentado (o **Access** absorve a finalidade) — fica `visivel:false` no `site.json`, reativável no `/admin`.
+  - **Pulse** = manutenção preditiva de equipamentos; **View** = painel único ("olho geral") do condomínio; **AI** = camada de IA da suíte. Conceitos com pasta própria em `C:\Projetos\DRG-{Pulse,View,AI}` (BACKLOG+ROADMAP).
 
 ---
 

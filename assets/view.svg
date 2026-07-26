@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG View">
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="vView" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a86e6"/>
+      <stop offset="0.55" stop-color="#0d4a9c"/>
+      <stop offset="1" stop-color="#07295a"/>
+    </linearGradient>
+  </defs>
+  <rect x="12" y="15" width="40" height="34" rx="5" fill="none" stroke="url(#vView)" stroke-width="2.6"/>
+  <rect x="17" y="21" width="13" height="8" rx="2" fill="url(#vView)"/>
+  <rect x="34" y="21" width="13" height="8" rx="2" fill="#9cc4f5"/>
+  <rect x="17" y="33" width="13" height="10" rx="2" fill="#9cc4f5"/>
+  <rect x="34" y="33" width="13" height="10" rx="2" fill="url(#vView)"/>
+</svg>

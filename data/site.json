@@ -1918,6 +1918,259 @@
       "finalH": "Vigie o que a ronda não alcança.",
       "finalP": "Entre na lista e seja avisado quando o DRG-Sense abrir.",
       "planos": []
+    },
+    {
+      "key": "pulse",
+      "marca": "DRG",
+      "nome": "Pulse",
+      "emoji": "💓",
+      "logo": "pulse.svg",
+      "cat": "Manutenção preditiva",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "pulse/",
+      "cta": "Tenho interesse",
+      "desc": "Monitora se cada motor, bomba, portão ou solenoide está operando ou apresentando falha — e avisa antes da quebra.",
+      "descPagina": "DRG-Pulse: monitoramento de condição e manutenção preditiva de motores, bombas, portões e solenoides — corrente, vibração e temperatura, com alerta de falha antes da quebra.",
+      "h1": "Saiba que o equipamento vai falhar <em>antes</em> dele parar.",
+      "sub": "Um nó de monitoramento mede corrente, vibração e temperatura de motores, bombas, portões e solenoides — e avisa quando algo sai do normal, antes da quebra virar prejuízo.",
+      "mini": "1 hardware, vários equipamentos · Corrente e vibração · Alerta antes da falha",
+      "doresT": "A manutenção só aparece quando quebra",
+      "dores": [
+        "Bomba que roda seca e queima sem ninguém ver",
+        "Motor de portão que trava no pior dia",
+        "Sem histórico de horas ou ciclos de cada equipamento",
+        "Manutenção corretiva custa caro e para tudo"
+      ],
+      "solT": "Cada equipamento com sinais vitais",
+      "sol": [
+        "Estado ligado/desligado, horas e ciclos de operação",
+        "Alerta de bomba seca, sobrecarga e motor travado",
+        "Vibração e corrente revelam desgaste antes da falha",
+        "Aviso por e-mail, WhatsApp e push antes de quebrar"
+      ],
+      "recT": "Do \"parou\" ao \"vai parar\"",
+      "recL": "Para condomínios, prédios e empresas que não podem depender do equipamento quebrar pra agir.",
+      "rec": [
+        {
+          "i": "🔌",
+          "h": "Nó universal",
+          "p": "Um mesmo hardware (ESP32) monitora motor, bomba, portão ou solenoide, por perfil."
+        },
+        {
+          "i": "📉",
+          "h": "Corrente & carga",
+          "p": "A assinatura da corrente mostra bomba seca, sobrecarga e motor travado."
+        },
+        {
+          "i": "📳",
+          "h": "Vibração",
+          "p": "Acelerômetro detecta desgaste de rolamento e desbalanceamento antes da falha."
+        },
+        {
+          "i": "⏱️",
+          "h": "Horas & ciclos",
+          "p": "Contagem de operação pra trocar a peça no tempo certo, sem chute."
+        },
+        {
+          "i": "🚨",
+          "h": "Alerta antecipado",
+          "p": "Falha e tendência avisadas por e-mail, WhatsApp e push."
+        },
+        {
+          "i": "🔗",
+          "h": "Integra com Guard/Condo",
+          "p": "A falha vira ocorrência no Guard e resumo no painel do condomínio."
+        }
+      ],
+      "comoL": "Instala o nó no equipamento, conecta e o painel passa a vigiar.",
+      "passos": [
+        {
+          "h": "Instale o nó",
+          "p": "No motor, bomba, portão ou solenoide que você quer vigiar."
+        },
+        {
+          "h": "Aprenda o normal",
+          "p": "O sistema mede alguns dias e monta o baseline de cada equipamento."
+        },
+        {
+          "h": "Receba o aviso",
+          "p": "Quando algo sai do padrão, você é avisado antes da quebra."
+        }
+      ],
+      "finalH": "Troque a manutenção corretiva pela preditiva.",
+      "finalP": "Entre na lista e seja avisado quando o DRG-Pulse abrir.",
+      "planos": []
+    },
+    {
+      "key": "view",
+      "marca": "DRG",
+      "nome": "View",
+      "emoji": "👁️",
+      "logo": "view.svg",
+      "cat": "Painel único do condomínio",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "view/",
+      "cta": "Tenho interesse",
+      "desc": "O \"olho geral\" do condomínio: uma tela só que junta água, energia, sensores, equipamentos, segurança e acessos de todos os apps.",
+      "descPagina": "DRG-View: painel único (single pane of glass) do condomínio. Consolida numa tela o status de todos os apps DR Systems — água, energia, sensores, equipamentos, segurança, acessos e elevador.",
+      "h1": "Todo o condomínio numa <em>tela só</em>.",
+      "sub": "Água do Hidro, energia do Energy, sensores do Sense, equipamentos do Pulse, ocorrências do Guard, acessos do Access — tudo consolidado num painel, com semáforo e alertas num lugar só.",
+      "mini": "Uma tela, todos os apps · Semáforo ok/atenção/crítico · Modo mural na guarita",
+      "planosNota": "🧩 Faz sentido para quem já tem 2 ou mais apps DR Systems ativos — o View junta o que eles já monitoram.",
+      "doresT": "O status do condomínio está espalhado",
+      "dores": [
+        "Abrir sete apps pra saber se está tudo bem",
+        "Alerta importante perdido no meio de vários sistemas",
+        "A guarita não tem uma visão do condomínio inteiro",
+        "Administradora sem visão consolidada de vários condomínios"
+      ],
+      "solT": "Um painel que junta tudo",
+      "sol": [
+        "Tiles de status por área: água, energia, sensores, segurança…",
+        "Semáforo ok / atenção / crítico e contadores num relance",
+        "Feed único com os alertas de todos os apps",
+        "Multi-condomínio e modo mural pra TV da guarita"
+      ],
+      "recT": "A visão que faltava",
+      "recL": "Para síndicos, portarias e administradoras que querem o quadro completo sem abrir mil telas.",
+      "rec": [
+        {
+          "i": "🧩",
+          "h": "Junta todos os apps",
+          "p": "Hidro, Energy, Sense, Pulse, Guard, Access e Liftalk num painel só."
+        },
+        {
+          "i": "🚦",
+          "h": "Semáforo por área",
+          "p": "Verde, amarelo, vermelho — o que precisa de atenção salta aos olhos."
+        },
+        {
+          "i": "🔔",
+          "h": "Feed único de alertas",
+          "p": "Todos os avisos, de todos os sistemas, num lugar só, por severidade."
+        },
+        {
+          "i": "📺",
+          "h": "Modo mural / TV",
+          "p": "Tela cheia pra sala de controle ou guarita, sempre à vista."
+        },
+        {
+          "i": "🔎",
+          "h": "Clicou, abriu",
+          "p": "Cada tile leva direto ao app de origem, no contexto certo."
+        },
+        {
+          "i": "🏢",
+          "h": "Multi-condomínio",
+          "p": "Uma conta acompanha vários condomínios, isolados entre si."
+        }
+      ],
+      "comoL": "Você já tem os apps. O View só junta tudo numa tela.",
+      "passos": [
+        {
+          "h": "Ligue os apps que já usa",
+          "p": "Hidro, Guard, Energy, Sense… o que estiver ativo entra no painel."
+        },
+        {
+          "h": "Escolha o layout",
+          "p": "Quais tiles aparecem, a ordem e o modo mural."
+        },
+        {
+          "h": "Acompanhe num relance",
+          "p": "Semáforo e feed de alertas do condomínio inteiro numa tela."
+        }
+      ],
+      "finalH": "Enxergue o condomínio inteiro de uma vez.",
+      "finalP": "Entre na lista e seja avisado quando o DRG-View abrir.",
+      "planos": []
+    },
+    {
+      "key": "ai",
+      "marca": "DRG",
+      "nome": "AI",
+      "emoji": "🧠",
+      "logo": "ai.svg",
+      "cat": "Inteligência da suíte",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "ai/",
+      "cta": "Tenho interesse",
+      "desc": "A camada de IA da DR Systems: um assistente que responde pelos seus documentos, gera relatórios inteligentes e detecta anomalias — dentro de todos os apps.",
+      "descPagina": "DRG-AI: a camada de inteligência artificial da suíte DR Systems. Assistente documental com fonte, relatórios inteligentes e análise preditiva, integrada a todos os produtos, com trilha de auditoria e LGPD.",
+      "h1": "A <em>inteligência</em> que atravessa toda a suíte.",
+      "sub": "Um assistente treinado nos documentos e dados autorizados de cada cliente, que responde com fonte, gera relatórios e detecta anomalias — dentro do Hidro, Condo, Guard, Energy e dos demais apps.",
+      "mini": "Responde só pelos seus dados · Cita a fonte · Custo por cliente rastreável",
+      "doresT": "Dado demais, tempo de menos",
+      "dores": [
+        "Informação espalhada em PDFs, planilhas e telas",
+        "Relatório mensal feito na mão, todo mês",
+        "Alerta importante perdido no meio de mil eventos",
+        "Medo de a IA \"inventar\" resposta"
+      ],
+      "solT": "Uma IA que conhece o seu negócio",
+      "sol": [
+        "Responde com base só nos documentos autorizados, citando a fonte",
+        "Relatórios automáticos de consumo, ocorrências e inadimplência",
+        "Prioriza o que é crítico e detecta anomalias na telemetria",
+        "Se não sabe, encaminha pro humano — nunca inventa"
+      ],
+      "recT": "Inteligência plugada em cada app",
+      "recL": "Um motor de IA compartilhado que dá superpoder aos produtos DR Systems, sem cada um reinventar a roda.",
+      "rec": [
+        {
+          "i": "📚",
+          "h": "Assistente documental",
+          "p": "Pergunta e resposta sobre os documentos do cliente, com citação da fonte (é o motor do Sind.ia)."
+        },
+        {
+          "i": "📊",
+          "h": "Relatórios inteligentes",
+          "p": "Resumo automático de consumo, acessos, ocorrências e financeiro."
+        },
+        {
+          "i": "🔮",
+          "h": "Análise preditiva",
+          "p": "Anomalia e tendência na telemetria de Hidro, Energy, Sense e Pulse."
+        },
+        {
+          "i": "🛡️",
+          "h": "Nunca inventa",
+          "p": "Fonte obrigatória, encaminha pro humano quando falta base, tudo auditado."
+        },
+        {
+          "i": "🏢",
+          "h": "Isolado por cliente",
+          "p": "Cada tenant enxerga só os próprios dados — nada vaza de um pro outro."
+        },
+        {
+          "i": "💳",
+          "h": "Custo sob controle",
+          "p": "Uso de IA medido e limitado por cliente, cobrado como add-on."
+        }
+      ],
+      "comoL": "Você autoriza os dados. A IA passa a trabalhar dentro dos apps.",
+      "passos": [
+        {
+          "h": "Autorize os dados",
+          "p": "Documentos e telemetria que a IA pode usar, por cliente."
+        },
+        {
+          "h": "Ative por app",
+          "p": "Ligue o assistente e os relatórios onde fizer sentido."
+        },
+        {
+          "h": "Colha o resultado",
+          "p": "Respostas com fonte, relatórios prontos e alertas priorizados."
+        }
+      ],
+      "finalH": "Dê inteligência a toda a sua operação.",
+      "finalP": "Entre na lista e seja avisado quando o DRG-AI abrir.",
+      "planos": []
     }
   ]
 }
