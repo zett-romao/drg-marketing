@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG Access">
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="aBadge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a86e6"/>
+      <stop offset="0.55" stop-color="#0d4a9c"/>
+      <stop offset="1" stop-color="#07295a"/>
+    </linearGradient>
+  </defs>
+  <rect x="28" y="10" width="8" height="5" rx="2" fill="#0d4a9c"/>
+  <rect x="16" y="15" width="32" height="39" rx="5" fill="url(#aBadge)" stroke="#06213f" stroke-width="2"/>
+  <rect x="28" y="18.5" width="8" height="3" rx="1.5" fill="#cfe2ff"/>
+  <circle cx="32" cy="31" r="6.5" fill="#eaf3ff"/>
+  <path d="M22.5 47 C22.5 39.5 41.5 39.5 41.5 47 Z" fill="#eaf3ff"/>
+</svg>

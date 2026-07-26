@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG Energy">
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="eBolt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a86e6"/>
+      <stop offset="0.55" stop-color="#0d4a9c"/>
+      <stop offset="1" stop-color="#07295a"/>
+    </linearGradient>
+  </defs>
+  <circle cx="32" cy="32" r="22" fill="none" stroke="#cfe2ff" stroke-width="2.4" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <path d="M35 10 L20 36 H29 L27 54 L44 27 H34 L39 10 Z" fill="url(#eBolt)" stroke="#06213f" stroke-width="2" stroke-linejoin="round"/>
+</svg>

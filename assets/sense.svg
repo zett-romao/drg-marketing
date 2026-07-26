@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG Sense">
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <defs>
+    <linearGradient id="sNode" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3a86e6"/>
+      <stop offset="1" stop-color="#0d4a9c"/>
+    </linearGradient>
+  </defs>
+  <path d="M18 34 Q32 20 46 34" fill="none" stroke="#9cc4f5" stroke-width="3.4" stroke-linecap="round"/>
+  <path d="M23 39 Q32 28 41 39" fill="none" stroke="#2f6fd0" stroke-width="3.4" stroke-linecap="round"/>
+  <circle cx="32" cy="45" r="5.5" fill="url(#sNode)" stroke="#06213f" stroke-width="1.6"/>
+</svg>
