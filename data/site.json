@@ -1752,6 +1752,90 @@
       "planos": []
     },
     {
+      "key": "charge",
+      "marca": "DRG",
+      "nome": "Charge",
+      "emoji": "🔌",
+      "logo": "charge.svg",
+      "cat": "Recarga de veículos elétricos",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "charge/",
+      "cta": "Tenho interesse",
+      "desc": "Recarga de carro elétrico em condomínio sem reforçar a entrada de energia: gerenciamento dinâmico de carga, medição homologada e rateio no boleto da unidade.",
+      "descPagina": "DRG-Charge: recarga de veículos elétricos em condomínio com gerenciamento dinâmico de carga, medidor com aprovação de modelo INMETRO e rateio auditável no boleto da unidade.",
+      "h1": "Recarga de carro elétrico <em>sem reformar a entrada</em> do prédio.",
+      "sub": "A NBR 17019 manda dimensionar cada ponto de recarga com fator de demanda 1 — vinte vagas de 7,4 kW viram 148 kW declarados, e o orçamento de reforço mata o projeto na assembleia. O DRG-Charge mede a energia disponível em tempo real e distribui entre os carros conectados.",
+      "mini": "Gerenciamento dinâmico de carga · Medição homologada INMETRO · Rateio no boleto da unidade",
+      "doresT": "O carro elétrico chegou e o orçamento assustou",
+      "dores": [
+        "Orçamento de reforço do padrão de entrada que trava a decisão",
+        "Condômino que comprou o carro e a assembleia não resolve",
+        "Energia da recarga caindo na taxa condominial de todo mundo",
+        "Síndico com medo de responsabilidade por instalação irregular"
+      ],
+      "solT": "As vagas cabem na energia que o prédio já tem",
+      "sol": [
+        "Medição da demanda no quadro geral e distribuição da folga em tempo real",
+        "Consumo de cada carro no boleto da unidade, fora da taxa condominial",
+        "Medidor com portaria de aprovação de modelo do INMETRO no faturamento",
+        "Instalação conforme NBR 17019, com projeto e ART de engenheiro habilitado"
+      ],
+      "recT": "Da tomada ao boleto",
+      "recL": "Para condomínios, administradoras e frotas que precisam de mais vagas do que a entrada de energia permite.",
+      "rec": [
+        {
+          "i": "📊",
+          "h": "Carga dinâmica",
+          "p": "Um medidor no quadro geral acompanha a demanda do prédio e limita a corrente dos carregadores para nunca ultrapassar a capacidade disponível."
+        },
+        {
+          "i": "🔌",
+          "h": "Carregador próprio",
+          "p": "Equipamento de fabricação DR Systems, em corrente alternada modo 3, com o gerenciamento de carga já embarcado."
+        },
+        {
+          "i": "🧾",
+          "h": "Rateio auditável",
+          "p": "Consumo por vaga lançado no boleto da unidade, com laudo mensal em PDF assinado para prestação de contas em assembleia."
+        },
+        {
+          "i": "🛡️",
+          "h": "Conformidade",
+          "p": "DR individual por ponto, proteção contra falta em corrente contínua e desligamento de emergência conforme a NBR 17019."
+        },
+        {
+          "i": "🔗",
+          "h": "Fala com qualquer marca",
+          "p": "Protocolo OCPP 1.6J: gerencia também o carregador de terceiro que o condomínio já instalou."
+        },
+        {
+          "i": "🏢",
+          "h": "Integra com o Condo",
+          "p": "Vaga ligada a condomínio e unidade, com cobrança na mesma fatura do condômino."
+        }
+      ],
+      "comoL": "Diagnóstico da garagem, instalação e cobrança no automático.",
+      "passos": [
+        {
+          "h": "Diagnóstico da capacidade elétrica",
+          "p": "Medimos a folga real da entrada do prédio e dizemos quantas vagas cabem sem obra de reforço."
+        },
+        {
+          "h": "Instalação com projeto e ART",
+          "p": "Carregadores nas vagas e gerenciador no quadro geral, conforme a NBR 17019."
+        },
+        {
+          "h": "Cada um paga o que carregou",
+          "p": "O consumo vai para o boleto da unidade, com laudo mensal auditável."
+        }
+      ],
+      "finalH": "Quantas vagas de recarga cabem na sua garagem?",
+      "finalP": "Entre na lista e faça o diagnóstico gratuito da capacidade elétrica do seu condomínio.",
+      "planos": []
+    },
+    {
       "key": "energy",
       "marca": "DRG",
       "nome": "Energy",

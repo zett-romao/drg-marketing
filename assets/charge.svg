@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DRG Charge">
+  <rect width="64" height="64" rx="15" fill="#ffffff"/>
+  <!-- Marca DRG-Charge: teto de demanda + rampa de carga (baixa -> total).
+       Geometria identica a DRG-Charge/assets/logo-mark.svg, reescalada
+       para o tile de 64 px da familia DR Systems. -->
+  <g transform="translate(4.92,3.24) scale(0.846)">
+    <rect x="6" y="11" width="52" height="6" rx="3" fill="#0d1319"/>
+    <rect x="6"  y="45" width="10" height="12" rx="3" fill="#e0a374"/>
+    <rect x="20" y="38" width="10" height="19" rx="3" fill="#c9762f"/>
+    <rect x="34" y="32" width="10" height="25" rx="3" fill="#3d86c6"/>
+    <rect x="48" y="25" width="10" height="32" rx="3" fill="#0b5cab"/>
+  </g>
+</svg>
