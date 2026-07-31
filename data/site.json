@@ -1087,6 +1087,136 @@
       "planos": []
     },
     {
+      "key": "atende24h",
+      "marca": "DRG",
+      "nome": "Atende24h",
+      "emoji": "💬",
+      "logo": "atende24h.svg",
+      "cat": "Atendimento no WhatsApp",
+      "destaque": false,
+      "visivel": true,
+      "status": "ativo",
+      "href": "atende24h/",
+      "app": "https://drg-atende24h.zett-romao.workers.dev/assinar",
+      "cta": "Testar 14 dias grátis",
+      "ctaSecundario": {
+        "rotulo": "Entrar no painel",
+        "href": "https://drg-atende24h.zett-romao.workers.dev/painel"
+      },
+      "desc": "Central de atendimento no WhatsApp: um número para a empresa inteira, triagem automática, fila por setor e equipe atendendo pelo navegador.",
+      "descPagina": "DRG-Atende24h: central de atendimento no WhatsApp oficial, com triagem automática, roteamento por setor, painel em tempo real, IA e relatórios de fila. Um número para toda a empresa.",
+      "h1": "Um número de WhatsApp para <em>a empresa inteira</em>.",
+      "sub": "Triagem automática, fila por setor e a equipe atendendo de onde estiver, no mesmo número. Cada conversa com dono, histórico e prazo.",
+      "mini": "WhatsApp oficial da Meta · Fila por setor · Relatório de quem assumiu",
+      "doresT": "O WhatsApp da empresa vira bagunça",
+      "dores": [
+        "Um celular só, passando de mão em mão entre os setores",
+        "Cliente esperando na fila sem ninguém assumir a conversa",
+        "Histórico preso no aparelho de quem saiu da empresa",
+        "Ninguém sabe quanto o cliente esperou nem quem respondeu"
+      ],
+      "solT": "Uma central, com dono e prazo em cada conversa",
+      "sol": [
+        "Triagem automática no primeiro contato e roteamento para o setor certo",
+        "Fila por setor em tempo real: assumir, responder e encerrar",
+        "Histórico da empresa, não do aparelho, com etiquetas, notas e anexos",
+        "Relatório de espera, de quem assumiu e de quem deixou passar"
+      ],
+      "recT": "Tudo o que um atendimento sério precisa",
+      "recL": "WhatsApp oficial (Cloud API da Meta), multi-empresa, com isolamento entre clientes provado por teste automatizado.",
+      "rec": [
+        {
+          "i": "🔀",
+          "h": "Triagem e setores",
+          "p": "Menu automático no primeiro contato; a conversa cai na fila do setor certo, com responsáveis e horário próprios."
+        },
+        {
+          "i": "👥",
+          "h": "Equipe em home office",
+          "p": "Cada atendente entra pelo navegador, enxerga só a fila dele e assume a conversa num clique. Sem aparelho compartilhado."
+        },
+        {
+          "i": "⏱️",
+          "h": "Fechamento automático",
+          "p": "Conversa que esfriou ou ficou parada na fila encerra sozinha no prazo que você definir, com o motivo gravado."
+        },
+        {
+          "i": "📊",
+          "h": "Relatório de verdade",
+          "p": "Tempo de espera e de atendimento, CSAT, quantas ninguém assumiu, quem deixou passar e a maior espera do período."
+        },
+        {
+          "i": "🧠",
+          "h": "IA no atendimento",
+          "p": "Resumo da conversa, sugestão de resposta e transcrição do áudio do cliente, dentro do próprio painel."
+        },
+        {
+          "i": "🎨",
+          "h": "Sua marca no painel",
+          "p": "Nome, logo e cor da empresa; as mensagens do robô são editáveis, com prévia no formato do WhatsApp."
+        }
+      ],
+      "comoL": "Sai do papel no mesmo dia: setores, equipe e mensagens se configuram pelo próprio painel.",
+      "passos": [
+        {
+          "h": "Conecte o número",
+          "p": "Comece pelo número da DR Systems ou tenha o seu próprio número dedicado, disponível no plano Escritório."
+        },
+        {
+          "h": "Monte setores e equipe",
+          "p": "Setores, responsáveis, horário de atendimento e as quatro mensagens que o robô envia."
+        },
+        {
+          "h": "A equipe atende pelo painel",
+          "p": "Fila em tempo real, aviso de mensagem nova, anexos, etiquetas e encerramento com pesquisa de satisfação."
+        }
+      ],
+      "finalH": "Tire o atendimento do celular pessoal.",
+      "finalP": "São 14 dias grátis. Configure os setores hoje e comece a atender pelo painel.",
+      "planos": [
+        {
+          "nome": "Essencial",
+          "preco": 149,
+          "sub": "2 atendentes · 1.000 mensagens/mês",
+          "destaque": false,
+          "itens": [
+            "Triagem automática e setores",
+            "Painel em tempo real",
+            "Relatórios e pesquisa de satisfação"
+          ],
+          "cta": "Assinar",
+          "ctaHref": "https://drg-atende24h.zett-romao.workers.dev/assinar"
+        },
+        {
+          "nome": "Profissional",
+          "preco": 349,
+          "sub": "5 atendentes · 5.000 mensagens/mês",
+          "destaque": true,
+          "itens": [
+            "Tudo do Essencial",
+            "IA: resumo, sugestão e transcrição",
+            "Fechamento automático e etiquetas"
+          ],
+          "cta": "Assinar",
+          "ctaHref": "https://drg-atende24h.zett-romao.workers.dev/assinar"
+        },
+        {
+          "nome": "Escritório",
+          "preco": 699,
+          "sub": "15 atendentes · 20.000 mensagens/mês",
+          "destaque": false,
+          "itens": [
+            "Tudo do Profissional",
+            "Número dedicado com a sua marca",
+            "Suporte prioritário"
+          ],
+          "cta": "Assinar",
+          "ctaHref": "https://drg-atende24h.zett-romao.workers.dev/assinar"
+        }
+      ],
+      "planosNota": "Teste grátis de 14 dias. Atendente extra R$ 39/mês e mensagem excedente R$ 0,12. Número dedicado tem setup único de R$ 300."
+    },
+    {
       "key": "fit",
       "marca": "DRG",
       "nome": "Fit",

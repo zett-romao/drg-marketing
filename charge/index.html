@@ -39,9 +39,9 @@
     <div class="prodname">DRG·<b>Charge</b></div>
     <div class="pill">🔌 Recarga de veículos elétricos · Em breve</div>
     <h1>Recarga de carro elétrico <em>sem reformar a entrada</em> do prédio.</h1>
-    <p class="sub">A NBR 17019 manda dimensionar cada ponto de recarga com fator de demanda 1 — vinte vagas de 7,4 kW viram 148 kW declarados, e o orçamento de reforço mata o projeto na assembleia. O DRG·Charge mede a energia disponível em tempo real e distribui entre os carros conectados.</p>
+    <p class="sub">A NBR 17019 manda dimensionar cada ponto de recarga com fator de demanda 1 — vinte vagas de 7,4 kW viram 148 kW declarados, e o orçamento de reforço mata o projeto na assembleia. O DRG-Charge mede a energia disponível em tempo real e distribui entre os carros conectados.</p>
     <div class="cta">
-      <a class="btn btn-primary btn-lg" href="https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20o%20diagn%C3%B3stico%20da%20capacidade%20el%C3%A9trica%20da%20garagem%20do%20meu%20condom%C3%ADnio." target="_blank" rel="noopener">Diagnóstico gratuito da garagem</a>
+      <a class="btn btn-primary btn-lg" href="https://wa.me/5511997347272?text=Ol%C3%A1!%20Tenho%20interesse%20no%20DRG%C2%B7Charge%20e%20quero%20entrar%20na%20lista%20de%20espera." target="_blank" rel="noopener">Entrar na lista de espera</a>
       <a class="btn btn-ghost btn-lg" href="#recursos">Ver recursos</a>
     </div>
     <div class="mini">Gerenciamento dinâmico de carga · Medição homologada INMETRO · Rateio no boleto da unidade</div>
@@ -116,7 +116,7 @@
 (function(){
   var KEY="charge";
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  function brl(v){return 'R$ '+Number(v).toLocaleString('pt-br');}
+  function brl(v){return 'R\u0024 '+Number(v).toLocaleString('pt-br');}
   fetch('../data/site.json?t='+Date.now(),{cache:'no-store'}).then(function(r){return r.json();}).then(function(cfg){
     var pr=(cfg.produtos||[]).filter(function(x){return x.key===KEY;})[0];
     var pl=(pr&&pr.planos)||[];
@@ -147,7 +147,7 @@
   <div class="wrap">
     <h2>Quantas vagas de recarga cabem na sua garagem?</h2>
     <p>Entre na lista e faça o diagnóstico gratuito da capacidade elétrica do seu condomínio.</p>
-    <a class="btn btn-light btn-lg" href="https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20o%20diagn%C3%B3stico%20da%20capacidade%20el%C3%A9trica%20da%20garagem%20do%20meu%20condom%C3%ADnio." target="_blank" rel="noopener">Diagnóstico gratuito da garagem</a>
+    <a class="btn btn-light btn-lg" href="https://wa.me/5511997347272?text=Ol%C3%A1!%20Tenho%20interesse%20no%20DRG%C2%B7Charge%20e%20quero%20entrar%20na%20lista%20de%20espera." target="_blank" rel="noopener">Entrar na lista de espera</a>
   </div>
 </section>
 

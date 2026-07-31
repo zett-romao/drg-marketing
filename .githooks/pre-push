@@ -1,0 +1,21 @@
+#!/bin/sh
+# Trava de publicação: nenhum push sai daqui com app da casa fora da landing.
+#
+# Roda tools/auditar-produtos.mjs (varre C:\Projetos, cruza com data/site.json).
+# Se houver app sem card, card sem página ou copy com "TODO", o push é barrado.
+#
+# Emergência: git push --no-verify
+# Instalação (uma vez por máquina): git config core.hooksPath .githooks
+
+if ! command -v node >/dev/null 2>&1; then
+  echo "pre-push: node não encontrado, auditoria pulada."
+  exit 0
+fi
+
+node tools/auditar-produtos.mjs || {
+  echo "🚫 Push barrado: a landing está desatualizada em relação aos apps."
+  echo "   Resolva as pendências acima, ou use 'git push --no-verify' se for proposital."
+  exit 1
+}
+
+exit 0

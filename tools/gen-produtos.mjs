@@ -225,3 +225,33 @@ for (const p of produtos){
 }
 console.log(`\n${n} landings geradas a partir de data/site.json.`);
 if (semCopy.length) console.log('⚠ produtos sem copy de página (não gerados):', semCopy.join(', '));
+
+// ---- Lista do <noscript> da home: também sai do site.json (nada de nome hardcodado) ----
+// A home renderiza os cards por JS; o <noscript> é o que buscador e leitor sem JS enxergam.
+// Sem isso a lista envelhece calada (foi o que aconteceu: Charge, Pulse, View e Atende24h
+// ficaram de fora dela mesmo já estando no site.json).
+{
+  const homePath = join(ROOT, 'index.html');
+  const html = readFileSync(homePath, 'utf8');
+  const INI = '<!-- PRODUTOS:INICIO';
+  const FIM = '<!-- PRODUTOS:FIM -->';
+  const a = html.indexOf(INI), b = html.indexOf(FIM);
+  if (a === -1 || b === -1) {
+    console.log('⚠ marcadores PRODUTOS:INICIO/FIM não encontrados no index.html — lista do <noscript> não atualizada.');
+  } else {
+    const links = produtos
+      .filter(p => p.visivel !== false)
+      .map(p => `<a href="${p.href || p.key + '/'}" style="color:var(--clara)">${p.nome}</a>`)
+      .join(', ');
+    const bloco =
+      `${INI} — gerado por tools/gen-produtos.mjs a partir de data/site.json. Não editar à mão. -->\n` +
+      `      <p class="lead">Produtos: ${links}.</p>\n      `;
+    const visiveis = produtos.filter(p => p.visivel !== false).length;
+    // O contador da faixa de números também é recalculado (o JS já o corrige em tempo
+    // de execução; isto evita o número velho piscar antes do fetch e no <noscript>).
+    const novoHtml = (html.slice(0, a) + bloco + html.slice(b))
+      .replace(/(id="stat-produtos">)\d+(<)/, `$1${visiveis}$2`);
+    writeFileSync(homePath, novoHtml, 'utf8');
+    console.log('✓ index.html — lista do <noscript> e contador atualizados com', visiveis, 'produtos.');
+  }
+}
