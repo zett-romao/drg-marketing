@@ -5,8 +5,8 @@
 //   node tools/auditar-produtos.mjs --aviso  → só avisa; sai sempre 0
 //
 // Por que existe: o site.json já é fonte única de card/planos/copy, mas ninguém conferia
-// se NASCEU APP NOVO. Foi assim que o DRG-Atende24h ficou fora da landing por um mês,
-// no ar e vendendo. Isto roda no pre-push (.githooks/pre-push) e barra a publicação.
+// se NASCEU APP NOVO. O DRG-Atende24h subiu em 30/07/2026 e entrou na landing só quando o
+// dono reclamou. Isto roda no pre-push (.githooks/pre-push) e barra a publicação.
 //
 // A varredura lê o disco local (C:\Projetos), por isso não roda no GitHub Pages.
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
