@@ -5,7 +5,10 @@
 # Se houver app sem card, card sem página ou copy com "TODO", o push é barrado.
 #
 # Emergência: git push --no-verify
-# Instalação (uma vez por máquina): git config core.hooksPath .githooks
+#
+# Instalação: automática. `core.hooksPath` é config local e não vem no clone, então
+# tools/_hooks.mjs a acerta na 1ª vez que se roda a auditoria, o gerador ou a prévia.
+# À mão, se precisar: git config core.hooksPath .githooks
 
 if ! command -v node >/dev/null 2>&1; then
   echo "pre-push: node não encontrado, auditoria pulada."

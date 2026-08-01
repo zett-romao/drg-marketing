@@ -3,8 +3,11 @@
 // Rodar da raiz do projeto:  node tools/gen-produtos.mjs
 import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
 import { join } from 'node:path';
+import { garantirHooks } from './_hooks.mjs';
 
 const ROOT = process.cwd();
+
+garantirHooks();
 
 // Contato oficial da DR Systems (WhatsApp) — usado nos CTAs de interesse/lista de espera.
 const WHATS = '5511997347272';

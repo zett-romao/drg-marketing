@@ -3,6 +3,9 @@
 import { createServer } from 'node:http';
 import { readFile } from 'node:fs/promises';
 import { join, extname, normalize } from 'node:path';
+import { garantirHooks } from './_hooks.mjs';
+
+garantirHooks();
 
 const ROOT = process.cwd();
 const PORT = 8080;

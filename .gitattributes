@@ -1,3 +1,8 @@
-# Hooks são scripts sh: com CRLF o Git Bash do Windows quebra no shebang
-# ("\r: command not found") e a trava de publicação passaria a falhar calada.
+# Scripts sh: com CRLF o shell quebra no shebang ("\r: command not found") e a trava
+# de publicação passaria a falhar calada. Vale para o hook e para os .command do macOS.
 .githooks/* text eol=lf
+*.command text eol=lf
+*.sh text eol=lf
+
+# .bat é do Windows: CRLF sempre.
+*.bat text eol=crlf

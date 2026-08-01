@@ -10,13 +10,30 @@
 //
 // A varredura lê o disco local (C:\Projetos), por isso não roda no GitHub Pages.
 import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve, delimiter } from 'node:path';
+import { homedir } from 'node:os';
+import { garantirHooks } from './_hooks.mjs';
 
 const ROOT = process.cwd();
 const AVISO = process.argv.includes('--aviso');
 
+garantirHooks();
+
 // Onde os apps da casa moram. Pastas que não existirem são ignoradas em silêncio.
-const RAIZES = ['C:\\Projetos', 'G:\\Meu Drive'];
+// A raiz que sempre vale é a PASTA-MÃE desta aqui: os DRG-* são irmãos do DRG-Marketing
+// em qualquer máquina (C:\Projetos no PC, ~/Projetos ou ~/Dev no MacBook).
+// Layout fora do padrão: DRG_RAIZES="/caminho/um:/caminho/dois" (";" separa no Windows)
+// — quando definida, essa variável SUBSTITUI a lista padrão.
+const RAIZES = (process.env.DRG_RAIZES
+  ? process.env.DRG_RAIZES.split(delimiter).filter(Boolean)
+  : [
+      resolve(ROOT, '..'),
+      'C:\\Projetos',
+      'G:\\Meu Drive',
+      join(homedir(), 'Projetos'),
+      join(homedir(), 'Documents', 'Projetos')
+    ]
+).filter((v, i, a) => a.indexOf(v) === i);
 
 // Pasta do disco → key do produto no site.json, quando os nomes não batem.
 const APELIDOS = {
@@ -41,13 +58,18 @@ const produtos = site.produtos || [];
 const porKey = new Map(produtos.map(p => [p.key, p]));
 
 // ---- 1. varre o disco atrás de pastas de app ----
+const vistas = new Set();
 const pastas = [];
 for (const raiz of RAIZES) {
   if (!existsSync(raiz)) continue;
-  for (const nome of readdirSync(raiz)) {
+  let itens = [];
+  try { itens = readdirSync(raiz); } catch { continue; }
+  for (const nome of itens) {
     if (!/^(drg[-_]|dr_global)/i.test(nome)) continue;
+    if (vistas.has(nome.toLowerCase())) continue; // mesma pasta vista por duas raízes
     const caminho = join(raiz, nome);
     try { if (!statSync(caminho).isDirectory()) continue; } catch { continue; }
+    vistas.add(nome.toLowerCase());
     pastas.push({ nome, caminho });
   }
 }
@@ -121,8 +143,21 @@ if (ocultos.length) {
   linha('');
 }
 
+// Máquina sem os outros repos clonados (ex.: MacBook recém-configurado): a metade
+// "app sem card" da auditoria não tem como rodar. Dizer "em dia" aqui seria mentira —
+// o push segue liberado, mas com o aviso na cara.
+if (!pastas.length) {
+  linha('⚠ Não encontrei nenhuma pasta DRG-* nas raízes procuradas:');
+  for (const r of RAIZES) linha(`   ${r}`);
+  linha('   A conferência de "app sem card" NÃO rodou nesta máquina.');
+  linha('   Se os apps estão em outro lugar: DRG_RAIZES="/caminho/dos/projetos" (";" separa no Windows).');
+  linha('');
+}
+
 if (!pendencias) {
-  linha('✅ Landing em dia: todo app do disco tem card, e todo card tem página.');
+  linha(pastas.length
+    ? '✅ Landing em dia: todo app do disco tem card, e todo card tem página.'
+    : '✅ Cards e páginas conferem entre si (sem a varredura de apps, ver aviso acima).');
   linha('');
   process.exit(0);
 }
