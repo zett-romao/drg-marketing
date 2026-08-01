@@ -1103,7 +1103,7 @@
         "rotulo": "Entrar no painel",
         "href": "https://drg-atende24h.zett-romao.workers.dev/painel"
       },
-      "desc": "Central de atendimento no WhatsApp: um número para a empresa inteira, triagem automática, fila por setor e equipe atendendo pelo navegador do computador e APP pelo celular.",
+      "desc": "Central de atendimento no WhatsApp: um número para a empresa inteira, triagem automática, fila por setor e equipe atendendo pelo navegador do computador e pelo APP PWA no celular.",
       "descPagina": "DRG-Atende24h: central de atendimento no WhatsApp oficial, com triagem automática, roteamento por setor, painel em tempo real, IA e relatórios de fila. Um número para toda a empresa.",
       "h1": "Um número de WhatsApp para <em>a empresa inteira</em>.",
       "sub": "Triagem automática, fila por setor e a equipe atendendo de onde estiver, no mesmo número. Cada conversa com dono, histórico e prazo.",
