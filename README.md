@@ -37,15 +37,21 @@ casa sem card na landing) **se instala sozinha** na primeira vez que você roda 
 ferramenta do projeto — `core.hooksPath` é configuração local e não vem no clone, então
 `tools/_hooks.mjs` a acerta para você.
 
-A auditoria procura as pastas dos apps na **pasta-mãe deste repo** (os `DRG-*` são irmãos
-do `DRG-Marketing`), além de `C:\Projetos`, `G:\Meu Drive`, `~/Projetos` e
+A auditoria olha **duas fontes**: os **repos da conta no GitHub** (via `gh`, dono lido do
+remote `origin`) e as **pastas `DRG-*` do disco**. O GitHub é o que vale em qualquer
+máquina — app que nasceu no MacBook e ainda não foi clonado no PC é pego assim. O disco
+cobre o contrário: app que ainda nem tem repo.
+
+No disco, ela procura na **pasta-mãe deste repo** (os `DRG-*` são irmãos do
+`DRG-Marketing`), além de `C:\Projetos`, `G:\Meu Drive`, `~/Projetos` e
 `~/Documents/Projetos`. Se os seus projetos estiverem em outro lugar:
 
 ```text
 export DRG_RAIZES="$HOME/Dev/DRG"      # macOS/Linux (";" separa no Windows)
+node tools/auditar-produtos.mjs --sem-github   # sem rede / sem gh
 ```
 
-Numa máquina onde só este repo está clonado, a auditoria **avisa** que não conseguiu
-conferir "app sem card" — e deixa o push passar, em vez de dar um "tudo em dia" falso.
+Se nenhuma das duas fontes responder, a auditoria **avisa** que não conseguiu conferir
+"app sem card" — e deixa o push passar, em vez de dar um "tudo em dia" falso.
 
 > Landings por produto ficam em subpastas: `kronos/`, `juridico/`, `atende24h/`, etc.
