@@ -1,7 +1,7 @@
 // Gera as landings por produto (uma subpasta cada) a partir de um template único.
 // FONTE ÚNICA: data/site.json (cards, planos E copy da página). Não há mais lista aqui.
 // Rodar da raiz do projeto:  node tools/gen-produtos.mjs
-import { writeFileSync, mkdirSync, readFileSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import { garantirHooks } from './_hooks.mjs';
 
@@ -12,6 +12,12 @@ garantirHooks();
 // Contato oficial da DR Systems (WhatsApp) — usado nos CTAs de interesse/lista de espera.
 const WHATS = '5511997347272';
 const wa = (msg) => `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
+
+// Bump quando a arte dos ícones mudar (fura o cache de favicon do navegador).
+const VERSAO_ICONE = '20260801';
+
+// Caminho relativo à raiz do projeto (o gerador roda de lá).
+const existe = (rel) => existsSync(join(ROOT, rel));
 
 const ICON = (emoji) =>
   `data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%23152a45'/%3E%3Ctext%20x='16'%20y='23'%20font-size='18'%20text-anchor='middle'%3E${emoji}%3C/text%3E%3C/svg%3E`;
@@ -47,13 +53,16 @@ function page(p){
     ? `<a class="btn btn-light btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>
       ${p.ctaSecundario ? `<a class="btn btn-ghost btn-lg" href="${p.ctaSecundario.href}" target="_blank" rel="noopener">${p.ctaSecundario.rotulo}</a>` : ''}`
     : `<a class="btn btn-light btn-lg" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + ' e quero entrar na lista de espera.')}" target="_blank" rel="noopener">Entrar na lista de espera</a>`;
-  // Logo própria do produto (opcional): substitui o emoji grande e o favicon.
-  const favicon = p.logo
-    ? `<link rel="icon" href="../assets/${p.logo}" />
-  <link rel="apple-touch-icon" href="../assets/${p.logo}" />`
-    : `<link rel="icon" href="../assets/favicon.svg" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
-  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />`;
+  // Favicon: SEMPRE a logo do próprio produto (assets/<key>.svg), não a da casa.
+  // A aba era o único lugar onde as 20 landings ficavam idênticas — em 16px ninguém
+  // lê o nome, então o `</>` da DR Systems em todas não distinguia nada.
+  // 🔒 apple-touch-icon NUNCA aponta SVG: o iOS ignora e desenha o quadrado cinza.
+  // O ?v= é o que faz a aba trocar de desenho sem o usuário limpar cache: favicon
+  // é o recurso que o navegador mais agarra — mesmo URL, mesmo desenho, por dias.
+  const marcaSvg = p.logo || (existe(`assets/${p.key}.svg`) ? `${p.key}.svg` : null);
+  const favicon = `<link rel="icon" href="../assets/${marcaSvg || 'favicon.svg'}?v=${VERSAO_ICONE}" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png?v=${VERSAO_ICONE}" />
+  <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png?v=${VERSAO_ICONE}" />`;
   const heroMark = p.logo
     ? `<img class="prodlogo" src="../assets/${p.logo}" alt="${marca}·${p.nome}" width="88" height="88" style="display:block;margin:0 auto 10px;width:88px;height:88px" />`
     : `<div class="emojibig">${p.emoji}</div>`;
