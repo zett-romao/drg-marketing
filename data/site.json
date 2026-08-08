@@ -2386,6 +2386,94 @@
       "finalP": "Entre na lista e seja avisado quando o DRG-AI abrir.",
       "planos": [],
       "motivoOculto": "decisao do dono: AI e motor interno, sem card na landing"
+    },
+    {
+      "key": "appcare",
+      "marca": "DRG",
+      "nome": "APPCare",
+      "emoji": "🩺",
+      "cat": "Cuidadores e enfermagem sob demanda",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "appcare/",
+      "cta": "Tenho interesse",
+      "desc": "Acompanhante hospitalar, cuidador e enfermagem de última hora: você escolhe o profissional, vê as referências e contrata pelo aplicativo.",
+      "descPagina": "APPCare: encontre acompanhante hospitalar, cuidador ou profissional de enfermagem verificado, na hora. Você escolhe pela ficha, paga pelo app e o valor só é cobrado quando o atendimento começa.",
+      "h1": "A cuidadora não veio. E agora, <em>quem fica com a sua mãe?</em>",
+      "sub": "Encontre acompanhante hospitalar, cuidador ou profissional de enfermagem perto de você. Você escolhe a pessoa pela ficha e pelas referências — e ela aceita ou não. O pagamento fica bloqueado e só é cobrado quando o atendimento começa de verdade.",
+      "mini": "Você escolhe quem vai · Documentos conferidos antes · Só cobra quando começa",
+      "doresT": "A hora do aperto nunca avisa",
+      "dores": [
+        "A cuidadora avisa às 22h que não vem amanhã",
+        "A mãe foi internada e o hospital exige acompanhante — e todo mundo trabalha",
+        "Você não conhece ninguém e não sabe em quem confiar",
+        "Agência cobra caro, demora e ainda manda quem estiver sobrando"
+      ],
+      "solT": "Você escolhe — e sabe quem está entrando na sua casa",
+      "sol": [
+        "Veja quem alcança o seu endereço, com preço e distância na tela",
+        "Leia a ficha: experiência, o que a pessoa pode fazer e o que as famílias disseram",
+        "Documento, antecedentes e COREN conferidos antes de qualquer chamado",
+        "Se a pessoa não puder, o aplicativo já mostra as próximas com um toque"
+      ],
+      "recT": "Feito para a hora em que ninguém tem tempo",
+      "recL": "Cada detalhe existe porque a família está com pressa e com medo de errar.",
+      "rec": [
+        {
+          "i": "🔎",
+          "h": "Você escolhe a pessoa",
+          "p": "Nada de sorteio. Você lê a ficha, vê as referências e decide quem vai."
+        },
+        {
+          "i": "🛡️",
+          "h": "Conferido antes, não na hora",
+          "p": "Documento com foto, antecedentes e COREN checados no cadastro. Às 2h da manhã ninguém confere papel."
+        },
+        {
+          "i": "💳",
+          "h": "Só cobra quando começa",
+          "p": "O valor fica bloqueado ao escolher e só é cobrado quando o profissional chega e assume."
+        },
+        {
+          "i": "📍",
+          "h": "Quem realmente alcança você",
+          "p": "Cada profissional define até quantos quilômetros aceita ir. Aparece só quem chega até o seu endereço."
+        },
+        {
+          "i": "⚕️",
+          "h": "Cada um no seu limite",
+          "p": "Acompanhante, cuidador e enfermagem têm escopos diferentes — e o aplicativo não deixa trocar."
+        },
+        {
+          "i": "🔄",
+          "h": "Trocar sem constrangimento",
+          "p": "Não gostou ou a pessoa não pôde? Você chama outra na mesma tela, sem precisar justificar."
+        }
+      ],
+      "comoL": "Do aperto ao profissional na porta, em quatro passos.",
+      "passos": [
+        {
+          "h": "Diga o que você precisa",
+          "p": "Acompanhante, cuidador ou enfermagem — em casa ou no hospital, no dia e na hora que precisar."
+        },
+        {
+          "h": "Escolha a pessoa",
+          "p": "Veja quem alcança o endereço, leia a ficha com as referências e o preço, e escolha."
+        },
+        {
+          "h": "Pague pelo aplicativo",
+          "p": "O valor fica bloqueado e a pessoa é avisada. Se ela não puder, você chama outra e nada foi cobrado."
+        },
+        {
+          "h": "Acompanhe o atendimento",
+          "p": "Ela faz o check-in ao chegar — é aí que a cobrança acontece. No fim, você avalia."
+        }
+      ],
+      "finalH": "Tenha para quem ligar antes de precisar.",
+      "finalP": "Estamos formando a equipe de profissionais verificados cidade por cidade. Deixe seu contato e avisamos assim que o APPCare abrir na sua região.",
+      "planos": [],
+      "logo": "appcare.svg"
     }
   ]
 }
