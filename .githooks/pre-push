@@ -21,4 +21,11 @@ node tools/auditar-produtos.mjs || {
   exit 1
 }
 
+# Preço da página de VENDA tem de bater com o que o sistema cobra. Cópia manual desatualiza
+# sem avisar, e quem descobre primeiro é o cliente, com o valor errado na cara.
+node tools/sincronizar-precos.mjs --conferir || {
+  echo "   (app fora do ar? use --offline: DRG_SEM_REDE=1 git push)"
+  exit 1
+}
+
 exit 0

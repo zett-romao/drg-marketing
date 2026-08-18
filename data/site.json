@@ -1578,7 +1578,7 @@
       "planos": [
         {
           "nome": "Essencial",
-          "preco": 190,
+          "preco": 270,
           "sub": "até 100 unidades no total",
           "destaque": false,
           "itens": [
@@ -1587,11 +1587,14 @@
             "Reserva de áreas comuns"
           ],
           "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com"
+          "ctaHref": "https://drg-condo.onrender.com",
+          "faixas": [
+            "plan_100"
+          ]
         },
         {
           "nome": "Pro",
-          "preco": 290,
+          "preco": 370,
           "sub": "até 200 unidades no total",
           "destaque": true,
           "itens": [
@@ -1600,7 +1603,10 @@
             "App do morador (PWA)"
           ],
           "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com"
+          "ctaHref": "https://drg-condo.onrender.com",
+          "faixas": [
+            "plan_200"
+          ]
         },
         {
           "nome": "Avançado",
@@ -1613,7 +1619,10 @@
             "Perfis e permissões"
           ],
           "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com"
+          "ctaHref": "https://drg-condo.onrender.com",
+          "faixas": [
+            "plan_300"
+          ]
         },
         {
           "nome": "Business",
@@ -1626,7 +1635,10 @@
             "Suporte prioritário"
           ],
           "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com"
+          "ctaHref": "https://drg-condo.onrender.com",
+          "faixas": [
+            "plan_600"
+          ]
         },
         {
           "nome": "Corporativo",
@@ -1639,7 +1651,11 @@
             "SLA e suporte dedicado"
           ],
           "cta": "Falar com a gente",
-          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems%20sobre%20o%20DRG-Condo."
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20DR%20Systems%20sobre%20o%20DRG-Condo.",
+          "faixas": [
+            "plan_800",
+            "plan_801_plus"
+          ]
         }
       ],
       "cta": "Acessar",
@@ -1711,7 +1727,9 @@
       ],
       "finalH": "Administre o condomínio sem improviso.",
       "finalP": "Acesse agora e comece a organizar o seu condomínio num lugar só.",
-      "descPagina": "Condo: gestão condominial completa, do financeiro à comunicação com os moradores, feita para o síndico."
+      "descPagina": "Condo: gestão condominial completa, do financeiro à comunicação com os moradores, feita para o síndico.",
+      "precosSincronizadosEm": "2026-08-18",
+      "precosAssinatura": "8f6863afd4cd389e"
     },
     {
       "key": "open",
