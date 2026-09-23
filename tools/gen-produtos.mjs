@@ -39,10 +39,20 @@ function page(p){
   const cta2 = p.ctaSecundario
     ? `<a class="btn btn-ghost btn-lg" href="${p.ctaSecundario.href}" target="_blank" rel="noopener">${p.ctaSecundario.rotulo}</a>`
     : '';
+  // Contato opcional por WhatsApp em produto já no ar (ex.: Condo: "Falar com a gente").
+  // 🔒 Regra 8: contato é WhatsApp, nunca mailto. Some quando o produto não declara.
+  const ctaContato = p.ctaContato
+    ? `<a class="btn btn-ghost btn-lg" href="${wa(p.ctaContato.msg || ('Olá! Quero saber mais sobre o ' + marca + '-' + p.nome + '.'))}" target="_blank" rel="noopener">${p.ctaContato.rotulo || 'Falar com a gente'}</a>`
+    : '';
+  // Link discreto para quem já é cliente (ex.: "Já tenho conta · Entrar"). Opcional.
+  const ctaLogin = p.ctaLogin
+    ? `<p class="login-link"><a href="${p.ctaLogin.href}" target="_blank" rel="noopener">${p.ctaLogin.rotulo || 'Já tenho conta · Entrar'}</a></p>`
+    : '';
 
   const heroCta = live
     ? `<a class="btn btn-primary btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>
-      ${cta2}
+      ${cta2}${ctaContato ? `
+      ${ctaContato}` : ''}
       <a class="btn btn-ghost btn-lg" href="#recursos">Ver recursos</a>`
     : `<a class="btn btn-primary btn-lg" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + ' e quero entrar na lista de espera.')}" target="_blank" rel="noopener">Entrar na lista de espera</a>
       <a class="btn btn-ghost btn-lg" href="#recursos">Ver recursos</a>`;
@@ -51,7 +61,9 @@ function page(p){
     : `<div class="pill">${p.emoji} ${p.cat} · Em breve</div>`;
   const finalCta = live
     ? `<a class="btn btn-light btn-lg" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>
-      ${p.ctaSecundario ? `<a class="btn btn-ghost btn-lg" href="${p.ctaSecundario.href}" target="_blank" rel="noopener">${p.ctaSecundario.rotulo}</a>` : ''}`
+      ${p.ctaSecundario ? `<a class="btn btn-ghost btn-lg" href="${p.ctaSecundario.href}" target="_blank" rel="noopener">${p.ctaSecundario.rotulo}</a>` : ''}${ctaContato ? `
+      ${ctaContato}` : ''}${ctaLogin ? `
+    ${ctaLogin}` : ''}`
     : `<a class="btn btn-light btn-lg" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + ' e quero entrar na lista de espera.')}" target="_blank" rel="noopener">Entrar na lista de espera</a>`;
   // Favicon: SEMPRE a logo do próprio produto (assets/<key>.svg), não a da casa.
   // A aba era o único lugar onde as 20 landings ficavam idênticas — em 16px ninguém
@@ -98,7 +110,7 @@ function page(p){
     <a class="nav-link" id="nav-planos" href="#planos" hidden>Planos</a>
     <span class="sp"></span>
     ${live
-      ? `<a class="btn btn-primary" href="${p.app}" target="_blank" rel="noopener">${p.cta}</a>`
+      ? `${p.ctaLogin ? `<a class="nav-link" href="${p.ctaLogin.href}" target="_blank" rel="noopener">Entrar</a>` : ''}<a class="btn btn-primary" href="${p.app}" target="_blank" rel="noopener">${p.ctaNav || p.cta}</a>`
       : `<a class="btn btn-primary" href="${wa('Olá! Tenho interesse no ' + marca + '·' + p.nome + '.')}" target="_blank" rel="noopener">Tenho interesse</a>`}
   </div>
 </nav>
@@ -113,7 +125,8 @@ function page(p){
     <div class="cta">
       ${heroCta}
     </div>
-    <div class="mini">${p.mini}</div>
+    ${live && ctaLogin ? `${ctaLogin}
+    ` : ''}<div class="mini">${p.mini}</div>
   </div>
 </header>
 

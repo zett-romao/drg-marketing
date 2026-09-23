@@ -56,7 +56,8 @@ const NAO_E_PRODUTO = {
   'platform': 'núcleo interno de arquitetura, não é produto de cliente',
   'padrao-drg': 'padrões internos',
   'garantidora_antigo_nao_usar': 'pasta aposentada',
-  'rently_antigo': 'pasta aposentada'
+  'rently_antigo': 'pasta aposentada',
+  'spy': 'projetos de CFTV da DR Global para os condomínios administrados (playbook + pasta por cliente), não é produto de venda'
 };
 
 const site = JSON.parse(readFileSync(join(ROOT, 'data', 'site.json'), 'utf8'));

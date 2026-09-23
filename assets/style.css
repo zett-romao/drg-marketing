@@ -29,6 +29,12 @@ img{max-width:100%}
 .btn-light{background:#fff;color:var(--azul2)}
 .btn-light:hover{background:#eef4fb;transform:translateY(-1px)}
 .btn-lg{padding:15px 30px;font-size:17px}
+/* Botão nunca é mudo: feedback tátil no clique (padrão DR Systems). */
+.btn:active{transform:scale(.98);filter:brightness(.92)}
+/* Link discreto "Já tenho conta · Entrar" das landings de produto no ar. */
+.hero .login-link,.final .login-link{margin:14px auto 0;font-size:14px}
+.login-link a{color:#cfe0f2;text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:6px 4px}
+.login-link a:hover{color:#fff}
 
 /* NAV */
 nav{position:sticky;top:0;z-index:30;background:rgba(21,42,69,.92);backdrop-filter:blur(8px)}
@@ -165,6 +171,7 @@ a.fcard:hover{background:rgba(255,255,255,.12);transform:translateY(-3px);border
 .final{background:var(--grad);color:#fff;text-align:center}
 .final h2{font-size:32px;font-weight:820}
 .final p{color:#dce7f3;margin:10px auto 26px;max-width:560px;font-size:17px}
+.final .btn{margin:5px}
 
 footer{background:#0e1c2e;color:#8fa3b8;padding:30px 0;text-align:center;font-size:13px}
 footer .brand{justify-content:center;margin-bottom:8px;font-size:16px}

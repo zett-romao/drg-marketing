@@ -72,7 +72,7 @@ Página única apresentando os 10 produtos da família DRG, com o Kronos em dest
 - [x] **CNPJ real** no rodapé: DR Global Multi Services · CNPJ **49.698.112/0001-57** (obtido do Kronos, 2026-07-06).
 - [x] **Nome do produto no topo** do hero das páginas de produto (antes só aparecia o emoji).
 - [ ] ⚠️ Conferir razão social: no Kronos o CNPJ 49.698.112/0001-57 está como *"D.R. Global - Gestão de Condomínios, Imóveis, Assessoria Financeira e Administrativa Ltda"*; no site usamos "DR Global Multi Services". Confirmar qual usar.
-- [ ] Confirmar status "Em breve" de **Rently, Garantidora, Condo** — ligar link quando cada um puder ser divulgado.
+- [ ] Confirmar status "Em breve" de **Rently, Garantidora** — ligar link quando cada um puder ser divulgado. (**Condo** lançado em 23/09/2026: CTA → inscrição pública `drg-condo.onrender.com/inscricao`, sem lista de espera.)
 - [ ] Revisar rotas de destino (Sign/Jurídico vão pra vendas/signup — confirmar).
 - [ ] Canal de **contato** além do e-mail (WhatsApp comercial?).
 

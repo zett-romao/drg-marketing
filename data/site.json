@@ -1570,15 +1570,15 @@
       "cat": "Gestão condominial",
       "destaque": false,
       "visivel": true,
-      "status": "embreve",
+      "status": "ativo",
       "href": "condo/",
-      "app": "https://drg-condo.onrender.com",
+      "app": "https://drg-condo.onrender.com/inscricao",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
       "planosNota": "🏢 O preço é pela SOMA das unidades de todos os seus condomínios — não importa quantos condomínios você administra, só o total de unidades somadas. Ex.: 3 condomínios de 30 unidades = 90 no total, cabe no Essencial. Cada condomínio fica isolado na mesma conta.",
       "planos": [
         {
           "nome": "Essencial",
-          "preco": 270,
+          "preco": 170,
           "sub": "até 100 unidades no total",
           "destaque": false,
           "itens": [
@@ -1586,15 +1586,15 @@
             "Comunicação com moradores",
             "Reserva de áreas comuns"
           ],
-          "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com",
+          "cta": "Começar avaliação grátis",
+          "ctaHref": "https://drg-condo.onrender.com/inscricao",
           "faixas": [
             "plan_100"
           ]
         },
         {
           "nome": "Pro",
-          "preco": 370,
+          "preco": 270,
           "sub": "até 200 unidades no total",
           "destaque": true,
           "itens": [
@@ -1602,8 +1602,8 @@
             "Controle de cobranças",
             "App do morador (PWA)"
           ],
-          "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com",
+          "cta": "Começar avaliação grátis",
+          "ctaHref": "https://drg-condo.onrender.com/inscricao",
           "faixas": [
             "plan_200"
           ]
@@ -1618,8 +1618,8 @@
             "Multi-condomínio isolado",
             "Perfis e permissões"
           ],
-          "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com",
+          "cta": "Começar avaliação grátis",
+          "ctaHref": "https://drg-condo.onrender.com/inscricao",
           "faixas": [
             "plan_300"
           ]
@@ -1634,8 +1634,8 @@
             "Alto volume de unidades",
             "Suporte prioritário"
           ],
-          "cta": "Acessar",
-          "ctaHref": "https://drg-condo.onrender.com",
+          "cta": "Começar avaliação grátis",
+          "ctaHref": "https://drg-condo.onrender.com/inscricao",
           "faixas": [
             "plan_600"
           ]
@@ -1658,10 +1658,10 @@
           ]
         }
       ],
-      "cta": "Acessar",
+      "cta": "Inscrever meu condomínio",
       "h1": "A gestão do condomínio <em>completa</em>, num lugar só.",
       "sub": "Do financeiro à comunicação com os moradores — tudo organizado para o síndico administrar sem planilha e sem grupo de WhatsApp lotado.",
-      "mini": "Financeiro · Comunicação · Reservas · Multi-condomínio isolado",
+      "mini": "Avaliação gratuita, sem cartão · Financeiro · Comunicação · Reservas · Multi-condomínio isolado",
       "doresT": "Síndico faz tudo no improviso",
       "dores": [
         "Financeiro do condomínio no papel",
@@ -1726,10 +1726,19 @@
         }
       ],
       "finalH": "Administre o condomínio sem improviso.",
-      "finalP": "Acesse agora e comece a organizar o seu condomínio num lugar só.",
+      "finalP": "Inscreva seu condomínio e comece a avaliação gratuita, sem cartão. O síndico já entra no sistema na hora.",
       "descPagina": "Condo: gestão condominial completa, do financeiro à comunicação com os moradores, feita para o síndico.",
-      "precosSincronizadosEm": "2026-08-18",
-      "precosAssinatura": "8f6863afd4cd389e"
+      "precosSincronizadosEm": "2026-09-23",
+      "precosAssinatura": "9532fa12c73ec933",
+      "ctaNav": "Inscrever condomínio",
+      "ctaContato": {
+        "rotulo": "Falar com a gente",
+        "msg": "Olá! Quero saber mais sobre o DRG-Condo para o meu condomínio."
+      },
+      "ctaLogin": {
+        "rotulo": "Já tenho conta · Entrar",
+        "href": "https://drg-condo.onrender.com"
+      }
     },
     {
       "key": "open",
