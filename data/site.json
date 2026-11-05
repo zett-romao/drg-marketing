@@ -1811,7 +1811,7 @@
         },
         {
           "h": "Cadastramos moradores e unidades",
-          "p": "Direto no DRG-Open, ou puxando do DRG·Condo — um registro só, duas portas de entrada."
+          "p": "Direto no DRG-Open, ou puxando do DRG-Guard — um registro só, duas portas de entrada."
         },
         {
           "h": "A tela passa a mostrar quem passou",
@@ -1973,7 +1973,7 @@
       "descPagina": "DRG-Access: controle de acesso operacional — portaria, visitantes, prestadores, veículos, credenciais e eventos, com registro de entradas e saídas e trilha de auditoria.",
       "h1": "Quem entra e quem sai do condomínio, <em>registrado</em>.",
       "sub": "Portaria, visitantes, prestadores, veículos e credenciais num só lugar. O DRG-Access enxerga cada passagem e registra tudo — convivendo com a automação que você já tem.",
-      "mini": "Convive com o que já está instalado · Registro que fica como prova · Uma base só com o Condo",
+      "mini": "Convive com o que já está instalado · Registro que fica como prova · Uma base só com o Guard",
       "doresT": "O portão abre e ninguém sabe quem é",
       "dores": [
         "Entradas e saídas sem registro, ou anotadas no caderno",
@@ -1986,7 +1986,7 @@
         "Cada passagem registrada, com data, hora e responsável",
         "Cadastro de visitantes, prestadores, veículos e eventos",
         "Credenciais e convites com validade e revogação",
-        "Base compartilhada com o DRG-Condo, sem cópia paralela"
+        "Base compartilhada com o DRG-Guard, sem cópia paralela"
       ],
       "recT": "A portaria enxergando o condomínio",
       "recL": "Para síndicos e administradoras que querem saber quem passou, sem trocar o que já funciona.",
@@ -2014,7 +2014,7 @@
         {
           "i": "🧩",
           "h": "Base compartilhada",
-          "p": "Usa o cadastro do DRG-Condo; nada de manter uma cópia paralela de moradores e unidades."
+          "p": "Usa o cadastro do DRG-Guard; nada de manter uma cópia paralela de moradores e unidades."
         },
         {
           "i": "⚖️",
@@ -2030,7 +2030,7 @@
         },
         {
           "h": "Cadastramos moradores e unidades",
-          "p": "Direto no Access ou puxando do DRG-Condo — um registro só."
+          "p": "Direto no Access ou puxando do DRG-Guard — um registro só."
         },
         {
           "h": "A tela mostra quem passou",
@@ -2102,7 +2102,7 @@
         },
         {
           "i": "🏢",
-          "h": "Integra com o Condo",
+          "h": "Integra com o Guard",
           "p": "Vaga ligada a condomínio e unidade, com cobrança na mesma fatura do condômino."
         }
       ],
@@ -2181,7 +2181,7 @@
         },
         {
           "i": "🔗",
-          "h": "Integra com o Condo",
+          "h": "Integra com o Guard",
           "p": "Vincula medidores a condomínio, bloco, unidade ou área comum."
         },
         {
@@ -2354,7 +2354,7 @@
         },
         {
           "i": "🔗",
-          "h": "Integra com Guard/Condo",
+          "h": "Integra com o Guard",
           "p": "A falha vira ocorrência no Guard e resumo no painel do condomínio."
         }
       ],
@@ -2477,7 +2477,7 @@
       "desc": "A camada de IA da DR Systems: um assistente que responde pelos seus documentos, gera relatórios inteligentes e detecta anomalias — dentro de todos os apps.",
       "descPagina": "DRG-AI: a camada de inteligência artificial da suíte DR Systems. Assistente documental com fonte, relatórios inteligentes e análise preditiva, integrada a todos os produtos, com trilha de auditoria e LGPD.",
       "h1": "A <em>inteligência</em> que atravessa toda a suíte.",
-      "sub": "Um assistente treinado nos documentos e dados autorizados de cada cliente, que responde com fonte, gera relatórios e detecta anomalias — dentro do Hidro, Condo, Guard, Energy e dos demais apps.",
+      "sub": "Um assistente treinado nos documentos e dados autorizados de cada cliente, que responde com fonte, gera relatórios e detecta anomalias — dentro do Hidro, Guard, Energy e dos demais apps.",
       "mini": "Responde só pelos seus dados · Cita a fonte · Custo por cliente rastreável",
       "doresT": "Dado demais, tempo de menos",
       "dores": [
