@@ -1824,6 +1824,140 @@
       "aposentadoPor": "access"
     },
     {
+      "marca": "DRG",
+      "destaque": false,
+      "visivel": false,
+      "status": "embreve",
+      "planos": [],
+      "key": "sentinel",
+      "nome": "Sentinel",
+      "emoji": "🛡️",
+      "cat": "Segurança de equipamentos e rede",
+      "href": "sentinel/",
+      "desc": "Protege os computadores e a rede da empresa: ameaças, inventário, atualizações e filtro de DNS num painel só.",
+      "h1": "Os computadores e a rede da empresa <em>sob vigilância</em>, o dia inteiro.",
+      "sub": "Detecta ameaças, mantém o inventário e as atualizações em dia e filtra o DNS de toda a rede. Mede o equipamento e a rede, nunca a pessoa.",
+      "mini": "Painel único · Alerta na hora · Mede o equipamento, não a pessoa",
+      "doresT": "Ninguém sabe o que está acontecendo nos computadores",
+      "dores": [
+        "Máquina infectada só aparece quando já parou",
+        "Ninguém sabe quantos computadores existem nem o que roda neles",
+        "Atualização atrasada vira porta de entrada",
+        "Site perigoso aberto na rede da empresa"
+      ],
+      "solT": "Um vigia em cada computador, um painel para tudo",
+      "sol": [
+        "Agente leve em cada máquina",
+        "Ameaça detectada vira alerta na hora",
+        "Inventário e atualizações sempre à vista",
+        "Filtro de DNS para a rede inteira"
+      ],
+      "recT": "O que o Sentinel acompanha",
+      "recL": "Feito para empresas que precisam cuidar dos equipamentos sem vigiar as pessoas.",
+      "rec": [
+        {
+          "i": "🛡️",
+          "h": "Detecção de ameaças",
+          "p": "Comportamento suspeito no computador vira alerta com o que aconteceu e onde."
+        },
+        {
+          "i": "🖥️",
+          "h": "Inventário",
+          "p": "Cada máquina com sistema, programas e estado das atualizações."
+        },
+        {
+          "i": "🌐",
+          "h": "Filtro de DNS",
+          "p": "Bloqueia endereços perigosos para toda a rede."
+        }
+      ],
+      "comoL": "Instala em poucos minutos, sem trocar nada do que já funciona.",
+      "passos": [
+        {
+          "h": "Instalamos o agente",
+          "p": "Um programa leve em cada computador."
+        },
+        {
+          "h": "Ligamos o filtro da rede",
+          "p": "O DNS da empresa passa pelo Sentinel."
+        },
+        {
+          "h": "O painel acompanha",
+          "p": "Alertas e inventário num lugar só."
+        }
+      ],
+      "finalH": "Seus equipamentos protegidos, sem vigiar ninguém.",
+      "finalP": "Entre na lista e seja avisado quando o DRG-Sentinel abrir.",
+      "descPagina": "Sentinel: proteção dos computadores e da rede da empresa, com detecção de ameaças, inventário e filtro de DNS."
+    },
+    {
+      "marca": "DRG",
+      "destaque": false,
+      "visivel": false,
+      "status": "embreve",
+      "planos": [],
+      "key": "delivery",
+      "nome": "Delivery",
+      "emoji": "🛵",
+      "cat": "Interfone do entregador",
+      "href": "delivery/",
+      "desc": "Visor no portão: o entregador digita bloco e apartamento, toca LIGAR e o morador atende.",
+      "h1": "O entregador chama o morador <em>direto do portão</em>.",
+      "sub": "Um visor no portão: o entregador digita bloco e apartamento, toca LIGAR e o morador atende. A portaria fica livre para o que importa.",
+      "mini": "Visor no portão · O morador atende · Portaria livre",
+      "doresT": "Entrega trava a portaria",
+      "dores": [
+        "Fila de entregador na guarita",
+        "Porteiro interfonando unidade por unidade",
+        "Morador que não atende e entrega que volta",
+        "Portaria distraída na hora errada"
+      ],
+      "solT": "O entregador fala direto com o morador",
+      "sol": [
+        "Digita bloco e apartamento no visor",
+        "Toca LIGAR e o morador atende",
+        "Sem passar pelo porteiro",
+        "Registro de cada chamada"
+      ],
+      "recT": "Como funciona",
+      "recL": "Feito para condomínios com muitas entregas.",
+      "rec": [
+        {
+          "i": "📟",
+          "h": "Visor no portão",
+          "p": "Tela simples, resistente, do lado de fora."
+        },
+        {
+          "i": "📞",
+          "h": "Chamada para o morador",
+          "p": "O morador atende e decide."
+        },
+        {
+          "i": "🧾",
+          "h": "Registro",
+          "p": "Cada chamada fica registrada."
+        }
+      ],
+      "comoL": "Instala no portão que já existe.",
+      "passos": [
+        {
+          "h": "Instalamos o visor",
+          "p": "No portão de entrada."
+        },
+        {
+          "h": "Cadastramos as unidades",
+          "p": "Bloco e apartamento de cada morador."
+        },
+        {
+          "h": "O entregador chama",
+          "p": "E o morador atende."
+        }
+      ],
+      "finalH": "Entrega resolvida sem travar a portaria.",
+      "finalP": "Entre na lista e seja avisado quando o DRG-Delivery abrir.",
+      "descPagina": "Delivery: interfone do entregador no portão do condomínio."
+    },
+    {
       "key": "access",
       "marca": "DRG",
       "nome": "Access",

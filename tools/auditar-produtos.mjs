@@ -46,7 +46,9 @@ const RAIZES = (process.env.DRG_RAIZES
 const APELIDOS = {
   'dr_global_git': 'kronos',   // pasta do Kronos no PC
   'drg-sistema': 'kronos',     // nome do repo do Kronos no GitHub
-  'drg-sindico': 'sindia'      // o produto se chama Sind.ia
+  'drg-sindico': 'sindia',     // o produto se chama Sind.ia
+  'drg-rently (antigo - nao usar)': 'rently_antigo',   // pasta aposentada no Drive
+  'drg-sentinel-pcs': 'sentinel'  // instalador do agente do Sentinel (Drive), mesmo produto
 };
 
 // O que NÃO é produto de prateleira — não deve virar card. A chave é a key derivada,
@@ -66,7 +68,8 @@ const porKey = new Map(produtos.map(p => [p.key, p]));
 
 const keyDe = (nome) => {
   const n = nome.toLowerCase();
-  return APELIDOS[n] || n.replace(/^drg[-_]/, '');
+  // acento não muda o produto: a pasta "DRG-Jurídico" do Drive é o card "juridico"
+  return APELIDOS[n] || n.normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/^drg[-_]/, '');
 };
 
 // ---- 1. fonte A: repos da conta no GitHub ----
