@@ -26,8 +26,10 @@ import { readFileSync, writeFileSync } from 'node:fs';
 const CONFERIR = process.argv.includes('--conferir');
 const OFFLINE = process.argv.includes('--offline') || process.env.DRG_SEM_REDE === '1';
 
+// 🔴 05/11/2026: o DRG-Condo foi DESATIVADO (o Guard herdou o papel) e a API dele responde 410.
+//    Era a única fonte; a linha fica comentada para o caso de religar.
 const FONTES = [
-  { key: 'condo', nome: 'DRG-Condo', api: 'https://drg-condo.onrender.com/api/public/plans' }
+  // { key: 'condo', nome: 'DRG-Condo', api: 'https://drg-condo.onrender.com/api/public/plans' }
 ];
 
 const valor = (texto) => Number(String(texto).replace(/[^\d,]/g, '').replace(',', '.')) || 0;

@@ -1570,9 +1570,8 @@
       "cat": "Gestão condominial",
       "destaque": false,
       "visivel": false,
-      "status": "ativo",
+      "status": "embreve",
       "href": "condo/",
-      "app": "https://drg-condo.onrender.com/inscricao",
       "desc": "Gestão condominial completa, do financeiro à comunicação com os moradores.",
       "planosNota": "🏢 O preço é pela SOMA das unidades de todos os seus condomínios — não importa quantos condomínios você administra, só o total de unidades somadas. Ex.: 3 condomínios de 30 unidades = 90 no total, cabe no Essencial. Cada condomínio fica isolado na mesma conta.",
       "planos": [
