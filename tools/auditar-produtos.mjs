@@ -47,8 +47,7 @@ const APELIDOS = {
   'dr_global_git': 'kronos',   // pasta do Kronos no PC
   'drg-sistema': 'kronos',     // nome do repo do Kronos no GitHub
   'drg-sindico': 'sindia',     // o produto se chama Sind.ia
-  'drg-rently (antigo - nao usar)': 'rently_antigo',   // pasta aposentada no Drive
-  'drg-sentinel-pcs': 'sentinel'  // instalador do agente do Sentinel (Drive), mesmo produto
+  'drg-rently (antigo - nao usar)': 'rently_antigo'   // pasta aposentada no Drive
 };
 
 // O que NÃO é produto de prateleira — não deve virar card. A chave é a key derivada,
