@@ -2567,6 +2567,119 @@
       "finalP": "Estamos formando a equipe de profissionais verificados cidade por cidade. Deixe seu contato e avisamos assim que o APPCare abrir na sua região.",
       "planos": [],
       "logo": "appcare.svg"
+    },
+    {
+      "key": "sender",
+      "marca": "DRG",
+      "nome": "Sender",
+      "emoji": "📤",
+      "cat": "Nota fiscal do condomínio",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "sender/",
+      "cta": "Reservar para o meu condomínio",
+      "desc": "A NFS-e do condomínio, uma por unidade, emitida junto com o boleto. Pronta para a regra que começa em 2027.",
+      "descPagina": "DRG-Sender: emissão da NFS-e do condomínio (código 99.05.01, NT 009), uma por unidade, junto com o boleto. Integrado ao DRG-Guard Financeiro.",
+      "h1": "Nota fiscal do condomínio? A sua sai <em>junto com o boleto</em>.",
+      "sub": "A NFS-e nacional ganhou o código próprio do condomínio (99.05.01, NT 009), com a cobrança a partir de 01/01/2027. Para o condomínio que vai emitir, o DRG-Sender gera uma nota por unidade no fechamento do mês, e o morador vê a nota no app, ao lado do boleto.",
+      "mini": "Pré-venda · Prazo: 01/01/2027 (Ato Conjunto RFB/CGIBS nº 7/2026) · Emissão direta no ambiente nacional",
+      "doresT": "Emitir centenas de notas na mão não fecha a conta",
+      "dores": [
+        "Condomínio com 700 unidades: são 700 notas a cada mês de cobrança",
+        "Digitar CPF, unidade e valores de cada morador no emissor nacional",
+        "Nota que não bate com o boleto vira dúvida, reclamação e retrabalho",
+        "Taxa extra, fundo de reserva e consumo precisam aparecer separados"
+      ],
+      "solT": "A nota nasce do rateio que você já faz",
+      "sol": [
+        "Fechou o mês e registrou os boletos: as notas vão para a fila sozinhas",
+        "Taxa ordinária, fundo de reserva e rateios extras discriminados na nota",
+        "Mandar a mesma cobrança de novo nunca gera nota em dobro",
+        "O morador abre a nota no app, junto do boleto"
+      ],
+      "recT": "Feito para administradora e síndico",
+      "recL": "Integrado ao DRG-Guard Financeiro, ou por planilha para quem usa outro sistema.",
+      "rec": [
+        {
+          "i": "🏢",
+          "h": "Código 99.05.01",
+          "p": "Leiaute da NT 009 com o grupo próprio do condomínio: cobranças, descontos e a unidade."
+        },
+        {
+          "i": "🧾",
+          "h": "Nota junto do boleto",
+          "p": "A nota fica vinculada ao boleto do mês e chega ao morador pelo app."
+        },
+        {
+          "i": "🔐",
+          "h": "Certificado do condomínio",
+          "p": "Assinada com o A1 do próprio condomínio, guardado criptografado no cofre."
+        },
+        {
+          "i": "🛡️",
+          "h": "Sem nota em dobro",
+          "p": "Cada cobrança tem uma referência única. Reenviar não emite outra nota."
+        },
+        {
+          "i": "📋",
+          "h": "Conferência antes do envio",
+          "p": "Os erros que o Fisco recusaria aparecem antes, em português, para corrigir."
+        },
+        {
+          "i": "📄",
+          "h": "DANFSe oficial",
+          "p": "O PDF da nota vem do ambiente nacional, pronto para o condômino e o contador."
+        }
+      ],
+      "comoL": "Você liga uma vez. Depois, a nota acompanha cada boleto.",
+      "passos": [
+        {
+          "h": "Cadastre o condomínio",
+          "p": "CNPJ, endereço e o certificado A1 do condomínio."
+        },
+        {
+          "h": "Ligue no Financeiro",
+          "p": "No DRG-Guard, em Cobranças, ligue as notas fiscais."
+        },
+        {
+          "h": "Feche o mês",
+          "p": "Ao registrar os boletos, cada unidade ganha a sua nota."
+        }
+      ],
+      "finalH": "Seu condomínio pronto antes de a regra começar.",
+      "finalP": "Fale com a gente e reserve a implantação.",
+      "planos": [
+        {
+          "nome": "Com DRG-Guard",
+          "preco": 0.8,
+          "periodo": "/nota",
+          "sub": "condomínio que usa o DRG-Guard Financeiro",
+          "destaque": true,
+          "itens": [
+            "Nota sai junto com o boleto",
+            "Dados puxados do rateio, sem digitar",
+            "Nota no app do morador"
+          ],
+          "cta": "Reservar",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20a%20nota%20fiscal%20do%20meu%20condom%C3%ADnio%20pelo%20DRG-Sender."
+        },
+        {
+          "nome": "Sem DRG-Guard",
+          "preco": 1.2,
+          "periodo": "/nota",
+          "sub": "administradora com outro sistema",
+          "destaque": false,
+          "itens": [
+            "Envio por planilha ou API",
+            "Conferência antes de emitir",
+            "DANFSe oficial"
+          ],
+          "cta": "Falar com a gente",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20a%20nota%20fiscal%20do%20meu%20condom%C3%ADnio%20pelo%20DRG-Sender."
+        }
+      ],
+      "logo": "sender.svg"
     }
   ]
 }
