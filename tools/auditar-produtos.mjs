@@ -58,7 +58,9 @@ const NAO_E_PRODUTO = {
   'padrao-drg': 'padrões internos',
   'garantidora_antigo_nao_usar': 'pasta aposentada',
   'rently_antigo': 'pasta aposentada',
-  'spy': 'projetos de CFTV da DR Global para os condomínios administrados (playbook + pasta por cliente), não é produto de venda'
+  'spy': 'projetos de CFTV da DR Global para os condomínios administrados (playbook + pasta por cliente), não é produto de venda',
+  // 17/11/2026, aprovado pelo dono ("Apagar a pasta do Sentinel" + Global-Site na lista): o site institucional não é produto
+  'global-site': 'site institucional da D.R. Global Gestão de Condomínios (drglobal.com.br), não é produto de venda'
 };
 
 const site = JSON.parse(readFileSync(join(ROOT, 'data', 'site.json'), 'utf8'));
