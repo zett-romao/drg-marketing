@@ -2576,14 +2576,14 @@
       "cat": "Nota fiscal do condomínio",
       "destaque": false,
       "visivel": true,
-      "status": "embreve",
+      "status": "ativo",
       "href": "sender/",
-      "cta": "Reservar para o meu condomínio",
+      "cta": "Criar conta · 2 meses grátis",
       "desc": "A NFS-e do condomínio, uma por unidade, emitida junto com o boleto. Pronta para a regra que começa em 2027.",
       "descPagina": "DRG-Sender: emissão da NFS-e do condomínio (código 99.05.01, NT 009), uma por unidade, junto com o boleto. Integrado ao DRG-Guard Financeiro.",
       "h1": "Nota fiscal do condomínio? A sua sai <em>junto com o boleto</em>.",
       "sub": "A NFS-e nacional ganhou o código próprio do condomínio (99.05.01, NT 009), com a cobrança a partir de 01/01/2027. Para o condomínio que vai emitir, o DRG-Sender gera uma nota por unidade no fechamento do mês, e o morador vê a nota no app, ao lado do boleto.",
-      "mini": "Pré-venda · Prazo: 01/01/2027 (Ato Conjunto RFB/CGIBS nº 7/2026) · Emissão direta no ambiente nacional",
+      "mini": "2 meses grátis por conta · Emissão direta no ambiente nacional · Obrigatória a partir de 01/01/2027 (Ato Conjunto RFB/CGIBS nº 7/2026)",
       "doresT": "Emitir centenas de notas na mão não fecha a conta",
       "dores": [
         "Condomínio com 700 unidades: são 700 notas a cada mês de cobrança",
@@ -2648,38 +2648,46 @@
         }
       ],
       "finalH": "Seu condomínio pronto antes de a regra começar.",
-      "finalP": "Fale com a gente e reserve a implantação.",
+      "finalP": "Crie a conta, cadastre o condomínio e teste a emissão no ambiente de homologação antes de ligar a produção.",
       "planos": [
         {
           "nome": "Com DRG-Guard",
-          "preco": 0.8,
-          "periodo": "/nota",
-          "sub": "condomínio que usa o DRG-Guard Financeiro",
+          "sub": "por mês · condomínio que usa o DRG-Guard Financeiro",
           "destaque": true,
           "itens": [
             "Nota sai junto com o boleto",
             "Dados puxados do rateio, sem digitar",
             "Nota no app do morador"
           ],
-          "cta": "Reservar",
-          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20a%20nota%20fiscal%20do%20meu%20condom%C3%ADnio%20pelo%20DRG-Sender."
+          "cta": "Criar conta grátis",
+          "ctaHref": "https://sender.drsystems.dev.br/sender/?criar=1",
+          "precoTexto": "R$ 0,80/unidade"
         },
         {
           "nome": "Sem DRG-Guard",
-          "preco": 1.2,
-          "periodo": "/nota",
-          "sub": "administradora com outro sistema",
+          "sub": "por mês · administradora com outro sistema",
           "destaque": false,
           "itens": [
-            "Envio por planilha ou API",
-            "Conferência antes de emitir",
-            "DANFSe oficial"
+            "Envio por planilha de rateio ou API",
+            "Boleto próprio ou da garantidora",
+            "Conferência antes de emitir · DANFSe oficial"
           ],
-          "cta": "Falar com a gente",
-          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20a%20nota%20fiscal%20do%20meu%20condom%C3%ADnio%20pelo%20DRG-Sender."
+          "cta": "Criar conta grátis",
+          "ctaHref": "https://sender.drsystems.dev.br/sender/?criar=1",
+          "precoTexto": "R$ 1,20/unidade"
         }
       ],
-      "logo": "sender.svg"
+      "logo": "sender.svg",
+      "app": "https://sender.drsystems.dev.br/sender/?criar=1",
+      "ctaContato": {
+        "rotulo": "Falar com a gente",
+        "msg": "Olá! Quero a nota fiscal do meu condomínio pelo DRG-Sender."
+      },
+      "ctaLogin": {
+        "href": "https://sender.drsystems.dev.br/sender/",
+        "rotulo": "Já tenho conta · Entrar"
+      },
+      "planosNota": "🎁 2 meses grátis por conta. Depois, uma fatura por condomínio (CNPJ) por mês, pelo número de unidades existentes — só para condomínio com a emissão ligada em produção. Vários condomínios na mesma conta, cada um com o seu certificado A1."
     },
     {
       "key": "cad",
