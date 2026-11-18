@@ -105,6 +105,15 @@ for (const raiz of RAIZES) {
     if (!/^(drg[-_]|dr_global)/i.test(nome)) continue;
     if (vistas.has(nome.toLowerCase())) continue; // mesma pasta vista por duas raízes
     try { if (!statSync(join(raiz, nome)).isDirectory()) continue; } catch { continue; }
+    /* 🧹 17/11/2026: CÓPIA DE TRABALHO do git (worktree: o `.git` é um ARQUIVO apontando para o repo
+       principal, ex. DRG-Guard-assembleia) é o mesmo app em outra pasta, nunca produto novo; e pasta
+       VAZIA (sobra de worktree removida que o Windows ainda segurava) também não. Antes as duas
+       barravam o push como "app sem card". */
+    try {
+      const git = join(raiz, nome, '.git');
+      if (existsSync(git) && statSync(git).isFile()) continue;
+      if (!readdirSync(join(raiz, nome)).length) continue;
+    } catch { continue; }
     vistas.add(nome.toLowerCase());
     pastas.push(nome);
   }

@@ -2680,6 +2680,102 @@
         }
       ],
       "logo": "sender.svg"
+    },
+    {
+      "key": "cad",
+      "marca": "DRG",
+      "nome": "Cad",
+      "emoji": "📐",
+      "cat": "Desenho técnico 2D e BIM",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "cad/",
+      "cta": "Tenho interesse",
+      "desc": "Desenho técnico 2D e BIM direto no navegador: DXF, PDF em escala, vista 3D e IFC, sem instalar nada.",
+      "descPagina": "DRG-Cad: desenho técnico 2D e BIM no navegador, com DXF, PDF em escala, vista 3D, pavimentos e exportação IFC.",
+      "h1": "Do desenho 2D ao <em>BIM</em>, no navegador.",
+      "sub": "O DRG-Cad desenha plantas em 2D com cotas, textos, blocos e hachuras, abre e salva DXF, imprime PDF em escala e leva o projeto para o 3D com pavimentos e exportação IFC. Roda no navegador, sem instalação.",
+      "mini": "Em desenvolvimento · Funciona no navegador · Português, inglês e espanhol",
+      "doresT": "Desenho técnico ainda depende de programa pesado",
+      "dores": [
+        "Licença cara e instalação em cada máquina",
+        "Arquivo DXF que abre diferente em cada programa",
+        "Planta 2D e modelo 3D feitos em ferramentas separadas",
+        "Imprimir em escala vira tentativa e erro"
+      ],
+      "solT": "Um CAD que abre no navegador",
+      "sol": [
+        "Desenho 2D com cotas, textos, blocos e hachuras",
+        "DXF de ida e volta e PDF em escala",
+        "Vista 3D, sólidos e pavimentos a partir da planta",
+        "Exporta IFC, glTF, OBJ e STL"
+      ],
+      "recT": "O que já está pronto",
+      "recL": "Fases 1 a 4 concluídas: do 2D ao 3D/BIM.",
+      "rec": [
+        {
+          "i": "✏️",
+          "h": "Desenho 2D",
+          "p": "Linhas, cotas, textos, blocos e hachuras, com edição completa."
+        },
+        {
+          "i": "📄",
+          "h": "DXF e PDF",
+          "p": "Abre e salva DXF; imprime PDF em escala."
+        },
+        {
+          "i": "🧊",
+          "h": "3D e BIM",
+          "p": "Vista 3D, sólidos e pavimentos a partir da planta."
+        },
+        {
+          "i": "🏗️",
+          "h": "IFC",
+          "p": "Exporta IFC, além de glTF, OBJ e STL."
+        },
+        {
+          "i": "💾",
+          "h": "Salvamento automático",
+          "p": "O projeto se salva sozinho enquanto você desenha."
+        },
+        {
+          "i": "🌎",
+          "h": "Três idiomas",
+          "p": "Português, inglês e espanhol."
+        }
+      ],
+      "comoL": "Abriu o navegador, começou a desenhar.",
+      "passos": [
+        {
+          "h": "Abra o DRG-Cad",
+          "p": "Direto no navegador, sem instalar."
+        },
+        {
+          "h": "Desenhe ou importe",
+          "p": "Comece do zero ou abra um DXF."
+        },
+        {
+          "h": "Entregue",
+          "p": "PDF em escala, DXF ou o modelo em IFC."
+        }
+      ],
+      "finalH": "Quer o DRG-Cad no seu escritório?",
+      "finalP": "Fale com a gente e acompanhe o lançamento.",
+      "planos": [
+        {
+          "nome": "Lançamento",
+          "precoTexto": "Sob consulta",
+          "sub": "em desenvolvimento",
+          "destaque": true,
+          "itens": [
+            "Desenho 2D e 3D/BIM",
+            "DXF, PDF e IFC"
+          ],
+          "cta": "Tenho interesse",
+          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20saber%20do%20DRG-Cad."
+        }
+      ]
     }
   ]
 }
