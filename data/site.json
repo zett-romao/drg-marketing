@@ -2697,7 +2697,7 @@
       "cat": "Desenho técnico 2D e BIM",
       "destaque": false,
       "visivel": true,
-      "status": "embreve",
+      "status": "ativo",
       "href": "cad/",
       "cta": "Tenho interesse",
       "desc": "Desenho técnico 2D e BIM direto no navegador: DXF, PDF em escala, vista 3D e IFC, sem instalar nada.",
