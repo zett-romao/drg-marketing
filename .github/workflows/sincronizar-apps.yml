@@ -1,0 +1,61 @@
+# App novo da casa entra na landing SOZINHO, todo dia — sem depender de PC ligado.
+# Roda tools/sincronizar-apps.mjs (mesma detecção da auditoria): repo DRG-* sem card vira
+# card 🟡 Em breve, página gerada, commit + push. Pedido do dono em 19/11/2026.
+#
+# Segredo DRG_REPOS_TOKEN: token fine-grained do GitHub, SÓ "Metadata: read" em todos os
+# repositórios — serve para LISTAR os repos privados e ler a descrição. Não escreve nada.
+# A publicação aqui usa o GITHUB_TOKEN do próprio Actions (contents: write só neste repo).
+# Token vencido/ausente → o job FALHA de propósito (o GitHub manda e-mail), em vez de
+# dizer "em dia" sem ter olhado.
+name: Sincronizar apps com a landing
+
+on:
+  schedule:
+    - cron: '0 11 * * *'   # 08:00 em Brasília
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: sincronizar-apps
+  cancel-in-progress: false
+
+jobs:
+  sincronizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Conferir o token que lista os repos
+        env:
+          GH_TOKEN: ${{ secrets.DRG_REPOS_TOKEN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Falta o segredo DRG_REPOS_TOKEN (Settings > Secrets > Actions)."; exit 1
+          fi
+          n=$(gh repo list "${GITHUB_REPOSITORY_OWNER}" --limit 200 --json name --jq 'length') || {
+            echo "::error::DRG_REPOS_TOKEN inválido ou vencido — gerar outro e trocar o segredo."; exit 1; }
+          echo "Repos visíveis pelo token: $n"
+          [ "$n" -gt 1 ] || { echo "::error::O token só enxerga $n repo(s): precisa de 'All repositories' + Metadata read."; exit 1; }
+
+      - name: Sincronizar e publicar
+        env:
+          GH_TOKEN: ${{ secrets.DRG_REPOS_TOKEN }}
+          DRG_SEM_REDE: '1'   # conferência de preço fica para o push manual; aqui não mexemos em preço
+        run: |
+          git config user.name  "drg-marketing-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${{ github.token }}@github.com/${GITHUB_REPOSITORY}.git"
+          node tools/sincronizar-apps.mjs
+
+      - name: Garantir o build do GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # push feito com GITHUB_TOKEN nem sempre dispara o Pages; pedir o build não custa nada
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/pages/builds" >/dev/null && echo "Pages: build pedido." || echo "Pages: build não pedido (segue o automático)."
