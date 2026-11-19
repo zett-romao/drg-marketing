@@ -54,6 +54,24 @@
     .phead .tagpill{font-size:11px;font-weight:800;padding:3px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:.04em}
     .tp-on{background:#c6f6d5;color:#22543d}.tp-soon{background:#feebc8;color:#7b341e}.tp-off{background:#e2e8f0;color:#4a5568}.tp-dest{background:#bee3f8;color:#2a4365}
     .phead .sp{flex:1}
+    /* 19/11/2026 — seletor único de 3 posições: o que aparece no site, num clique, sem abrir o card */
+    .seg{display:inline-flex;border:1px solid var(--linha);border-radius:10px;overflow:hidden;background:#fff}
+    .seg button{border:0;background:#fff;padding:7px 11px;min-height:34px;font:700 12.5px system-ui,'Segoe UI',sans-serif;color:var(--mut);cursor:pointer;white-space:nowrap}
+    .seg button+button{border-left:1px solid var(--linha)}
+    .seg button:active{transform:scale(.98);filter:brightness(.92)}
+    .seg button:disabled{cursor:wait}
+    .seg button.on.s-ar{background:#c6f6d5;color:#22543d}
+    .seg button.on.s-br{background:#feebc8;color:#7b341e}
+    .seg button.on.s-oc{background:#4a5568;color:#fff}
+    .grp{display:flex;align-items:center;gap:10px;margin:22px 2px 10px;font-weight:800;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut)}
+    .grp .n{background:#e2e8f0;color:#4a5568;border-radius:20px;padding:1px 9px;font-size:12px}
+    .grp .ds{font-weight:600;text-transform:none;letter-spacing:0;font-size:12.5px}
+    .grp-vazio{border:1px dashed var(--linha);border-radius:12px;padding:12px 14px;color:var(--mut);font-size:13px;margin-bottom:14px}
+    .phead{flex-wrap:wrap;row-gap:6px}
+    .pmsg{flex-basis:100%;font-size:13px;font-weight:700;display:none}
+    .pmsg.ok{display:block;color:var(--ok)}.pmsg.err{display:block;color:var(--err);font-size:14px}
+    .dirty{color:var(--warn)!important;font-weight:700}
+    button:active{transform:scale(.98);filter:brightness(.92)}
     .ord{display:flex;gap:4px}
     .ord button{width:30px;height:30px;border-radius:7px;border:1px solid var(--linha);background:#fff;cursor:pointer;font-size:14px}
     .pbody{padding:16px 14px;display:none;grid-template-columns:repeat(2,1fr);gap:12px}
@@ -134,7 +152,7 @@
     <div class="msg" id="msg"></div>
 
     <div class="box" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
-      <div><b>Cards dos produtos</b><div class="muted">Arraste a ordem com ↑ ↓ · marque o que mostrar · edite os textos · clique num card para abrir.</div></div>
+      <div><b>Cards dos produtos</b><div class="muted">Em cada produto, escolha <b>🟢 No ar</b>, <b>🟡 Em breve</b> ou <b>⚫ Oculto</b>: publica na hora. ↑ ↓ ordena dentro do grupo · clique no nome para editar textos e planos.</div></div>
       <span style="flex:1"></span>
       <button class="btn btn-g" id="add">＋ Adicionar produto</button>
     </div>
@@ -190,7 +208,7 @@
 
 <div class="savebar" id="savebar" style="display:none">
   <div class="inner">
-    <span class="muted">As mudanças só vão pro ar quando você publicar.</span>
+    <span class="muted" id="dirtymsg">Textos e planos só vão pro ar quando você publicar. (No ar / Em breve / Oculto publicam na hora.)</span>
     <span class="sp"></span>
     <button class="btn btn-g" id="reload">Descartar</button>
     <button class="btn btn-p" id="save">Salvar e publicar</button>
@@ -528,31 +546,67 @@
   }
 
   // ---- render ----
+  // 19/11/2026 (pedido do dono): UM controle decide o que aparece no site — No ar / Em breve /
+  // Oculto — direto na linha do produto, publicando na hora. Antes eram dois controles
+  // (checkbox "Mostrar no site" + select de status) escondidos dentro do card aberto, e
+  // nada ia pro ar sem lembrar do "Salvar e publicar". A lista é agrupada igual ao site:
+  // No ar primeiro, depois Em breve; ↑↓ ordenam dentro do grupo.
+  var GRUPOS=[
+    {id:'ar',t:'🟢 No ar',ds:'aparecem primeiro no site, com botão para conhecer/contratar'},
+    {id:'br',t:'🟡 Em breve',ds:'aparecem depois dos que estão no ar, em cinza'},
+    {id:'oc',t:'⚫ Oculto',ds:'fora da página inicial'}
+  ];
+  var NOME_EST={ar:'No ar',br:'Em breve',oc:'Oculto'};
+  var PMSG={};      // recado por produto (sobrevive ao re-render)
+  var DIRTY=false;  // há edição de texto/plano/ordem ainda não publicada?
+  function estado(p){ return p.visivel===false?'oc':(p.status==='embreve'?'br':'ar'); }
+  function sujo(){
+    DIRTY=true;
+    var m=$('dirtymsg'); m.textContent='● Há edições de texto, planos ou ordem ainda NÃO publicadas.'; m.className='muted dirty';
+  }
+  function limpo(){
+    DIRTY=false;
+    var m=$('dirtymsg'); m.textContent='Tudo publicado. Textos e planos vão pro ar no "Salvar e publicar"; No ar / Em breve / Oculto publicam na hora.'; m.className='muted';
+  }
+
   function render(){
     var list=$('list'); list.innerHTML='';
-    PRODS.forEach(function(p,i){
-      var soon=p.status==='embreve';
-      var pillCls=p.visivel===false?'tp-off':(soon?'tp-soon':'tp-on');
-      var pillTxt=p.visivel===false?'Oculto':(soon?'Em breve':'Ativo');
+    GRUPOS.forEach(function(g){
+      var itens=PRODS.filter(function(p){return estado(p)===g.id;});
+      var h=document.createElement('div'); h.className='grp';
+      h.innerHTML=g.t+' <span class="n">'+itens.length+'</span><span class="ds">'+g.ds+'</span>';
+      list.appendChild(h);
+      if(!itens.length){ var v=document.createElement('div'); v.className='grp-vazio'; v.textContent='Nenhum produto aqui.'; list.appendChild(v); }
+      itens.forEach(function(p){ renderProd(p,list); });
+    });
+  }
+
+  function renderProd(p,list){
+      var i=PRODS.indexOf(p);
+      var est=estado(p);
       var el=document.createElement('div');
       el.className='prod'+(p.destaque?' is-dest':'')+(p.visivel===false?' hidden-card':'');
+      var pm=PMSG[p.key];
       el.innerHTML=''+
         '<div class="phead" data-act="toggle">'+
           '<span class="em">'+esc(p.emoji)+'</span>'+
           '<span class="nm">'+esc(p.marca)+'·'+esc(p.nome)+'</span>'+
-          '<span class="tagpill '+pillCls+'">'+pillTxt+'</span>'+
           (p.destaque?'<span class="tagpill tp-dest">Destaque</span>':'')+
           '<span class="sp"></span>'+
-          '<span class="ord">'+
-            '<button data-act="up" title="Subir">↑</button>'+
-            '<button data-act="down" title="Descer">↓</button>'+
+          '<span class="seg">'+
+            '<button class="s-ar'+(est==='ar'?' on':'')+'" data-est="ar" title="Aparece no site, no grupo dos que estão no ar">🟢 No ar</button>'+
+            '<button class="s-br'+(est==='br'?' on':'')+'" data-est="br" title="Aparece no site, em cinza, no grupo Em breve">🟡 Em breve</button>'+
+            '<button class="s-oc'+(est==='oc'?' on':'')+'" data-est="oc" title="Some da página inicial">⚫ Oculto</button>'+
           '</span>'+
+          '<span class="ord">'+
+            '<button data-act="up" title="Subir dentro do grupo">↑</button>'+
+            '<button data-act="down" title="Descer dentro do grupo">↓</button>'+
+          '</span>'+
+          '<div class="pmsg'+(pm?' '+pm.cls:'')+'">'+(pm?esc(pm.txt):'')+'</div>'+
         '</div>'+
         '<div class="pbody">'+
           '<div class="toggles">'+
-            '<label><input type="checkbox" data-f="visivel" '+(p.visivel!==false?'checked':'')+'/> Mostrar no site</label>'+
             '<label><input type="checkbox" data-f="destaque" '+(p.destaque?'checked':'')+'/> Card de destaque (banner)</label>'+
-            '<label>Status: <select data-f="status"><option value="ativo"'+(!soon?' selected':'')+'>Ativo</option><option value="embreve"'+(soon?' selected':'')+'>Em breve</option></select></label>'+
           '</div>'+
           '<div><label>Emoji</label><input type="text" data-f="emoji" value="'+esc(p.emoji)+'"/></div>'+
           '<div><label>Marca (DRG / GDR)</label><input type="text" data-f="marca" value="'+esc(p.marca)+'"/></div>'+
@@ -571,22 +625,24 @@
 
       // header toggle open/close
       el.querySelector('.phead').addEventListener('click',function(ev){
-        if(ev.target.closest('.ord')) return;
+        if(ev.target.closest('.ord')||ev.target.closest('.seg')) return;
         el.classList.toggle('open');
         OPEN[p.key]=el.classList.contains('open');
       });
-      el.querySelector('[data-act=up]').addEventListener('click',function(ev){ev.stopPropagation();move(i,-1);});
-      el.querySelector('[data-act=down]').addEventListener('click',function(ev){ev.stopPropagation();move(i,1);});
-      el.querySelector('[data-act=del]').addEventListener('click',function(){ if(confirm('Remover '+p.nome+' do site?')){PRODS.splice(i,1);render();} });
+      el.querySelectorAll('.seg button').forEach(function(b){
+        b.addEventListener('click',function(ev){ ev.stopPropagation(); mudarEstado(p,b.getAttribute('data-est'),b); });
+      });
+      el.querySelector('[data-act=up]').addEventListener('click',function(ev){ev.stopPropagation();move(p,-1);});
+      el.querySelector('[data-act=down]').addEventListener('click',function(ev){ev.stopPropagation();move(p,1);});
+      el.querySelector('[data-act=del]').addEventListener('click',function(){ if(confirm('Remover '+p.nome+' do site?')){PRODS.splice(PRODS.indexOf(p),1);sujo();render();} });
 
       // field bindings
       el.querySelectorAll('[data-f]').forEach(function(inp){
         var f=inp.getAttribute('data-f');
         inp.addEventListener(inp.type==='checkbox'?'change':'input',function(){
-          if(f==='visivel'){p.visivel=inp.checked;render();return;}
+          sujo();
           if(f==='destaque'){ if(inp.checked){PRODS.forEach(function(x){x.destaque=false;});p.destaque=true;} else {p.destaque=false;} render();return;}
           if(f==='caps'){p.caps=inp.value.split('\n').map(function(s){return s.trim();}).filter(Boolean);return;}
-          if(f==='status'){p.status=inp.value;render();return;}
           p[f]=inp.value;
         });
       });
@@ -595,7 +651,7 @@
       el.querySelectorAll('[data-pf]').forEach(function(inp){
         var f=inp.getAttribute('data-pf'); var j=+inp.getAttribute('data-pj');
         inp.addEventListener(inp.type==='checkbox'?'change':'input',function(){
-          var pl=(p.planos||[])[j]; if(!pl) return;
+          var pl=(p.planos||[])[j]; if(!pl) return; sujo();
           if(f==='destaque'){pl.destaque=inp.checked;return;}
           if(f==='itens'){pl.itens=inp.value.split('\n').map(function(s){return s.trim();}).filter(Boolean);return;}
           if(f==='preco'){var v=String(inp.value).trim().replace(',','.'); pl.preco=(v===''||isNaN(parseFloat(v)))?0:parseFloat(v); return;}
@@ -603,24 +659,83 @@
         });
       });
       el.querySelectorAll('[data-act=delplano]').forEach(function(b){
-        b.addEventListener('click',function(){var j=+b.getAttribute('data-pj'); if(confirm('Remover este plano?')){p.planos.splice(j,1); render();}});
+        b.addEventListener('click',function(){var j=+b.getAttribute('data-pj'); if(confirm('Remover este plano?')){p.planos.splice(j,1); sujo(); render();}});
       });
       var addp=el.querySelector('[data-act=addplano]');
-      if(addp) addp.addEventListener('click',function(){ if(!p.planos)p.planos=[]; p.planos.push({nome:'Novo plano',preco:0,sub:'',itens:[],destaque:false,cta:'Assinar',ctaHref:''}); OPEN[p.key]=true; render();});
+      if(addp) addp.addEventListener('click',function(){ if(!p.planos)p.planos=[]; p.planos.push({nome:'Novo plano',preco:0,sub:'',itens:[],destaque:false,cta:'Assinar',ctaHref:''}); OPEN[p.key]=true; sujo(); render();});
 
       list.appendChild(el);
-    });
   }
 
-  function move(i,d){
-    var j=i+d; if(j<0||j>=PRODS.length) return;
-    var t=PRODS[i]; PRODS[i]=PRODS[j]; PRODS[j]=t; render();
+  // ↑↓ trocam com o vizinho do MESMO grupo (No ar / Em breve / Oculto) — é a ordem que o site usa.
+  function move(p,d){
+    var g=estado(p), i=PRODS.indexOf(p), j=i+d;
+    while(j>=0&&j<PRODS.length&&estado(PRODS[j])!==g) j+=d;
+    if(j<0||j>=PRODS.length) return;
+    PRODS[i]=PRODS[j]; PRODS[j]=p; sujo(); render();
+  }
+
+  // ---- GitHub: ler e gravar o site.json ----
+  function lerRemoto(){
+    return fetch(API+'?ref='+BRANCH+'&t='+Date.now(),{headers:headers(),cache:'no-store'}).then(function(r){
+      if(!r.ok) throw new Error('Erro '+r.status+' ao ler o site no GitHub.');
+      return r.json();
+    }).then(function(d){ return { sha:d.sha, prods:(JSON.parse(b64dec(d.content)).produtos||[]) }; });
+  }
+  function gravar(prods,shaBase,mensagem){
+    var body={ message:mensagem, content:b64enc(JSON.stringify({produtos:prods},null,2)+'\n'), sha:shaBase, branch:BRANCH };
+    return fetch(API,{method:'PUT',headers:headers(),body:JSON.stringify(body)}).then(function(r){
+      return r.json().then(function(j){
+        if(!r.ok){
+          var m=(j&&j.message)||('Erro '+r.status+' ao publicar.');
+          if(/does not match|is at least|409|conflict/i.test(m)) m='⚠️ O site foi atualizado por outra origem depois que você abriu o painel. Nada foi sobrescrito. Clique em "Descartar" para recarregar e refaça a edição.';
+          throw new Error(m);
+        }
+        sha=j.content.sha; return sha;
+      });
+    });
+  }
+  function carimbo(){ return new Date().toISOString().slice(0,16).replace('T',' '); }
+
+  // Troca No ar / Em breve / Oculto e PUBLICA NA HORA.
+  // Sem edição pendente: relê o site.json do GitHub, muda SÓ este produto e grava — assim um
+  // clique aqui nunca atropela algo que o Claude/outro computador publicou nesse meio-tempo.
+  // Com edição pendente: publica tudo junto (o conflito, se houver, é barrado pelo GitHub).
+  function mudarEstado(p,novo,btn){
+    if(estado(p)===novo) return;
+    var antes={visivel:p.visivel,status:p.status};
+    function aplicar(x){ if(novo==='oc'){x.visivel=false;} else {x.visivel=true; x.status=(novo==='br'?'embreve':'ativo');} }
+    var seg=btn.parentNode;
+    seg.querySelectorAll('button').forEach(function(b){b.disabled=true;});
+    btn.textContent='⏳ Publicando… aguarde';
+    var msg='painel: '+p.nome+' → '+NOME_EST[novo]+' ('+carimbo()+')';
+    var feito;
+    if(DIRTY){
+      aplicar(p);
+      feito=gravar(PRODS,sha,msg).then(limpo);
+    } else {
+      feito=lerRemoto().then(function(r){
+        var alvo=r.prods.filter(function(x){return x.key===p.key;})[0];
+        if(!alvo) throw new Error('Este produto não existe mais no site publicado. Clique em "Descartar" para recarregar.');
+        aplicar(alvo);
+        return gravar(r.prods,r.sha,msg).then(function(){ PRODS=r.prods; });
+      });
+    }
+    feito.then(function(){
+      PMSG[p.key]={cls:'ok',txt:'✓ '+p.nome+' agora está '+NOME_EST[novo].toUpperCase()+'. O site atualiza em cerca de 1 minuto.'};
+      render();
+    }).catch(function(e){
+      p.visivel=antes.visivel; p.status=antes.status;
+      PMSG[p.key]={cls:'err',txt:'✗ Não publicou: '+((e&&e.message)||'erro desconhecido')};
+      render();
+    });
   }
 
   $('add').addEventListener('click',function(){
     var k='novo'+PRODS.length;
     PRODS.push({key:k,marca:'DRG',nome:'Novo produto',emoji:'✨',cat:'Categoria',destaque:false,visivel:false,status:'embreve',href:'#',desc:'Descrição do produto.',planos:[]});
     OPEN[k]=true;
+    sujo();
     render();
     window.scrollTo(0,document.body.scrollHeight);
   });
@@ -629,26 +744,15 @@
   $('save').addEventListener('click',function(){
     var dest=PRODS.filter(function(p){return p.destaque;});
     if(dest.length>1){ show($('msg'),'err','Só pode haver 1 card de destaque. Desmarque os extras.'); window.scrollTo(0,0); return; }
-    $('save').disabled=true; show($('msg'),'info','Publicando…');
-    var body={ message:'painel: atualiza cards ('+new Date().toISOString().slice(0,16).replace('T',' ')+')',
-      content:b64enc(JSON.stringify({produtos:PRODS},null,2)+'\n'), sha:sha, branch:BRANCH };
-    fetch(API,{method:'PUT',headers:headers(),body:JSON.stringify(body)}).then(function(r){
-      return r.json().then(function(j){return {ok:r.ok,j:j};});
-    }).then(function(res){
-      $('save').disabled=false;
-      if(!res.ok){ throw new Error((res.j&&res.j.message)||'Erro ao salvar.'); }
-      sha=res.j.content.sha;
-      show($('msg'),'ok','✓ Publicado! O site atualiza em cerca de 1 minuto. Recarregue a página do site para ver.');
-      window.scrollTo(0,0);
+    var b=$('save'); b.disabled=true; b.textContent='⏳ Publicando… aguarde'; show($('msg'),'info','⏳ Publicando… aguarde');
+    gravar(PRODS,sha,'painel: atualiza cards ('+carimbo()+')').then(function(){
+      limpo(); PMSG={};
+      show($('msg'),'ok','✓ Publicado! O site atualiza em cerca de 1 minuto.');
+      b.textContent='✓ Publicado'; window.scrollTo(0,0);
+      setTimeout(function(){ b.textContent='Salvar e publicar'; b.disabled=false; },2500);
     }).catch(function(e){
-      $('save').disabled=false;
-      var m=(e&&e.message)||'Erro ao salvar.';
-      // Conflito de versao (o site.json mudou por outra origem/deploy depois que o painel abriu):
-      // o GitHub barra o PUT com sha antigo. Nao sobrescreve nada — mas o painel esta desatualizado.
-      if(/does not match|is at least|409|conflict/i.test(m)){
-        m='⚠️ O site foi atualizado por outra origem (deploy recente) depois que você abriu o painel. Nada foi sobrescrito. Clique em "Descartar" para recarregar a versão atual e refazer suas edições.';
-      }
-      show($('msg'),'err',m); window.scrollTo(0,0);
+      b.textContent='Salvar e publicar'; b.disabled=false;
+      show($('msg'),'err',(e&&e.message)||'Erro ao salvar.'); window.scrollTo(0,0);
     });
   });
 

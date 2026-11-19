@@ -14,6 +14,26 @@ Site estático, sem dependências externas. Identidade visual espelha a `/vendas
 |---|---|---|
 | Prévia local (localhost:8080) | `ABRIR LANDING.bat` | `abrir-landing.command` |
 | Conferir se todo app tem card | `CONFERIR APPS.bat` | `conferir-apps.command` |
+| **Pôr app novo no site sozinho** | `SINCRONIZAR APPS.bat` | `node tools/sincronizar-apps.mjs` |
+
+## O que aparece no site (19/11/2026)
+
+Cada produto tem **um** estado, escolhido no painel `/admin/` num clique — publica na hora:
+
+| Estado | No site |
+|---|---|
+| 🟢 **No ar** | grupo "No ar · contrate hoje", **sempre antes** dos demais |
+| 🟡 **Em breve** | grupo "Em breve", em cinza, depois dos que estão no ar |
+| ⚫ **Oculto** | fora da página inicial |
+
+No JSON isso é `visivel:false` (Oculto) ou `status: ativo|embreve`. Dentro de cada grupo
+vale a ordem do painel (↑↓ trocam com o vizinho do mesmo grupo).
+
+**App novo entra sozinho:** `tools/sincronizar-apps.mjs` usa a mesma detecção da auditoria
+(repos do GitHub + pastas `DRG-*`), cria o card como 🟡 Em breve com a descrição do repo,
+gera a página (só com o que vale para todo produto da casa, nada inventado), commita e
+publica. O card fica marcado `"auto": true` até alguém escrever a copy de verdade — a
+auditoria lista esses casos, sem barrar o push.
 
 Pela linha de comando, em qualquer sistema:
 

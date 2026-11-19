@@ -140,6 +140,15 @@ const semCopy = produtos.filter(p => !p.h1).map(p => p.key);
 const comTodo = produtos.filter(p => JSON.stringify(p).includes('TODO')).map(p => p.key);
 const ocultos = produtos.filter(p => p.visivel === false).map(p => p.key);
 
+// --json: entrega a detecção para o tools/sincronizar-apps.mjs (mesma regra, um lugar só).
+if (process.argv.includes('--json')) {
+  console.log(JSON.stringify({
+    semCard: semCard.map(([key, info]) => ({ key, nomes: [...info.nomes], origens: [...info.origens] })),
+    semPasta, semCopy, comTodo, cego: !repos.length && !pastas.length, githubNota
+  }));
+  process.exit(0);
+}
+
 // ---- 5. relatório ----
 const linha = (s) => console.log(s);
 linha('');
@@ -178,6 +187,13 @@ if (semCopy.length) {
 if (comTodo.length) {
   pendencias += comTodo.length;
   linha('🔴 COPY AINDA COM "TODO" (sai no ar assim): ' + comTodo.join(', '));
+  linha('');
+}
+
+const automaticos = produtos.filter(p => p.auto).map(p => `${p.key} (desde ${p.autoEm})`);
+if (automaticos.length) {
+  linha('🟡 Card criado AUTOMATICAMENTE, ainda com texto genérico (não barra o push): ' + automaticos.join(', '));
+  linha('   escrever a copy de verdade no data/site.json e apagar o campo "auto".');
   linha('');
 }
 

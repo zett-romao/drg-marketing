@@ -264,8 +264,9 @@ if (semCopy.length) console.log('⚠ produtos sem copy de página (não gerados)
   if (a === -1 || b === -1) {
     console.log('⚠ marcadores PRODUTOS:INICIO/FIM não encontrados no index.html — lista do <noscript> não atualizada.');
   } else {
-    const links = produtos
-      .filter(p => p.visivel !== false)
+    const vis = produtos.filter(p => p.visivel !== false);
+    // mesma ordem da home: no ar antes de "em breve" (19/11/2026)
+    const links = [...vis.filter(p => p.status !== 'embreve'), ...vis.filter(p => p.status === 'embreve')]
       .map(p => `<a href="${p.href || p.key + '/'}" style="color:var(--clara)">${p.nome}</a>`)
       .join(', ');
     const bloco =

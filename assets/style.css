@@ -158,6 +158,12 @@ a.fcard:hover{background:rgba(255,255,255,.12);transform:translateY(-3px);border
 .fcard p{color:#c2d3e5;font-size:13.5px;flex:1}
 .fcard .ir{display:inline-flex;align-items:center;gap:7px;margin-top:12px;font-size:13px;font-weight:700;color:var(--clara)}
 .fcard .ir .d{width:7px;height:7px;border-radius:50%;background:#48bb78}
+/* Seções da home: "No ar" antes de "Em breve" (19/11/2026) */
+.famsec{display:flex;align-items:center;gap:9px;margin:28px 0 14px;font-size:13px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;color:var(--clara)}
+.famsec .d{width:9px;height:9px;border-radius:50%;background:#48bb78;box-shadow:0 0 0 4px rgba(72,187,120,.18)}
+.famsec small{font-size:12px;font-weight:700;color:#9fb2c6;letter-spacing:0}
+.famsec.soon{color:#9fb2c6}
+.famsec.soon .d{background:#9fb2c6;box-shadow:none}
 .fcard.grey{opacity:.5;filter:grayscale(.35)}
 .fcard.grey .ir{color:#9fb2c6;font-weight:600}
 .fcard.grey .ir .d{background:#9fb2c6}

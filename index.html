@@ -66,7 +66,7 @@
     <div class="famgrid" id="famgrid-root"></div>
     <noscript>
       <!-- PRODUTOS:INICIO — gerado por tools/gen-produtos.mjs a partir de data/site.json. Não editar à mão. -->
-      <p class="lead">Produtos: <a href="kronos/" style="color:var(--clara)">Kronos</a>, <a href="juridico/" style="color:var(--clara)">Jurídico</a>, <a href="sindia/" style="color:var(--clara)">Sind.ia</a>, <a href="sign/" style="color:var(--clara)">Sign</a>, <a href="check/" style="color:var(--clara)">Check</a>, <a href="hidro/" style="color:var(--clara)">Hidro</a>, <a href="buscanfe/" style="color:var(--clara)">BuscaNFe</a>, <a href="guard/" style="color:var(--clara)">Guard</a>, <a href="atende24h/" style="color:var(--clara)">Atende24h</a>, <a href="fit/" style="color:var(--clara)">Fit</a>, <a href="rently/" style="color:var(--clara)">Rently</a>, <a href="garantidora/" style="color:var(--clara)">Garantidora</a>, <a href="liftalk/" style="color:var(--clara)">Liftalk</a>, <a href="access/" style="color:var(--clara)">Access</a>, <a href="charge/" style="color:var(--clara)">Charge</a>, <a href="energy/" style="color:var(--clara)">Energy</a>, <a href="sense/" style="color:var(--clara)">Sense</a>, <a href="pulse/" style="color:var(--clara)">Pulse</a>, <a href="view/" style="color:var(--clara)">View</a>, <a href="appcare/" style="color:var(--clara)">APPCare</a>, <a href="sender/" style="color:var(--clara)">Sender</a>, <a href="cad/" style="color:var(--clara)">Cad</a>.</p>
+      <p class="lead">Produtos: <a href="kronos/" style="color:var(--clara)">Kronos</a>, <a href="juridico/" style="color:var(--clara)">Jurídico</a>, <a href="sindia/" style="color:var(--clara)">Sind.ia</a>, <a href="sign/" style="color:var(--clara)">Sign</a>, <a href="check/" style="color:var(--clara)">Check</a>, <a href="hidro/" style="color:var(--clara)">Hidro</a>, <a href="buscanfe/" style="color:var(--clara)">BuscaNFe</a>, <a href="guard/" style="color:var(--clara)">Guard</a>, <a href="atende24h/" style="color:var(--clara)">Atende24h</a>, <a href="rently/" style="color:var(--clara)">Rently</a>, <a href="sender/" style="color:var(--clara)">Sender</a>, <a href="fit/" style="color:var(--clara)">Fit</a>, <a href="garantidora/" style="color:var(--clara)">Garantidora</a>, <a href="liftalk/" style="color:var(--clara)">Liftalk</a>, <a href="access/" style="color:var(--clara)">Access</a>, <a href="charge/" style="color:var(--clara)">Charge</a>, <a href="energy/" style="color:var(--clara)">Energy</a>, <a href="sense/" style="color:var(--clara)">Sense</a>, <a href="pulse/" style="color:var(--clara)">Pulse</a>, <a href="view/" style="color:var(--clara)">View</a>, <a href="appcare/" style="color:var(--clara)">APPCare</a>, <a href="cad/" style="color:var(--clara)">Cad</a>.</p>
       <!-- PRODUTOS:FIM -->
     </noscript>
   </div>
@@ -135,8 +135,12 @@
         '</div>';
     }
 
-    var g=document.getElementById('famgrid-root');
-    g.innerHTML=grid.map(function(p){
+    // 19/11/2026: ativo SEMPRE antes de "em breve" (pedido do dono). Dentro de cada grupo
+    // vale a ordem do painel. Antes era a ordem crua do JSON: o Sender, à venda, ficava em
+    // 25º, atrás de 13 cards "em breve".
+    var noar=grid.filter(function(p){return p.status!=='embreve';});
+    var breve=grid.filter(function(p){return p.status==='embreve';});
+    function cards(lista){ return lista.map(function(p){
       var soon=p.status==='embreve';
       var label=soon?'Em breve':'Conhecer →';
       return ''+
@@ -145,7 +149,12 @@
           '<p>'+esc(p.desc)+'</p>'+
           '<span class="ir"><span class="d"></span>'+label+'</span>'+
         '</a>';
-    }).join('');
+    }).join(''); }
+    var g=document.getElementById('famgrid-root');
+    g.className='';
+    g.innerHTML=
+      (noar.length?'<div class="famsec"><span class="d"></span>No ar · contrate hoje <small>'+noar.length+'</small></div><div class="famgrid">'+cards(noar)+'</div>':'')+
+      (breve.length?'<div class="famsec soon"><span class="d"></span>Em breve <small>'+breve.length+'</small></div><div class="famgrid">'+cards(breve)+'</div>':'');
   }).catch(function(e){ console.error('Falha ao carregar produtos:',e); });
 })();
 </script>
