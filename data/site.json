@@ -1982,7 +1982,7 @@
       "logo": "charge.svg",
       "cat": "Recarga de veículos elétricos",
       "destaque": false,
-      "visivel": true,
+      "visivel": false,
       "status": "embreve",
       "href": "charge/",
       "cta": "Tenho interesse",
