@@ -2487,7 +2487,7 @@
       "emoji": "🩺",
       "cat": "Cuidadores e enfermagem sob demanda",
       "destaque": false,
-      "visivel": true,
+      "visivel": false,
       "status": "embreve",
       "href": "appcare/",
       "cta": "Tenho interesse",
