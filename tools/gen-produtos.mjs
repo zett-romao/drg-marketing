@@ -14,7 +14,7 @@ const WHATS = '5511997347272';
 const wa = (msg) => `https://wa.me/${WHATS}?text=${encodeURIComponent(msg)}`;
 
 // Bump quando a arte dos ícones mudar (fura o cache de favicon do navegador).
-const VERSAO_ICONE = '20260801';
+const VERSAO_ICONE = '20261121';
 
 // Caminho relativo à raiz do projeto (o gerador roda de lá).
 const existe = (rel) => existsSync(join(ROOT, rel));
