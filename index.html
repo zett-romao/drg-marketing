@@ -27,7 +27,7 @@
   <div class="wrap">
     <a class="brand" href="#topo"><img class="tile" src="assets/mark.svg" alt="DR Systems" />DR&nbsp;Systems</a>
     <a class="nav-link" href="#produtos">Produtos</a>
-    <a class="nav-link" href="#kronos">Kronos</a>
+    <a class="nav-link" id="nav-destaque" href="#destaque">Guard</a>
     <a class="nav-link" href="#engenharia">Engenharia</a>
     <span class="sp"></span>
     <a class="btn btn-ghost" href="#produtos">Ver produtos</a>
@@ -66,7 +66,7 @@
     <div class="famgrid" id="famgrid-root"></div>
     <noscript>
       <!-- PRODUTOS:INICIO — gerado por tools/gen-produtos.mjs a partir de data/site.json. Não editar à mão. -->
-      <p class="lead">Produtos: <a href="kronos/" style="color:var(--clara)">Kronos</a>, <a href="juridico/" style="color:var(--clara)">Jurídico</a>, <a href="sindia/" style="color:var(--clara)">Sind.ia</a>, <a href="sign/" style="color:var(--clara)">Sign</a>, <a href="check/" style="color:var(--clara)">Check</a>, <a href="hidro/" style="color:var(--clara)">Hidro</a>, <a href="buscanfe/" style="color:var(--clara)">BuscaNFe</a>, <a href="guard/" style="color:var(--clara)">Guard</a>, <a href="atende24h/" style="color:var(--clara)">Atende24h</a>, <a href="rently/" style="color:var(--clara)">Rently</a>, <a href="sender/" style="color:var(--clara)">Sender</a>, <a href="cad/" style="color:var(--clara)">Cad</a>, <a href="fit/" style="color:var(--clara)">Fit</a>, <a href="garantidora/" style="color:var(--clara)">Garantidora</a>, <a href="liftalk/" style="color:var(--clara)">Liftalk</a>, <a href="access/" style="color:var(--clara)">Access</a>, <a href="energy/" style="color:var(--clara)">Energy</a>, <a href="sense/" style="color:var(--clara)">Sense</a>, <a href="pulse/" style="color:var(--clara)">Pulse</a>, <a href="view/" style="color:var(--clara)">View</a>.</p>
+      <p class="lead">Produtos: <a href="guard/" style="color:var(--clara)">Guard</a>, <a href="kronos/" style="color:var(--clara)">Kronos</a>, <a href="juridico/" style="color:var(--clara)">Jurídico</a>, <a href="sindia/" style="color:var(--clara)">Sind.ia</a>, <a href="sign/" style="color:var(--clara)">Sign</a>, <a href="check/" style="color:var(--clara)">Check</a>, <a href="hidro/" style="color:var(--clara)">Hidro</a>, <a href="buscanfe/" style="color:var(--clara)">BuscaNFe</a>, <a href="atende24h/" style="color:var(--clara)">Atende24h</a>, <a href="rently/" style="color:var(--clara)">Rently</a>, <a href="sender/" style="color:var(--clara)">Sender</a>, <a href="cad/" style="color:var(--clara)">Cad</a>, <a href="fit/" style="color:var(--clara)">Fit</a>, <a href="garantidora/" style="color:var(--clara)">Garantidora</a>, <a href="liftalk/" style="color:var(--clara)">Liftalk</a>, <a href="access/" style="color:var(--clara)">Access</a>, <a href="energy/" style="color:var(--clara)">Energy</a>, <a href="sense/" style="color:var(--clara)">Sense</a>, <a href="pulse/" style="color:var(--clara)">Pulse</a>, <a href="view/" style="color:var(--clara)">View</a>.</p>
       <!-- PRODUTOS:FIM -->
     </noscript>
   </div>
@@ -118,9 +118,10 @@
     var kroot=document.getElementById('kbanner-root');
     if(dest.length){
       var p=dest[0];
+      var nd=document.getElementById('nav-destaque'); if(nd) nd.textContent=p.nome;
       var caps=(p.caps||[]).map(function(c){return '<li>'+esc(c)+'</li>';}).join('');
       kroot.innerHTML=''+
-        '<div class="kbanner" id="kronos">'+
+        '<div class="kbanner" id="destaque">'+
           '<div class="tag">⭐ CARRO-CHEFE</div>'+
           '<div>'+
             '<div class="fi">'+(p.logo?'<img class="filogo" src="assets/'+esc(p.logo)+'" alt="" width="52" height="52">':esc(p.emoji))+'</div>'+

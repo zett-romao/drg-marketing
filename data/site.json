@@ -1,13 +1,110 @@
 {
   "produtos": [
     {
+      "key": "guard",
+      "marca": "DRG",
+      "nome": "Guard",
+      "emoji": "👮",
+      "logo": "guard.svg",
+      "cat": "Portaria & rondas",
+      "destaque": true,
+      "visivel": true,
+      "status": "ativo",
+      "href": "guard/",
+      "app": "https://adm.drglobal.com.br",
+      "cta": "Acessar",
+      "desc": "Operação condominial ponta a ponta: turnos, rondas por QR, ocorrências com prova, encomendas e escalas de limpeza.",
+      "descPagina": "DRG-Guard: operação condominial completa — turnos, rondas por QR Code, ocorrências com prova, portaria, encomendas e escalas de limpeza, com trilha de auditoria.",
+      "h1": "A portaria e a operação do condomínio <em>sob controle</em>.",
+      "sub": "Turnos, rondas por QR Code, ocorrências com prova, encomendas e limpeza — cada ação registrada, com foto, PDF e trilha de auditoria. Do porteiro ao supervisor.",
+      "mini": "Rondas por QR · Prova em foto e PDF · Notificação por e-mail e WhatsApp",
+      "doresT": "A operação da portaria vive no papel",
+      "dores": [
+        "Ronda anotada em caderno, sem prova de que foi feita",
+        "Ocorrência sem foto, sem histórico e sem responsável",
+        "Passagem de turno perdida entre um plantão e outro",
+        "Limpeza e portaria sem controle de quem fez o quê"
+      ],
+      "solT": "Cada plantão registrado e auditável",
+      "sol": [
+        "Ronda por QR Code com horário, ponto e justificativa de atraso",
+        "Ocorrência com foto, PDF, advertência/multa e notificação",
+        "Passagem de posto com materiais, pendências e encomendas",
+        "Escalas de limpeza com checklist e validação do supervisor"
+      ],
+      "recT": "Tudo o que a operação precisa registrar",
+      "recL": "Feito para portarias, zeladorias e supervisão de condomínios e empresas.",
+      "rec": [
+        {
+          "i": "📍",
+          "h": "Rondas por QR",
+          "p": "Cada ponto tem um QR impresso; o rondante lê pela câmera e o sistema registra horário e trajeto."
+        },
+        {
+          "i": "🚨",
+          "h": "Ocorrências com prova",
+          "p": "Registro com foto, PDF e categoria; gera advertência ou multa e notifica os envolvidos."
+        },
+        {
+          "i": "🔁",
+          "h": "Passagem de turno",
+          "p": "Abertura e fechamento de plantão com materiais, equipamentos, pendências e encomendas."
+        },
+        {
+          "i": "📦",
+          "h": "Portaria & encomendas",
+          "p": "Mensageria, recebimento e remessas internas, com registro de entrega."
+        },
+        {
+          "i": "🧹",
+          "h": "Escalas de limpeza",
+          "p": "Escala recorrente, checklist por tipo de área e validação da execução pelo supervisor."
+        },
+        {
+          "i": "🔐",
+          "h": "Auditoria & permissões",
+          "p": "Funções e permissões customizáveis, logs de auditoria em toda ação e login por colaborador."
+        }
+      ],
+      "comoL": "Configure a equipe e os pontos uma vez. O dia a dia é o plantão alimentando o sistema.",
+      "passos": [
+        {
+          "h": "Cadastre equipe e QR Codes",
+          "p": "Colaboradores, funções e os pontos de ronda com QR impresso."
+        },
+        {
+          "h": "A operação roda no plantão",
+          "p": "Turnos, rondas, ocorrências e limpeza registrados na hora, com prova."
+        },
+        {
+          "h": "Supervisão valida e acompanha",
+          "p": "Relatórios em PDF, validação de rondas e limpeza, e trilha de auditoria."
+        }
+      ],
+      "finalH": "Coloque a portaria no controle.",
+      "finalP": "Acesse o DRG-Guard e registre cada plantão com prova e auditoria.",
+      "planos": [],
+      "tagline": "o condomínio inteiro num sistema só",
+      "descLonga": "Portaria, rondas e a gestão do condomínio no mesmo sistema. Rondas por QR Code, ocorrências com foto e PDF, controle de acesso com reconhecimento facial, encomendas e escalas de limpeza. Para a administração: financeiro, reservas de espaços e assembleia online com prova em blockchain. Tudo com trilha de auditoria.",
+      "caps": [
+        "Rondas por QR Code",
+        "Ocorrências com prova",
+        "Reconhecimento facial",
+        "Portaria & encomendas",
+        "Escalas de limpeza",
+        "Financeiro do condomínio",
+        "Reservas de espaços",
+        "Assembleia online"
+      ]
+    },
+    {
       "key": "kronos",
       "marca": "DRG",
       "nome": "Kronos",
       "emoji": "👥",
       "logo": "kronos.svg",
       "cat": "RH ponta a ponta",
-      "destaque": true,
+      "destaque": false,
       "visivel": true,
       "status": "ativo",
       "href": "kronos/",
@@ -1000,91 +1097,6 @@
       "finalH": "Pronto para nunca mais perder uma nota?",
       "finalP": "Crie sua conta em minutos e deixe o robô trabalhar por você.",
       "descPagina": "BuscaNFe: baixa automaticamente as NF-e emitidas contra seus CNPJs/CPFs, por competência. XML, DANFE em PDF e planilha pro contador, direto da SEFAZ."
-    },
-    {
-      "key": "guard",
-      "marca": "DRG",
-      "nome": "Guard",
-      "emoji": "👮",
-      "logo": "guard.svg",
-      "cat": "Portaria & rondas",
-      "destaque": false,
-      "visivel": true,
-      "status": "ativo",
-      "href": "guard/",
-      "app": "https://adm.drglobal.com.br",
-      "cta": "Acessar",
-      "desc": "Operação condominial ponta a ponta: turnos, rondas por QR, ocorrências com prova, encomendas e escalas de limpeza.",
-      "descPagina": "DRG-Guard: operação condominial completa — turnos, rondas por QR Code, ocorrências com prova, portaria, encomendas e escalas de limpeza, com trilha de auditoria.",
-      "h1": "A portaria e a operação do condomínio <em>sob controle</em>.",
-      "sub": "Turnos, rondas por QR Code, ocorrências com prova, encomendas e limpeza — cada ação registrada, com foto, PDF e trilha de auditoria. Do porteiro ao supervisor.",
-      "mini": "Rondas por QR · Prova em foto e PDF · Notificação por e-mail e WhatsApp",
-      "doresT": "A operação da portaria vive no papel",
-      "dores": [
-        "Ronda anotada em caderno, sem prova de que foi feita",
-        "Ocorrência sem foto, sem histórico e sem responsável",
-        "Passagem de turno perdida entre um plantão e outro",
-        "Limpeza e portaria sem controle de quem fez o quê"
-      ],
-      "solT": "Cada plantão registrado e auditável",
-      "sol": [
-        "Ronda por QR Code com horário, ponto e justificativa de atraso",
-        "Ocorrência com foto, PDF, advertência/multa e notificação",
-        "Passagem de posto com materiais, pendências e encomendas",
-        "Escalas de limpeza com checklist e validação do supervisor"
-      ],
-      "recT": "Tudo o que a operação precisa registrar",
-      "recL": "Feito para portarias, zeladorias e supervisão de condomínios e empresas.",
-      "rec": [
-        {
-          "i": "📍",
-          "h": "Rondas por QR",
-          "p": "Cada ponto tem um QR impresso; o rondante lê pela câmera e o sistema registra horário e trajeto."
-        },
-        {
-          "i": "🚨",
-          "h": "Ocorrências com prova",
-          "p": "Registro com foto, PDF e categoria; gera advertência ou multa e notifica os envolvidos."
-        },
-        {
-          "i": "🔁",
-          "h": "Passagem de turno",
-          "p": "Abertura e fechamento de plantão com materiais, equipamentos, pendências e encomendas."
-        },
-        {
-          "i": "📦",
-          "h": "Portaria & encomendas",
-          "p": "Mensageria, recebimento e remessas internas, com registro de entrega."
-        },
-        {
-          "i": "🧹",
-          "h": "Escalas de limpeza",
-          "p": "Escala recorrente, checklist por tipo de área e validação da execução pelo supervisor."
-        },
-        {
-          "i": "🔐",
-          "h": "Auditoria & permissões",
-          "p": "Funções e permissões customizáveis, logs de auditoria em toda ação e login por colaborador."
-        }
-      ],
-      "comoL": "Configure a equipe e os pontos uma vez. O dia a dia é o plantão alimentando o sistema.",
-      "passos": [
-        {
-          "h": "Cadastre equipe e QR Codes",
-          "p": "Colaboradores, funções e os pontos de ronda com QR impresso."
-        },
-        {
-          "h": "A operação roda no plantão",
-          "p": "Turnos, rondas, ocorrências e limpeza registrados na hora, com prova."
-        },
-        {
-          "h": "Supervisão valida e acompanha",
-          "p": "Relatórios em PDF, validação de rondas e limpeza, e trilha de auditoria."
-        }
-      ],
-      "finalH": "Coloque a portaria no controle.",
-      "finalP": "Acesse o DRG-Guard e registre cada plantão com prova e auditoria.",
-      "planos": []
     },
     {
       "key": "atende24h",
