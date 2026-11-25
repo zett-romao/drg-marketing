@@ -92,6 +92,11 @@ function page(p){
   <meta property="og:title" content="${marca}·${p.nome} — ${p.cat}" />
   <meta property="og:description" content="${p.descPagina || p.desc}" />
   <meta name="twitter:card" content="summary_large_image" />
+  ${p.ogImagem ? `<meta property="og:image" content="https://drsystems.dev.br/assets/og/${p.ogImagem}" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://drsystems.dev.br/${p.href || p.key + "/"}" />
+  <meta name="twitter:image" content="https://drsystems.dev.br/assets/og/${p.ogImagem}" />` : ""}
   ${favicon}
   <link rel="manifest" href="../manifest.webmanifest" />
   <link rel="stylesheet" href="../assets/style.css" />

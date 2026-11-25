@@ -2926,7 +2926,8 @@
         "rotulo": "Receber pelo WhatsApp",
         "href": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20testar%20o%20DRG-UmClick.%20Podem%20me%20mandar%20o%20instalador%3F"
       },
-      "planosNota": "Teste grátis de 5 dias. Ao assinar, a 1ª cobrança vem 30 dias depois; depois vence todo mês no mesmo dia da assinatura. Cobrança por computador em que o DRG-UmClick está instalado (no uso compartilhado, conta o do titular e o de cada pessoa). Boleto ou Pix e nota fiscal chegam por e-mail."
+      "planosNota": "Teste grátis de 5 dias. Ao assinar, a 1ª cobrança vem 30 dias depois; depois vence todo mês no mesmo dia da assinatura. Cobrança por computador em que o DRG-UmClick está instalado (no uso compartilhado, conta o do titular e o de cada pessoa). Boleto ou Pix e nota fiscal chegam por e-mail.",
+      "ogImagem": "umclick.png"
     }
   ]
 }
