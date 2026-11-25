@@ -2813,7 +2813,7 @@
         {
           "nome": "Teste grátis",
           "preco": 0,
-          "sub": "baixe e experimente",
+          "sub": "5 dias · todos os recursos",
           "destaque": false,
           "itens": [
             "Todos os recursos liberados",
@@ -2852,7 +2852,7 @@
         }
       ],
       "app": "https://drsystems.dev.br/downloads/DRG-UmClick-Setup.exe",
-      "cta": "Baixar e testar grátis",
+      "cta": "Testar 5 dias grátis",
       "h1": "Certificado digital: <em>destrave uma vez, assine com um clique</em>.",
       "sub": "Certificado A1, A3 ou em nuvem destravado uma vez, e cada assinatura aprovada com um clique no PJe, PDPJ, e-SAJ, eproc e Adobe. A equipe pode usar de outra máquina, com login próprio e registro de tudo.",
       "mini": "PIN digitado só na janela do fabricante · PJe, e-SAJ e eproc · R$ 19 por computador",
@@ -2926,7 +2926,7 @@
         "rotulo": "Receber pelo WhatsApp",
         "href": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20testar%20o%20DRG-UmClick.%20Podem%20me%20mandar%20o%20instalador%3F"
       },
-      "planosNota": "Assine e use 30 dias antes da 1ª cobrança; depois vence todo mês no mesmo dia da assinatura. Cobrança por computador em que o DRG-UmClick está instalado (no uso compartilhado, conta o do titular e o de cada pessoa). Boleto ou Pix e nota fiscal chegam por e-mail."
+      "planosNota": "Teste grátis de 5 dias. Ao assinar, a 1ª cobrança vem 30 dias depois; depois vence todo mês no mesmo dia da assinatura. Cobrança por computador em que o DRG-UmClick está instalado (no uso compartilhado, conta o do titular e o de cada pessoa). Boleto ou Pix e nota fiscal chegam por e-mail."
     }
   ]
 }
