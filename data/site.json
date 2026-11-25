@@ -2796,6 +2796,91 @@
           "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20saber%20do%20DRG-Cad."
         }
       ]
+    },
+    {
+      "key": "umclick",
+      "marca": "DRG",
+      "nome": "UmClick",
+      "emoji": "🖱️",
+      "logo": "umclick.svg",
+      "cat": "Certificado digital",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "umclick/",
+      "desc": "Destrave o certificado digital uma vez e assine com um clique, com agenda, travas e registro de cada uso.",
+      "planos": [],
+      "app": "",
+      "cta": "Tenho interesse",
+      "h1": "Certificado digital: <em>destrave uma vez, assine com um clique</em>.",
+      "sub": "Certificado A1, A3 ou em nuvem destravado uma vez, e cada assinatura aprovada com um clique no PJe, no PDPJ e no Adobe. A equipe pode usar de outra máquina, com login próprio e registro de tudo.",
+      "mini": "PIN digitado só na janela do fabricante · Agenda de uso · Registro à prova de alteração",
+      "doresT": "Digitar o PIN toda hora atrasa o trabalho",
+      "dores": [
+        "PIN e código do token a cada assinatura e a cada login",
+        "Prazo correndo enquanto o sistema pede a senha de novo",
+        "Token emprestado para a equipe, sem controle nenhum",
+        "Ninguém sabe quem assinou o quê, nem quando"
+      ],
+      "solT": "Destrave uma vez, aprove com um clique",
+      "sol": [
+        "Destrava uma vez e cada assinatura pede só um clique",
+        "Trava sozinho no fim do horário, ao tirar o token ou bloquear o Windows",
+        "A equipe assina de outra máquina, com login próprio e aprovação configurável",
+        "Registro de quem, quando, onde e o quê, encadeado e à prova de alteração"
+      ],
+      "recT": "Feito para quem assina o dia inteiro",
+      "recL": "Advocacia, contabilidade e empresas que vivem de certificado digital.",
+      "rec": [
+        {
+          "i": "🔑",
+          "h": "A1, A3 e nuvem",
+          "p": "Token físico, certificado em nuvem e A1 no mesmo painel."
+        },
+        {
+          "i": "⚖️",
+          "h": "PJe e PDPJ",
+          "p": "Funciona com o PJeOffice, inclusive no login com certificado."
+        },
+        {
+          "i": "🗓️",
+          "h": "Agenda de uso",
+          "p": "Dias e horários em que cada certificado pode ficar destravado."
+        },
+        {
+          "i": "👥",
+          "h": "Uso compartilhado",
+          "p": "Pessoas autorizadas assinam de outra máquina; o certificado nunca sai do titular."
+        },
+        {
+          "i": "📜",
+          "h": "Registro encadeado",
+          "p": "Cada uso fica registrado; apagar ou alterar uma linha deixa rastro."
+        },
+        {
+          "i": "🔒",
+          "h": "PIN só do titular",
+          "p": "O PIN é digitado na janela do fabricante; o UmClick nunca o vê."
+        }
+      ],
+      "comoL": "Instale, destrave e trabalhe.",
+      "passos": [
+        {
+          "h": "Instale",
+          "p": "Instalador para cada usuário do Windows, sem precisar de administrador."
+        },
+        {
+          "h": "Destrave uma vez",
+          "p": "Digite o PIN na janela do fabricante do certificado, como sempre."
+        },
+        {
+          "h": "Aprove com um clique",
+          "p": "Cada assinatura do PJe ou do Adobe pede só o seu clique."
+        }
+      ],
+      "finalH": "Pare de digitar o PIN a cada assinatura.",
+      "finalP": "Fale com a gente e garanta o DRG-UmClick no seu escritório.",
+      "descPagina": "UmClick: destrave o certificado digital A1, A3 ou em nuvem uma vez e assine com um clique no PJe, PDPJ e Adobe, com agenda, travas e registro de cada uso."
     }
   ]
 }
