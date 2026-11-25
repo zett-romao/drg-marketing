@@ -2835,7 +2835,7 @@
             "Uso compartilhado com login e aprovação"
           ],
           "cta": "Assinar",
-          "ctaHref": "https://wa.me/5511997347272?text=Ol%C3%A1!%20Quero%20assinar%20o%20DRG-UmClick%20(R%24%2019%20por%20computador)."
+          "ctaHref": "https://drg-umclick-central.zett-romao.workers.dev/assinar"
         },
         {
           "nome": "Escritório",
