@@ -2806,7 +2806,7 @@
       "cat": "Certificado digital",
       "destaque": false,
       "visivel": true,
-      "status": "embreve",
+      "status": "ativo",
       "href": "umclick/",
       "desc": "Destrave o certificado digital uma vez e assine com um clique, com agenda, travas e registro de cada uso.",
       "planos": [],
