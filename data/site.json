@@ -2928,6 +2928,79 @@
       },
       "planosNota": "Teste grátis de 5 dias. Ao assinar, a 1ª cobrança vem 30 dias depois; depois vence todo mês no mesmo dia da assinatura. Cobrança por computador em que o DRG-UmClick está instalado (no uso compartilhado, conta o do titular e o de cada pessoa). Boleto ou Pix e nota fiscal chegam por e-mail.",
       "ogImagem": "umclick.png"
+    },
+    {
+      "key": "flow-control",
+      "marca": "DRG",
+      "nome": "Flow control",
+      "emoji": "✨",
+      "cat": "Novo produto",
+      "destaque": false,
+      "visivel": true,
+      "status": "embreve",
+      "href": "flow-control/",
+      "cta": "Tenho interesse",
+      "auto": true,
+      "autoEm": "2026-11-27",
+      "autoOrigem": "drg-flow-control (GitHub)",
+      "desc": "Novo produto da família DR Systems.",
+      "descPagina": "DRG·Flow control: Novo produto da família DR Systems.",
+      "h1": "DRG·Flow control, <em>em breve</em>.",
+      "sub": "Novo produto da família DR Systems.",
+      "mini": "Lista de espera aberta · Aviso no lançamento pelo WhatsApp",
+      "doresT": "O que ele resolve",
+      "dores": [
+        "Novo produto da família DR Systems."
+      ],
+      "solT": "Construído sobre a fundação DR Systems",
+      "sol": [
+        "Multi-tenant isolado: o dado de um cliente nunca aparece para outro.",
+        "Funciona no navegador e no celular, sem instalar nada.",
+        "Painel central de contas, planos e licenças.",
+        "Suporte direto com a equipe que desenvolve o sistema."
+      ],
+      "recT": "A base que todo produto herda",
+      "recL": "Recursos comuns da família DR Systems; os específicos deste produto chegam com o lançamento.",
+      "rec": [
+        {
+          "i": "🏢",
+          "h": "Multi-tenant isolado",
+          "p": "Isolamento por conta, com segurança por design em toda rota."
+        },
+        {
+          "i": "📴",
+          "h": "PWA",
+          "p": "Abre no navegador e no celular, com cache versionado."
+        },
+        {
+          "i": "🛡️",
+          "h": "Licenças centralizadas",
+          "p": "Contas, planos e controle de uso num painel só."
+        },
+        {
+          "i": "🔔",
+          "h": "Alertas",
+          "p": "E-mail, WhatsApp e push no celular."
+        }
+      ],
+      "comoL": "Como acompanhar o lançamento.",
+      "passos": [
+        {
+          "h": "Entre na lista de espera",
+          "p": "Um clique no botão abre o WhatsApp da DR Systems."
+        },
+        {
+          "h": "Avisamos no lançamento",
+          "p": "Você recebe a novidade antes de abrir para todos."
+        },
+        {
+          "h": "Implantação acompanhada",
+          "p": "A equipe que desenvolveu o sistema acompanha o início."
+        }
+      ],
+      "finalH": "Quer ser avisado quando o DRG·Flow control abrir?",
+      "finalP": "Entre na lista de espera e fale direto com a equipe.",
+      "planos": []
     }
   ]
 }
